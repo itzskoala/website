@@ -1,6 +1,6 @@
-# Blue Sky Studio Portfolio
+# Blue Sky Studio Website
 
-Static portfolio website designed for simple GitHub Pages hosting.
+Static website designed for simple GitHub Pages hosting.
 
 ## Files
 
