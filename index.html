@@ -3,201 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>itzsrikotala</title>
-    <meta name="theme-color" content="#dcefff" />
+    <title>Home | Sri Kotala</title>
     <meta
       name="description"
-      content="A website with a cloud-inspired blue art direction, built for elegant GitHub Pages hosting."
+      content="Sri Kotala's personal website with a sidebar layout, resume, projects, blog, and art."
     />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <div class="page-shell">
-      <div class="sky sky-one"></div>
-      <div class="sky sky-two"></div>
-      <div class="cloud cloud-a"></div>
-      <div class="cloud cloud-b"></div>
-      <div class="cloud cloud-c"></div>
+  <body data-page="home">
+    <div class="site-layout">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <a class="profile-link" href="./index.html" aria-label="Go to homepage">
+            <img class="profile-photo" src="./assets/profile-photo.svg" alt="Stylized portrait placeholder for Sri Kotala" />
+          </a>
 
-      <header class="site-header">
-        <a class="brand" href="#top">Sri Kotala</a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+          <nav class="sidebar-nav" aria-label="Primary">
+            <a class="sidebar-link is-active" href="./index.html">
+              <span class="sidebar-icon">⌂</span>
+              <span>Home Page</span>
+            </a>
+            <a class="sidebar-link" href="./resume.html">
+              <span class="sidebar-icon">◉</span>
+              <span>Resume</span>
+            </a>
+            <a class="sidebar-link" href="./projects.html">
+              <span class="sidebar-icon">▣</span>
+              <span>Projects</span>
+            </a>
+            <a class="sidebar-link" href="./blog.html">
+              <span class="sidebar-icon">✎</span>
+              <span>Blog</span>
+            </a>
+            <a class="sidebar-link" href="./art.html">
+              <span class="sidebar-icon">✦</span>
+              <span>Art</span>
+            </a>
+          </nav>
+        </div>
 
-      <main id="top">
-        <section class="hero section">
-          <div class="hero-copy" data-reveal>
-            <p class="eyebrow">Creative website for modern digital work</p>
-            <h1>
-              Designing calm,
-              <span>beautiful web experiences</span>
-              that feel like fresh air.
-            </h1>
-            <p class="hero-text">
-              I build polished, memorable websites with strong visual direction,
-              thoughtful motion, and a professional finish that makes people stay.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-solid" href="#work">See featured work</a>
-              <a class="button button-ghost" href="#contact">Start a project</a>
-            </div>
+        <div class="sidebar-bottom">
+          <div class="social-row">
+            <a class="social-pill" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">GH</a>
+            <a class="social-pill" href="mailto:hello@example.com">EM</a>
+            <a class="social-pill" href="./resume.html">CV</a>
           </div>
 
-          <div class="hero-panel" data-reveal>
-            <div class="floating-card card-primary">
-              <p class="card-label">Current Focus</p>
-              <h2>Brand-forward website design</h2>
-              <p>
-                Editorial layouts, custom cloud atmospheres, and elegant
-                storytelling for creative professionals.
-              </p>
-            </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+            <span class="theme-toggle-knob"></span>
+            <span>Dark / Light</span>
+          </button>
+        </div>
+      </aside>
 
-            <div class="floating-card card-secondary">
-              <p class="card-label">Approach</p>
-              <ul>
-                <li>Bold, art-directed visual systems</li>
-                <li>Responsive from phone to desktop</li>
-                <li>Simple deployment on GitHub Pages</li>
-              </ul>
+      <main class="content-shell">
+        <section class="content-panel intro-panel" data-reveal>
+          <div class="eyebrow">Home Page</div>
+          <h1>Hey, I'm <span>Sri</span></h1>
+          <p class="subhead">Engineer | Builder | Creative technologist | Lover of airy, expressive web design</p>
+          <p class="lede">
+            I’m building a website that feels elegant, soft, and a little dreamy. I love polished
+            interfaces, cloud imagery, editorial layouts, and motion that makes a page feel alive
+            instead of static.
+          </p>
+          <p class="body-copy">
+            This version keeps the sidebar structure you liked, but brings back the baby-blue cloud
+            atmosphere, the softer dark mode, and the animated feel from the earlier design. The
+            goal is for it to feel professional, pretty, and full of movement.
+          </p>
+          <div class="inline-actions">
+            <a class="pill-button pill-button-solid" href="./resume.html">View Resume</a>
+            <a class="pill-button" href="./projects.html">Open Projects</a>
+          </div>
+        </section>
+
+        <section class="content-panel banner-panel" data-reveal>
+          <div class="banner-card">
+            <img src="./assets/cloud-banner.svg" alt="Bright blue sky with soft clouds" />
+          </div>
+        </section>
+
+        <section class="content-panel section-panel" data-reveal>
+          <div class="section-header">
+            <div>
+              <div class="eyebrow">Moving Gallery</div>
+              <h2>A constantly drifting carousel for your future photos</h2>
+            </div>
+            <a class="pill-button" href="./art.html">See Art</a>
+          </div>
+
+          <div class="carousel-shell">
+            <div class="carousel-track">
+              <article class="carousel-card"><img src="./assets/photo-01.svg" alt="Open sky illustration" /></article>
+              <article class="carousel-card"><img src="./assets/photo-02.svg" alt="Cloud drift illustration" /></article>
+              <article class="carousel-card"><img src="./assets/photo-03.svg" alt="Window-like sky illustration" /></article>
+              <article class="carousel-card"><img src="./assets/photo-04.svg" alt="Bright sky composition" /></article>
+              <article class="carousel-card"><img src="./assets/photo-05.svg" alt="Twilight sky illustration" /></article>
+              <article class="carousel-card"><img src="./assets/photo-06.svg" alt="Soft current illustration" /></article>
+              <article class="carousel-card"><img src="./assets/photo-01.svg" alt="Open sky illustration duplicate" /></article>
+              <article class="carousel-card"><img src="./assets/photo-02.svg" alt="Cloud drift illustration duplicate" /></article>
+              <article class="carousel-card"><img src="./assets/photo-03.svg" alt="Window-like sky illustration duplicate" /></article>
+              <article class="carousel-card"><img src="./assets/photo-04.svg" alt="Bright sky composition duplicate" /></article>
+              <article class="carousel-card"><img src="./assets/photo-05.svg" alt="Twilight sky illustration duplicate" /></article>
+              <article class="carousel-card"><img src="./assets/photo-06.svg" alt="Soft current illustration duplicate" /></article>
             </div>
           </div>
         </section>
 
-        <section class="marquee-strip" aria-label="Studio highlights">
-          <div class="marquee-track">
-            <span>Creative Direction</span>
-            <span>Website Design</span>
-            <span>UI Systems</span>
-            <span>Front-end Craft</span>
-            <span>GitHub Pages Ready</span>
-            <span>Creative Direction</span>
-            <span>Website Design</span>
-            <span>UI Systems</span>
-            <span>Front-end Craft</span>
-            <span>GitHub Pages Ready</span>
-          </div>
-        </section>
-
-        <section class="work section" id="work">
-          <div class="section-heading" data-reveal>
-            <p class="eyebrow">Selected work</p>
-            <h2>A website that feels editorial, immersive, and distinct.</h2>
-          </div>
-
-          <div class="project-grid">
-            <article class="project-card project-card-large" data-reveal>
-              <div class="project-meta">
-                <span>01</span>
-                <span>Visual identity + web</span>
-              </div>
-              <h3>North Coast Atelier</h3>
-              <p>
-                A gallery-inspired brand site with sweeping imagery, generous
-                whitespace, and elegant pacing.
-              </p>
-            </article>
-
-            <article class="project-card" data-reveal>
-              <div class="project-meta">
-                <span>02</span>
-                <span>Product storytelling</span>
-              </div>
-              <h3>Cirrus Objects</h3>
-              <p>
-                Designed to turn technical details into a tactile, premium
-                browsing experience.
-              </p>
-            </article>
-
-            <article class="project-card" data-reveal>
-              <div class="project-meta">
-                <span>03</span>
-                <span>Creative website</span>
-              </div>
-              <h3>Blue Hour Motion</h3>
-              <p>
-                A director’s showcase with expressive typography, soft gradients,
-                and cinematic transitions.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="about section" id="about">
-          <div class="about-panel" data-reveal>
-            <p class="eyebrow">About the studio</p>
-            <h2>Professional polish, creative instincts, and a clean technical foundation.</h2>
+        <section class="content-panel section-panel two-column" data-reveal>
+          <article class="info-card">
+            <div class="eyebrow">What Lives Here</div>
+            <h3>Five tabs, one visual system</h3>
             <p>
-              This concept is built to feel high-end while staying lightweight.
-              The layout is static-site friendly, the styling is custom, and the
-              structure is easy to personalize for your name, projects, and links.
+              The site now follows the exact navigation format you liked: Home Page, Resume,
+              Projects, Blog, and Art. Each page shares the same sidebar, profile corner, and soft
+              cloud-led visual identity.
             </p>
-          </div>
+          </article>
 
-          <div class="stats-grid">
-            <div class="stat-card" data-reveal>
-              <span class="stat-number">01</span>
-              <p>Single-page website optimized for easy GitHub hosting.</p>
-            </div>
-            <div class="stat-card" data-reveal>
-              <span class="stat-number">02</span>
-              <p>Layered cloud visuals built with CSS so no image assets are required.</p>
-            </div>
-            <div class="stat-card" data-reveal>
-              <span class="stat-number">03</span>
-              <p>Sections ready for your work, bio, services, and contact details.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="services section" id="services">
-          <div class="section-heading" data-reveal>
-            <p class="eyebrow">What this site can say</p>
-            <h2>Beautiful presentation with room for serious professional credibility.</h2>
-          </div>
-
-          <div class="service-list">
-            <article class="service-card" data-reveal>
-              <h3>Website</h3>
-              <p>Feature your best projects with confident summaries and a more artful layout.</p>
-            </article>
-            <article class="service-card" data-reveal>
-              <h3>About</h3>
-              <p>Tell your story with warmth, clarity, and a design language that feels intentional.</p>
-            </article>
-            <article class="service-card" data-reveal>
-              <h3>Contact</h3>
-              <p>Invite collaborations with a strong call to action and space for social links.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="contact section" id="contact">
-          <div class="contact-panel" data-reveal>
-            <p class="eyebrow">Let’s build your version</p>
-            <h2>Ready to turn this into your own polished GitHub website?</h2>
+          <article class="info-card accent-card">
+            <div class="eyebrow">Style Direction</div>
+            <h3>Baby blue palette + elegant motion</h3>
             <p>
-              Replace the placeholder copy with your name, projects, and links,
-              then publish the folder directly with GitHub Pages.
+              Light mode stays airy and bright, dark mode shifts into a deep twilight blue, and the
+              fades, floating layers, and movement bring back the personality you liked earlier.
             </p>
-            <div class="hero-actions">
-              <a class="button button-solid" href="mailto:hello@example.com">Email me</a>
-              <a class="button button-ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </div>
+          </article>
         </section>
       </main>
     </div>

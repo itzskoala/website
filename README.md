@@ -1,20 +1,28 @@
-# Blue Sky Studio Website
+# Sri Kotala Website
 
-Static website designed for simple GitHub Pages hosting.
+Static multi-page website designed for simple GitHub Pages hosting.
 
 ## Files
 
-- `index.html`: page structure and content
-- `styles.css`: full visual design, layout, clouds, and responsive behavior
-- `script.js`: scroll reveal animation
-- `favicon.svg`: cloud-inspired browser icon
+- `index.html`: homepage with intro, banner, and snapshots
+- `resume.html`: resume page
+- `projects.html`: selected work page
+- `blog.html`: writing page
+- `art.html`: art gallery page
+- `personal.html`: redirect to the art page from the older site structure
+- `styles.css`: shared sidebar layout, visual system, and responsive behavior
+- `script.js`: shared dark mode toggle
+- `assets/`: profile art, banner art, and gallery images
+- `favicon.png`: browser icon
 
 ## Customize
 
-1. Replace `Blue Sky Studio` with your name or brand.
-2. Update the project cards with your real work.
-3. Change the email and GitHub links in the contact section.
-4. Adjust colors in `:root` inside `styles.css` if you want a different shade of blue.
+1. Replace the placeholder text with your real intro, resume details, project info, and blog titles.
+2. Put your real resume in the project root as `resume.pdf`.
+3. Swap `assets/profile-photo.svg` with your real profile photo if you want a real portrait in the sidebar.
+4. Replace the artwork in `assets/` with your own photos, project images, or art.
+5. Change the GitHub and email links across the pages.
+6. Adjust colors in `:root` inside `styles.css` if you want to fine-tune the blue cloud-inspired palette.
 
 ## Publish On GitHub Pages
 

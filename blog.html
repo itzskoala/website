@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Sri Kotala</title>
+    <meta
+      name="description"
+      content="Blog page for Sri Kotala with writing, notes, and reflections."
+    />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="blog">
+    <div class="site-layout">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <a class="profile-link" href="./index.html" aria-label="Go to homepage">
+            <img class="profile-photo" src="./assets/profile-photo.svg" alt="Stylized portrait placeholder for Sri Kotala" />
+          </a>
+
+          <nav class="sidebar-nav" aria-label="Primary">
+            <a class="sidebar-link" href="./index.html"><span class="sidebar-icon">⌂</span><span>Home Page</span></a>
+            <a class="sidebar-link" href="./resume.html"><span class="sidebar-icon">◉</span><span>Resume</span></a>
+            <a class="sidebar-link" href="./projects.html"><span class="sidebar-icon">▣</span><span>Projects</span></a>
+            <a class="sidebar-link is-active" href="./blog.html"><span class="sidebar-icon">✎</span><span>Blog</span></a>
+            <a class="sidebar-link" href="./art.html"><span class="sidebar-icon">✦</span><span>Art</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="social-row">
+            <a class="social-pill" href="./projects.html">PR</a>
+            <a class="social-pill" href="./art.html">AR</a>
+            <a class="social-pill" href="mailto:hello@example.com">EM</a>
+          </div>
+
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+            <span class="theme-toggle-knob"></span>
+            <span>Dark / Light</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="content-shell">
+        <section class="content-panel intro-panel" data-reveal>
+          <div class="eyebrow">Blog</div>
+          <h1>My Blog</h1>
+          <p class="subhead">Notes, reflections, tutorials, and whatever I want to write about next</p>
+        </section>
+
+        <section class="content-panel blog-stack" data-reveal>
+          <article class="blog-card">
+            <div class="blog-visual light-visual"></div>
+            <div class="blog-copy">
+              <h3>Building a personal site with stronger visual identity</h3>
+              <p>How I moved from a generic landing page to something more editorial, atmospheric, and personal.</p>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-visual gradient-visual"></div>
+            <div class="blog-copy">
+              <h3>Why color direction matters more than people think</h3>
+              <p>Warm highlights, black surfaces, and one consistent mood can make a site feel much more deliberate.</p>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-visual blue-visual"></div>
+            <div class="blog-copy">
+              <h3>Design notes from dreamy blue interfaces</h3>
+              <p>Studying how atmosphere, motion, and soft contrast can make a site feel calm and memorable.</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

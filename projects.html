@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Sri Kotala</title>
+    <meta
+      name="description"
+      content="Projects page for Sri Kotala featuring selected work and experiments."
+    />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="projects">
+    <div class="site-layout">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <a class="profile-link" href="./index.html" aria-label="Go to homepage">
+            <img class="profile-photo" src="./assets/profile-photo.svg" alt="Stylized portrait placeholder for Sri Kotala" />
+          </a>
+
+          <nav class="sidebar-nav" aria-label="Primary">
+            <a class="sidebar-link" href="./index.html"><span class="sidebar-icon">⌂</span><span>Home Page</span></a>
+            <a class="sidebar-link" href="./resume.html"><span class="sidebar-icon">◉</span><span>Resume</span></a>
+            <a class="sidebar-link is-active" href="./projects.html"><span class="sidebar-icon">▣</span><span>Projects</span></a>
+            <a class="sidebar-link" href="./blog.html"><span class="sidebar-icon">✎</span><span>Blog</span></a>
+            <a class="sidebar-link" href="./art.html"><span class="sidebar-icon">✦</span><span>Art</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="social-row">
+            <a class="social-pill" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">GH</a>
+            <a class="social-pill" href="./resume.html">CV</a>
+            <a class="social-pill" href="./blog.html">BL</a>
+          </div>
+
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+            <span class="theme-toggle-knob"></span>
+            <span>Dark / Light</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="content-shell">
+        <section class="content-panel intro-panel" data-reveal>
+          <div class="eyebrow">Projects</div>
+          <h1>Projects</h1>
+          <p class="subhead">Selected builds, experiments, and things I want people to remember</p>
+        </section>
+
+        <section class="project-grid content-panel" data-reveal>
+          <article class="project-card">
+            <div class="project-thumb warm-thumb">A</div>
+            <div class="card-meta">App</div>
+            <h3>Cloud Portfolio System</h3>
+            <p>A personal website designed with atmosphere, motion, and a layered visual identity.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb dark-thumb">R</div>
+            <div class="card-meta">Research</div>
+            <h3>Interface Studies</h3>
+            <p>Notes and experiments around elegant layouts, modular components, and personal branding.</p>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb gold-thumb">M</div>
+            <div class="card-meta">Playful</div>
+            <h3>Motion Study</h3>
+            <p>A playground for scroll reveals, soft fades, and continuously moving gallery layouts.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
