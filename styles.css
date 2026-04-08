@@ -44,6 +44,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -51,6 +52,7 @@ body {
   min-height: 100vh;
   font-family: "Manrope", sans-serif;
   color: var(--text);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 30%),
     linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 38%, var(--bg-bottom) 100%);
@@ -119,15 +121,18 @@ img {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .sidebar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  width: var(--sidebar-width);
   padding: 2rem 1.6rem 1.4rem;
   background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(20px);
@@ -213,6 +218,14 @@ img {
   gap: 0.55rem;
 }
 
+.social-icon {
+  min-width: 2.8rem;
+  padding-inline: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
 .social-pill,
 .pill-button {
   display: inline-flex;
@@ -263,11 +276,15 @@ img {
 }
 
 .content-shell {
+  grid-column: 2;
   padding: 2rem 2rem 3rem;
+  min-width: 0;
+  overflow-x: clip;
 }
 
 .content-panel {
   padding: 1.5rem 2rem;
+  min-width: 0;
 }
 
 .intro-panel {
@@ -420,6 +437,7 @@ p {
 .carousel-shell {
   position: relative;
   overflow: hidden;
+  width: 100%;
   padding: 0.3rem 0;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -428,11 +446,7 @@ p {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: carousel 30s linear infinite;
-}
-
-.carousel-shell:hover .carousel-track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .carousel-card {
@@ -461,6 +475,48 @@ p {
   width: 100%;
   height: 14rem;
   object-fit: cover;
+}
+
+.home-project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.home-project-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.home-project-card:hover,
+.home-project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 72px rgba(38, 88, 149, 0.18);
+  border-color: var(--border-strong);
+}
+
+.home-project-card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.home-project-copy {
+  padding: 1rem 0.1rem 0.2rem;
+}
+
+.home-project-copy h3 {
+  margin-top: 0.45rem;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
 }
 
 .two-column {
@@ -640,16 +696,8 @@ p {
   }
 }
 
-@keyframes carousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50% - 0.5rem));
-  }
-}
-
 @media (max-width: 1100px) {
+  .home-project-grid,
   .project-grid,
   .art-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -671,7 +719,9 @@ p {
 
   .sidebar {
     position: relative;
+    left: auto;
     height: auto;
+    width: auto;
     gap: 1.5rem;
   }
 
@@ -680,6 +730,7 @@ p {
   }
 
   .content-shell {
+    grid-column: auto;
     padding: 1.2rem;
   }
 
@@ -696,6 +747,7 @@ p {
 }
 
 @media (max-width: 640px) {
+  .home-project-grid,
   .project-grid,
   .art-grid,
   .two-column {
