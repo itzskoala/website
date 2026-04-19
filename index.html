@@ -3,188 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>itzsrikotala</title>
+    <title>About | Sri Kotala</title>
     <meta
       name="description"
-      content="Sri Kotala's personal website with a sidebar layout, resume, projects, blog, and art."
+      content="Sri Kotala portfolio with about, resume, projects, and photography."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="home">
-    <div class="site-layout">
-      <aside class="sidebar">
-        <div class="sidebar-top">
-          <a class="profile-link" href="./index.html" aria-label="Go to homepage">
-            <img class="profile-photo" src="./assets/profile-photo.svg" alt="Stylized portrait placeholder for Sri Kotala" />
+  <body class="page-fade">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <nav class="topbar-nav" aria-label="Primary">
+          <a class="topbar-link is-active" href="./index.html">About</a>
+          <a class="topbar-link" href="./resume.html">Resume</a>
+          <a class="topbar-link" href="./projects.html">Projects</a>
+          <a class="topbar-link" href="./photography.html">Photography</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section">
+        <div class="about-grid">
+          <div class="portrait-panel">
+            <img src="./assets/profile-photo.svg" alt="Sri Kotala portrait placeholder" />
+
+            <div class="social-row">
+              <a href="https://linkedin.com/in/skotala/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3.5 8h3v12h-3V8Zm5 0h2.87v1.64h.04A3.15 3.15 0 0 1 14.24 8c3.05 0 3.61 2 3.61 4.59V20h-3v-6.58c0-1.57-.03-3.58-2.18-3.58-2.18 0-2.51 1.7-2.51 3.47V20h-3V8Z"/></svg>
+              </a>
+              <a href="https://github.com/itzskoala" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6A4.7 4.7 0 0 1 6.5 9c-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.9 1.1.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+              </a>
+              <a href="mailto:kotal008@umn.edu" aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.51l9 5.4 9-5.4V7H3Zm18 2.81-8.48 5.09a1 1 0 0 1-1.04 0L3 9.81V17h18V9.81Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <h1>
+              Hi, I’m Sri, an undergraduate from
+              <span class="highlight">UMN-TC</span> graduating in CS &
+              Advertising
+            </h1>
+
+            <p>
+              I live in Minneapolis and I’m on a mission to learn as many things
+              as possible!
+            </p>
+
+            <p>
+              Software Engineering is like building with Legos and Marketing is
+              like getting everybody to look at my Legos.
+            </p>
+
+            <p>
+              I wear multiple hats and bounce between leading teams to being a
+              team player. My ultimate goal is to create impactful, inclusive
+              innovations in technology and media.
+            </p>
+
+            <p>
+              In my free time, you’ll find me writing short stories, on late
+              night runs, studying for the DELE (Spanish Certification), and
+              spending time with my mom :)
+            </p>
+
+            <div class="about-actions">
+              <a class="button-link" href="./projects.html">View all Projects</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <h2 class="section-heading">RECENT PROJECTS</h2>
+        <div class="project-grid">
+          <a class="project-card" href="./projects.html">
+            <div class="project-thumb thumb-talk2me"></div>
+            <div class="project-label">Talk2Me</div>
           </a>
-
-          <nav class="sidebar-nav" aria-label="Primary">
-            <a class="sidebar-link is-active" href="./index.html">
-              <span class="sidebar-icon">⌂</span>
-              <span>Home Page</span>
-            </a>
-            <a class="sidebar-link" href="./resume.html">
-              <span class="sidebar-icon">◉</span>
-              <span>Resume</span>
-            </a>
-            <a class="sidebar-link" href="./projects.html">
-              <span class="sidebar-icon">▣</span>
-              <span>Projects</span>
-            </a>
-            <a class="sidebar-link" href="./blog.html">
-              <span class="sidebar-icon">✎</span>
-              <span>Blog</span>
-            </a>
-            <a class="sidebar-link" href="./art.html">
-              <span class="sidebar-icon">✦</span>
-              <span>Art</span>
-            </a>
-          </nav>
+          <a class="project-card" href="./projects.html">
+            <div class="project-thumb thumb-paradise"></div>
+            <div class="project-label">Paradise Builder</div>
+          </a>
+          <a class="project-card" href="./projects.html">
+            <div class="project-thumb thumb-instagram"></div>
+            <div class="project-label">Instagram Posts via Agentic AI</div>
+          </a>
+          <a class="project-card" href="./projects.html">
+            <div class="project-thumb thumb-ufc"></div>
+            <div class="project-label">Brains vs. Brawn</div>
+          </a>
         </div>
+      </section>
+    </main>
 
-        <div class="sidebar-bottom">
-          <div class="social-row">
-            <a class="social-pill social-icon" href="https://twitter.com/your-handle" target="_blank" rel="noreferrer" aria-label="Twitter placeholder">X</a>
-            <a class="social-pill social-icon" href="https://www.tiktok.com/@your-handle" target="_blank" rel="noreferrer" aria-label="TikTok placeholder">TT</a>
-            <a class="social-pill social-icon" href="https://www.instagram.com/your-handle" target="_blank" rel="noreferrer" aria-label="Instagram placeholder">IG</a>
-            <a class="social-pill social-icon" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer" aria-label="LinkedIn placeholder">IN</a>
+    <footer>
+      <section class="site-footer-upper">
+        <div class="footer-grid">
+          <div>
+            <h2 class="footer-heading">SNAPSHOTS</h2>
+            <div class="snapshot-card">
+              <img src="./assets/photo-01.svg" alt="Snapshot placeholder" />
+            </div>
           </div>
 
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-            <span class="theme-toggle-knob"></span>
-            <span>Dark / Light</span>
-          </button>
+          <div>
+            <h2 class="footer-heading">MY ALTER EGO 😉</h2>
+            <div class="alter-ego-card">
+              <iframe
+                src="https://www.youtube.com/embed/M-954V9LORI"
+                title="My alter ego video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="footer-heading">MEET W/ ME!</h2>
+            <a class="meet-card" href="#">
+              <img src="./assets/profile-photo.svg" alt="Meet with Sri" />
+              <div class="meet-caption">30 min with Sri</div>
+            </a>
+          </div>
         </div>
-      </aside>
+      </section>
 
-      <main class="content-shell">
-        <section class="content-panel intro-panel" data-reveal>
-          <div class="eyebrow">Home Page</div>
-          <h1>Hey, I'm <span>Sri</span></h1>
-          <p class="subhead">Engineer | Builder | Creative technologist | Lover of airy, expressive web design</p>
-          <p class="lede">
-            I’m building a website that feels elegant, soft, and a little dreamy. I love polished
-            interfaces, cloud imagery, editorial layouts, and motion that makes a page feel alive
-            instead of static.
-          </p>
-          <p class="body-copy">
-            This version keeps the sidebar structure you liked, but brings back the baby-blue cloud
-            atmosphere, the softer dark mode, and the animated feel from the earlier design. The
-            goal is for it to feel professional, pretty, and full of movement.
-          </p>
-          <div class="inline-actions">
-            <a class="pill-button pill-button-solid" href="./resume.html">View Resume</a>
-            <a class="pill-button" href="#recent-projects">Recent Projects</a>
-          </div>
-        </section>
-
-        <section class="content-panel banner-panel" data-reveal>
-          <div class="banner-card">
-            <img src="./assets/cloud-banner.svg" alt="Bright blue sky with soft clouds" />
-          </div>
-        </section>
-
-        <section class="content-panel section-panel" data-reveal>
-          <div class="section-header">
-            <div>
-              <div class="eyebrow">Moving Gallery</div>
-              <h2>A constantly drifting carousel for your future photos</h2>
-            </div>
-            <a class="pill-button" href="./art.html">See Art</a>
-          </div>
-
-          <div class="carousel-shell" data-carousel-shell>
-            <div class="carousel-track" data-carousel-track>
-              <article class="carousel-card"><img src="./assets/photo-01.svg" alt="Open sky illustration" /></article>
-              <article class="carousel-card"><img src="./assets/photo-02.svg" alt="Cloud drift illustration" /></article>
-              <article class="carousel-card"><img src="./assets/photo-03.svg" alt="Window-like sky illustration" /></article>
-              <article class="carousel-card"><img src="./assets/photo-04.svg" alt="Bright sky composition" /></article>
-              <article class="carousel-card"><img src="./assets/photo-05.svg" alt="Twilight sky illustration" /></article>
-              <article class="carousel-card"><img src="./assets/photo-06.svg" alt="Soft current illustration" /></article>
-              <article class="carousel-card"><img src="./assets/photo-01.svg" alt="Open sky illustration duplicate" /></article>
-              <article class="carousel-card"><img src="./assets/photo-02.svg" alt="Cloud drift illustration duplicate" /></article>
-              <article class="carousel-card"><img src="./assets/photo-03.svg" alt="Window-like sky illustration duplicate" /></article>
-              <article class="carousel-card"><img src="./assets/photo-04.svg" alt="Bright sky composition duplicate" /></article>
-              <article class="carousel-card"><img src="./assets/photo-05.svg" alt="Twilight sky illustration duplicate" /></article>
-              <article class="carousel-card"><img src="./assets/photo-06.svg" alt="Soft current illustration duplicate" /></article>
-            </div>
-          </div>
-        </section>
-
-        <section class="content-panel section-panel" id="recent-projects" data-reveal>
-          <div class="section-header">
-            <div>
-              <div class="eyebrow">Recent Projects</div>
-              <h2>Clickable highlights right on the home page</h2>
-            </div>
-            <a class="pill-button" href="./projects.html">View All Projects</a>
-          </div>
-
-          <div class="home-project-grid">
-            <a class="home-project-card" href="https://github.com/itzskoala/website" target="_blank" rel="noreferrer">
-              <img src="./assets/photo-03.svg" alt="Project cover for the website project" />
-              <div class="home-project-copy">
-                <p class="card-meta">Website</p>
-                <h3>Blue Sky Website</h3>
-              </div>
+      <div class="site-footer-lower-wrap">
+        <div class="site-footer-lower">
+          <p class="footer-friends">Let's be friends 😄</p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com/in/skotala/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3.5 8h3v12h-3V8Zm5 0h2.87v1.64h.04A3.15 3.15 0 0 1 14.24 8c3.05 0 3.61 2 3.61 4.59V20h-3v-6.58c0-1.57-.03-3.58-2.18-3.58-2.18 0-2.51 1.7-2.51 3.47V20h-3V8Z"/></svg>
             </a>
-
-            <a class="home-project-card" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">
-              <img src="./assets/photo-05.svg" alt="Project cover for interface and motion experiments" />
-              <div class="home-project-copy">
-                <p class="card-meta">Interface</p>
-                <h3>Motion Experiments</h3>
-              </div>
+            <a href="https://github.com/itzskoala" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6A4.7 4.7 0 0 1 6.5 9c-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.9 1.1.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
             </a>
-
-            <a class="home-project-card" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">
-              <img src="./assets/photo-04.svg" alt="Project cover for a community-focused build" />
-              <div class="home-project-copy">
-                <p class="card-meta">Community</p>
-                <h3>Creative Community Build</h3>
-              </div>
-            </a>
-
-            <a class="home-project-card" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">
-              <img src="./assets/photo-06.svg" alt="Project cover for a tutorial or coding notes project" />
-              <div class="home-project-copy">
-                <p class="card-meta">Notes</p>
-                <h3>Code Notes and Tutorials</h3>
-              </div>
+            <a href="mailto:kotal008@umn.edu" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.51l9 5.4 9-5.4V7H3Zm18 2.81-8.48 5.09a1 1 0 0 1-1.04 0L3 9.81V17h18V9.81Z"/></svg>
             </a>
           </div>
-        </section>
-
-        <section class="content-panel section-panel two-column" data-reveal>
-          <article class="info-card">
-            <div class="eyebrow">What Lives Here</div>
-            <h3>Five tabs, one visual system</h3>
-            <p>
-              The site now follows the exact navigation format you liked: Home Page, Resume,
-              Projects, Blog, and Art. Each page shares the same sidebar, profile corner, and soft
-              cloud-led visual identity.
-            </p>
-          </article>
-
-          <article class="info-card accent-card">
-            <div class="eyebrow">Style Direction</div>
-            <h3>Baby blue palette + elegant motion</h3>
-            <p>
-              Light mode stays airy and bright, dark mode shifts into a deep twilight blue, and the
-              fades, floating layers, and movement bring back the personality you liked earlier.
-            </p>
-          </article>
-        </section>
-      </main>
-    </div>
-
+        </div>
+      </div>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>

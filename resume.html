@@ -6,92 +6,152 @@
     <title>Resume | Sri Kotala</title>
     <meta
       name="description"
-      content="Resume page for Sri Kotala with education, experience, and a downloadable resume."
+      content="Resume page for Sri Kotala."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="resume">
-    <div class="site-layout">
-      <aside class="sidebar">
-        <div class="sidebar-top">
-          <a class="profile-link" href="./index.html" aria-label="Go to homepage">
-            <img class="profile-photo" src="./assets/profile-photo.svg" alt="Stylized portrait placeholder for Sri Kotala" />
-          </a>
+  <body class="page-fade">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <nav class="topbar-nav" aria-label="Primary">
+          <a class="topbar-link" href="./index.html">About</a>
+          <a class="topbar-link is-active" href="./resume.html">Resume</a>
+          <a class="topbar-link" href="./projects.html">Projects</a>
+          <a class="topbar-link" href="./photography.html">Photography</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+      </div>
+    </header>
 
-          <nav class="sidebar-nav" aria-label="Primary">
-            <a class="sidebar-link" href="./index.html"><span class="sidebar-icon">⌂</span><span>Home Page</span></a>
-            <a class="sidebar-link is-active" href="./resume.html"><span class="sidebar-icon">◉</span><span>Resume</span></a>
-            <a class="sidebar-link" href="./projects.html"><span class="sidebar-icon">▣</span><span>Projects</span></a>
-            <a class="sidebar-link" href="./blog.html"><span class="sidebar-icon">✎</span><span>Blog</span></a>
-            <a class="sidebar-link" href="./art.html"><span class="sidebar-icon">✦</span><span>Art</span></a>
-          </nav>
-        </div>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1 class="page-title">RESUME</h1>
+        <p class="page-subtitle">Engineer | Writer | Marketer</p>
+      </div>
+    </section>
 
-        <div class="sidebar-bottom">
-          <div class="social-row">
-            <a class="social-pill social-icon" href="https://twitter.com/your-handle" target="_blank" rel="noreferrer" aria-label="Twitter placeholder">X</a>
-            <a class="social-pill social-icon" href="https://www.tiktok.com/@your-handle" target="_blank" rel="noreferrer" aria-label="TikTok placeholder">TT</a>
-            <a class="social-pill social-icon" href="https://www.instagram.com/your-handle" target="_blank" rel="noreferrer" aria-label="Instagram placeholder">IG</a>
-            <a class="social-pill social-icon" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer" aria-label="LinkedIn placeholder">IN</a>
-          </div>
-
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
-            <span class="theme-toggle-knob"></span>
-            <span>Dark / Light</span>
-          </button>
-        </div>
-      </aside>
-
-      <main class="content-shell">
-        <section class="content-panel intro-panel" data-reveal>
-          <div class="eyebrow">Resume</div>
-          <h1>Resume</h1>
-          <p class="subhead">Engineer | Quant-minded problem solver | Founder energy</p>
-          <div class="inline-actions">
-            <a class="pill-button pill-button-solid" href="./resume.pdf" target="_blank" rel="noreferrer">Open PDF</a>
-            <a class="pill-button" href="https://github.com/itzskoala" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-        </section>
-
-        <section class="content-panel section-panel resume-stack" data-reveal>
-          <div class="resume-section">
+    <main class="page-section">
+      <div class="resume-layout">
+        <div class="resume-copy">
+          <section class="resume-group">
             <h2>Education</h2>
-            <div class="resume-item">
-              <h3>Bachelor of Computer Science</h3>
-              <p>University details go here, 2026</p>
+            <p>• Bachelors in Computer Science</p>
+            <p>• Bachelors in Strategic Communication: Advertising and PR</p>
+            <p>University of Minnesota Twin Cities, Minneapolis, Minnesota</p>
+            <p>May 2026 | GPA: 3.67 CS | GPA: 3.94 Strategic Communication</p>
+            <p>Dean’s List, University of Minnesota College of Liberal Arts (2023 - 2025)</p>
+          </section>
+
+          <section class="resume-group">
+            <h2>Work Experience</h2>
+            <p>Research Assistant</p>
+            <ul>
+              <li>Hubbard School of Journalism and Mass Communication, Sep 2024 – Present</li>
+              <li>Designed an AI-enabled study testing audience reaction to varying news sources using 3 proprietary ML algorithms</li>
+            </ul>
+            <p>Teaching Assistant</p>
+            <ul>
+              <li>University of Minnesota College of Science and Engineering, Jan 2024 – Present</li>
+              <li>Facilitated three courses ranging from introductory to advanced topics in Computer Science</li>
+            </ul>
+            <p>ML Engineer</p>
+            <ul>
+              <li>National Science Foundation, May 2024 – Aug 2024</li>
+              <li>Evaluated 3 feature selection methods across 12 high-dimensional medical datasets</li>
+            </ul>
+          </section>
+
+          <section class="resume-group">
+            <h2>Awards & Achievements</h2>
+            <p>• 2026 International Communication Association (ICA) Finalist</p>
+            <p>• University of Minnesota Undergraduate Research Scholarship (2024 - 2025)</p>
+          </section>
+        </div>
+
+        <aside class="resume-side">
+          <div class="resume-logo-card">
+            <div class="umn-mark">M</div>
+          </div>
+
+          <div class="resume-preview-card">
+            <div>
+              <div class="resume-sheet">
+                <h3>Sri Kotala</h3>
+                <p>kotal008@umn.edu | linkedin.com/in/skotala | github.com/itzskoala</p>
+                <p><strong>Education</strong></p>
+                <p>University of Minnesota Twin Cities | BA Strategic Communication | BA Computer Science</p>
+                <p><strong>Skills</strong></p>
+                <p>Python, Java, C, C++, Jira, Agile/Scrum, Machine Learning, Deep Learning, Agentic AI Systems</p>
+                <p><strong>Work Experience</strong></p>
+                <p>Research Assistant, Machine Learning Engineer, Teaching Assistant</p>
+                <p><strong>Projects</strong></p>
+                <p>FileMind, Brains vs Brawn, Content Creator, AI Me!, Quotify</p>
+              </div>
+              <p class="resume-sheet-label">Resume</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <section class="site-footer-upper">
+        <div class="footer-grid">
+          <div>
+            <h2 class="footer-heading">SNAPSHOTS</h2>
+            <div class="snapshot-card">
+              <img src="./assets/photo-02.svg" alt="Snapshot placeholder" />
             </div>
           </div>
 
-          <div class="resume-section">
-            <h2>Experience</h2>
-            <div class="resume-item">
-              <h3>Software Engineering Experience</h3>
-              <p>Add your internship, lab, or work experience here.</p>
-            </div>
-            <div class="resume-item">
-              <h3>Leadership or Campus Role</h3>
-              <p>Use this area for leadership positions, organizations, or community work.</p>
+          <div>
+            <h2 class="footer-heading">MY ALTER EGO 😉</h2>
+            <div class="alter-ego-card">
+              <iframe
+                src="https://www.youtube.com/embed/M-954V9LORI"
+                title="My alter ego video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
 
-          <div class="resume-section">
-            <h2>Highlights</h2>
-            <div class="resume-item">
-              <h3>Projects, Awards, or Research</h3>
-              <p>List competitions, honors, hackathons, publications, or standout builds.</p>
-            </div>
+          <div>
+            <h2 class="footer-heading">MEET W/ ME!</h2>
+            <a class="meet-card" href="#">
+              <img src="./assets/profile-photo.svg" alt="Meet with Sri" />
+              <div class="meet-caption">30 min with Sri</div>
+            </a>
           </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
 
+      <div class="site-footer-lower-wrap">
+        <div class="site-footer-lower">
+          <p class="footer-friends">Let's be friends 😄</p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com/in/skotala/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3.5 8h3v12h-3V8Zm5 0h2.87v1.64h.04A3.15 3.15 0 0 1 14.24 8c3.05 0 3.61 2 3.61 4.59V20h-3v-6.58c0-1.57-.03-3.58-2.18-3.58-2.18 0-2.51 1.7-2.51 3.47V20h-3V8Z"/></svg>
+            </a>
+            <a href="https://github.com/itzskoala" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6A4.7 4.7 0 0 1 6.5 9c-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.9 1.1.9 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="mailto:kotal008@umn.edu" aria-label="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.51l9 5.4 9-5.4V7H3Zm18 2.81-8.48 5.09a1 1 0 0 1-1.04 0L3 9.81V17h18V9.81Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
