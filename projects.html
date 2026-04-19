@@ -16,13 +16,19 @@
   <body class="page-fade">
     <header class="topbar">
       <div class="topbar-inner">
-        <nav class="topbar-nav" aria-label="Primary">
-          <a class="topbar-link" href="./index.html">About</a>
-          <a class="topbar-link" href="./resume.html">Resume</a>
-          <a class="topbar-link is-active" href="./projects.html">Projects</a>
-          <a class="topbar-link" href="./photography.html">Photography</a>
-        </nav>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+        <a class="topbar-brand" href="./index.html" aria-label="Sri Kotala home">
+          <img src="./favicon.svg" alt="Koala logo" />
+          <span>Sri Kotala</span>
+        </a>
+        <div class="topbar-actions">
+          <nav class="topbar-nav" aria-label="Primary">
+            <a class="topbar-link" href="./index.html">About</a>
+            <a class="topbar-link" href="./resume.html">Resume</a>
+            <a class="topbar-link is-active" href="./projects.html">Projects</a>
+            <a class="topbar-link" href="./photography.html">Photography</a>
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+        </div>
       </div>
     </header>
 
@@ -75,14 +81,20 @@
           <div>
             <h2 class="footer-heading">MY ALTER EGO 😉</h2>
             <div class="alter-ego-card">
-              <iframe
-                src="https://www.youtube.com/embed/M-954V9LORI"
-                title="My alter ego video"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+              <a
+                class="alter-ego-link"
+                href="https://www.youtube.com/watch?v=M-954V9LORI"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open my alter ego video on YouTube"
+              >
+                <span class="alter-ego-poster">
+                  <span class="alter-ego-kicker">Featured Video</span>
+                  <span class="alter-ego-title">My Alter Ego</span>
+                  <span class="alter-ego-subtitle">Open on YouTube</span>
+                </span>
+                <span class="alter-ego-play" aria-hidden="true"></span>
+              </a>
             </div>
           </div>
 
