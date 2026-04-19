@@ -8,7 +8,7 @@
       name="description"
       content="Sri Kotala portfolio with about, resume, projects, and photography."
     />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,19 +20,13 @@
   <body class="page-fade">
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="topbar-brand" href="./index.html" aria-label="Sri Kotala home">
-          <img src="./favicon.svg" alt="Koala logo" />
-          <span>Sri Kotala</span>
-        </a>
-        <div class="topbar-actions">
-          <nav class="topbar-nav" aria-label="Primary">
-            <a class="topbar-link is-active" href="./index.html">About</a>
-            <a class="topbar-link" href="./resume.html">Resume</a>
-            <a class="topbar-link" href="./projects.html">Projects</a>
-            <a class="topbar-link" href="./photography.html">Photography</a>
-          </nav>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
-        </div>
+        <nav class="topbar-nav" aria-label="Primary">
+          <a class="topbar-link is-active" href="./index.html">About</a>
+          <a class="topbar-link" href="./resume.html">Resume</a>
+          <a class="topbar-link" href="./projects.html">Projects</a>
+          <a class="topbar-link" href="./photography.html">Photography</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
       </div>
     </header>
 
@@ -124,23 +118,22 @@
             </div>
           </div>
 
-          <div>
+        <div>
             <h2 class="footer-heading">MY ALTER EGO 😉</h2>
             <div class="alter-ego-card">
-              <a
-                class="alter-ego-link"
-                href="https://www.youtube.com/watch?v=M-954V9LORI"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open my alter ego video on YouTube"
-              >
-                <span class="alter-ego-poster">
-                  <span class="alter-ego-kicker">Featured Video</span>
-                  <span class="alter-ego-title">My Alter Ego</span>
-                  <span class="alter-ego-subtitle">Open on YouTube</span>
-                </span>
-                <span class="alter-ego-play" aria-hidden="true"></span>
-              </a>
+              
+              <iframe
+                class="alter-ego-frame"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/M-954V9LORI"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
 
