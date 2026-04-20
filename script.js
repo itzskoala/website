@@ -71,8 +71,10 @@ async function initSlideshows() {
   }
 
   slideshowRoots.forEach((slideshowRoot) => {
-    const image = slideshowRoot.querySelector("[data-slideshow-image]");
-    if (!image) {
+    const track = slideshowRoot.querySelector("[data-slideshow-track]");
+    const currentImage = slideshowRoot.querySelector("[data-slideshow-current]");
+    const nextImage = slideshowRoot.querySelector("[data-slideshow-next]");
+    if (!track || !currentImage || !nextImage) {
       return;
     }
 
@@ -81,9 +83,10 @@ async function initSlideshows() {
     let currentIndex = 0;
     let currentSpeed = baseSpeed;
     let timerId = null;
+    let isAnimating = false;
 
-    image.src = slides[currentIndex];
-    image.classList.add("is-active");
+    currentImage.src = slides[currentIndex];
+    nextImage.src = slides[(currentIndex + 1) % slides.length];
 
     if (slides.length === 1) {
       return;
@@ -91,14 +94,23 @@ async function initSlideshows() {
 
     const queueNextSlide = () => {
       timerId = window.setTimeout(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        image.classList.remove("is-active");
+        if (isAnimating) {
+          return;
+        }
+        isAnimating = true;
+        const transitionDuration = currentSpeed >= hoverSpeed ? 1600 : 1100;
+        track.style.transition = `transform ${transitionDuration}ms cubic-bezier(0.2, 0.7, 0.2, 1)`;
+        track.style.transform = "translateX(-100%)";
 
         window.setTimeout(() => {
-          image.src = slides[currentIndex];
-          image.classList.add("is-active");
+          currentIndex = (currentIndex + 1) % slides.length;
+          currentImage.src = slides[currentIndex];
+          nextImage.src = slides[(currentIndex + 1) % slides.length];
+          track.style.transition = "none";
+          track.style.transform = "translateX(0)";
+          isAnimating = false;
           queueNextSlide();
-        }, 220);
+        }, transitionDuration + 30);
       }, currentSpeed);
     };
 

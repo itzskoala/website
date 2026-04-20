@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <rect width="900" height="1100" fill="#f5e7e9"/>
+  <rect x="52" y="52" width="796" height="996" rx="28" fill="#fff8f8" stroke="#d9b8bd" stroke-width="8"/>
+  <circle cx="450" cy="428" r="170" fill="#7b222d" opacity=".12"/>
+  <path d="M294 444h222c53 0 96 43 96 96v6c0 132-108 240-240 240h-16c-89 0-160-71-160-160 0-101 82-182 182-182Z" fill="#7b222d" opacity=".2"/>
+  <path d="M636 582c-18 55-56 110-118 156-56 41-118 64-178 76 42 8 85 14 132 14 168 0 248-90 248-218 0-29-6-56-18-82-22 12-44 30-66 54Z" fill="#7b222d" opacity=".16"/>
+  <text x="450" y="900" text-anchor="middle" fill="#7b222d" font-family="Merriweather, serif" font-size="56" font-weight="700">Replace Meet Image</text>
+</svg>
