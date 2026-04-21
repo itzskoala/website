@@ -49,29 +49,48 @@ function getRandomSlides(items, count) {
 }
 
 async function discoverSlides() {
-  const extensions = ["jpg", "jpeg", "png", "webp"];
+  // Accepts both `slide-N.ext` and `slideN.ext` naming and tolerates
+  // gaps in the numbering (e.g. 1,2,3,4,8,9,11,12) by keeping scanning
+  // until enough consecutive indices fail.
+  const extensions = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
+  const patterns = [
+    (i, ext) => `./assets/slideshow/slide-${i}.${ext}`,
+    (i, ext) => `./assets/slideshow/slide${i}.${ext}`,
+  ];
   const discovered = [];
-  let index = 1;
-  while (true) {
+  const missTolerance = 20; // how many consecutive empty indices before we stop
+  let consecutiveMisses = 0;
+  const maxIndex = 200; // hard upper bound, just in case
+
+  const tryLoad = (path) =>
+    new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(path);
+      image.onerror = reject;
+      image.src = path;
+    });
+
+  for (let index = 1; index <= maxIndex; index += 1) {
     let foundForIndex = false;
-    for (const extension of extensions) {
-      const path = `./assets/slideshow/slide-${index}.${extension}`;
-      try {
-        await new Promise((resolve, reject) => {
-          const image = new Image();
-          image.onload = resolve;
-          image.onerror = reject;
-          image.src = path;
-        });
-        discovered.push(path);
-        foundForIndex = true;
-        break;
-      } catch {
-        continue;
+    for (const makePath of patterns) {
+      for (const extension of extensions) {
+        try {
+          await tryLoad(makePath(index, extension));
+          discovered.push(makePath(index, extension));
+          foundForIndex = true;
+          break;
+        } catch {
+          /* keep trying */
+        }
       }
+      if (foundForIndex) break;
     }
-    if (!foundForIndex) break;
-    index += 1;
+    if (foundForIndex) {
+      consecutiveMisses = 0;
+    } else {
+      consecutiveMisses += 1;
+      if (consecutiveMisses >= missTolerance && discovered.length) break;
+    }
   }
   return discovered;
 }
@@ -100,18 +119,17 @@ async function initSlideshows() {
     let slides = buildRandomOrder();
 
     // ---------------------------------------------------------------
-    // Speed controls — adjust these on the slideshow element in HTML:
+    // Speed control — adjust this on the slideshow element in HTML:
     //   <div class="snapshot-card snapshot-slideshow" data-slideshow
-    //        data-speed="1900"        <- ms between slides (lower = faster)
-    //        data-hover-speed="5400"  <- ms between slides while hovered
-    //        data-random-count="6">   <- number of random slides to pick
+    //        data-speed="1900"            <- ms between slides (lower = faster)
+    //        data-random-count="6">       <- (optional) cap # of slides shown
+    // Hover now fully pauses the slideshow — no hover-speed knob needed.
     // ---------------------------------------------------------------
     const baseSpeed = Number(slideshowRoot.dataset.speed || 3400);
-    const hoverSpeed = Number(slideshowRoot.dataset.hoverSpeed || baseSpeed * 2.1);
     let currentIndex = 0;
-    let currentSpeed = baseSpeed;
     let timerId = null;
     let isAnimating = false;
+    let isPaused = false;
 
     if (slides.length === 1) {
       currentImage.src = slides[0];
@@ -122,11 +140,20 @@ async function initSlideshows() {
     currentImage.src = slides[currentIndex];
     nextImage.src = slides[(currentIndex + 1) % slides.length];
 
+    const clearTimer = () => {
+      if (timerId) {
+        window.clearTimeout(timerId);
+        timerId = null;
+      }
+    };
+
     const queueNextSlide = () => {
+      clearTimer();
+      if (isPaused) return;
       timerId = window.setTimeout(() => {
-        if (isAnimating) return;
+        if (isAnimating || isPaused) return;
         isAnimating = true;
-        const transitionDuration = currentSpeed >= hoverSpeed ? 900 : 620;
+        const transitionDuration = 620;
         track.style.transition = `transform ${transitionDuration}ms cubic-bezier(0.2, 0.7, 0.2, 1)`;
         track.style.transform = "translateX(-100%)";
 
@@ -143,25 +170,20 @@ async function initSlideshows() {
           track.style.transition = "none";
           track.style.transform = "translateX(0)";
           isAnimating = false;
-          queueNextSlide();
+          if (!isPaused) queueNextSlide();
         }, transitionDuration + 30);
-      }, currentSpeed);
+      }, baseSpeed);
     };
 
+    // Hover fully pauses the slideshow; leaving the card resumes it.
     slideshowRoot.addEventListener("mouseenter", () => {
-      currentSpeed = hoverSpeed;
-      if (timerId) {
-        window.clearTimeout(timerId);
-        queueNextSlide();
-      }
+      isPaused = true;
+      clearTimer();
     });
 
     slideshowRoot.addEventListener("mouseleave", () => {
-      currentSpeed = baseSpeed;
-      if (timerId) {
-        window.clearTimeout(timerId);
-        queueNextSlide();
-      }
+      isPaused = false;
+      if (!isAnimating) queueNextSlide();
     });
 
     queueNextSlide();
