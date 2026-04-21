@@ -479,16 +479,35 @@ img {
   transition: transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* Inline SVG icons (GitHub, Email) use currentColor — set ink per context */
+.social-chip svg.social-icon {
+  color: #2b1618;
+}
+
+[data-theme="dark"] .social-chip svg.social-icon {
+  color: #f6e3e5;
+}
+
+/* Footer is always dark → always use light ink regardless of theme */
+.footer-socials .social-chip svg.social-icon {
+  color: #f6e3e5;
+}
+
 .social-chip:hover .social-icon,
 .social-chip:focus-visible .social-icon {
   transform: rotate(-6deg) scale(1.05);
 }
 
+/* Legacy — kept for any remaining img-based mono uses */
 .social-icon--mono {
   filter: brightness(0) saturate(100%) invert(13%) sepia(18%) saturate(901%) hue-rotate(302deg) brightness(91%) contrast(89%);
 }
 
 [data-theme="dark"] .social-icon--mono {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(7%) saturate(227%) hue-rotate(293deg) brightness(118%) contrast(87%);
+}
+
+.footer-socials .social-icon--mono {
   filter: brightness(0) saturate(100%) invert(97%) sepia(7%) saturate(227%) hue-rotate(293deg) brightness(118%) contrast(87%);
 }
 
@@ -533,32 +552,12 @@ img {
 
 .highlight {
   color: var(--umn-maroon);
-  position: relative;
   font-weight: 800;
   text-shadow: 0 1px 0 rgba(122, 0, 25, 0.12);
 }
 
 [data-theme="dark"] .highlight {
   text-shadow: 0 0 16px rgba(255, 96, 119, 0.35);
-}
-
-.highlight::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--umn-maroon), var(--umn-gold));
-  border-radius: 999px;
-  opacity: 0.9;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: umn-underline 900ms cubic-bezier(0.2, 0.7, 0.2, 1) 1.2s forwards;
-}
-
-@keyframes umn-underline {
-  to { transform: scaleX(1); }
 }
 
 .about-copy p {
@@ -574,17 +573,62 @@ img {
 }
 
 .button-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 46px;
-  padding: 0 20px;
+  padding: 0 22px;
   border: 1px solid var(--button-border);
   border-radius: 6px;
   color: var(--button);
   background: var(--surface);
   font-size: 0.88rem;
   font-weight: 700;
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              box-shadow 260ms ease,
+              background-color 240ms ease,
+              color 240ms ease,
+              border-color 240ms ease;
+}
+
+.button-link::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(closest-side, rgba(139, 23, 36, 0.35), rgba(139, 23, 36, 0) 70%);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity 240ms ease;
+  z-index: -1;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  transform: translateY(-3px) scale(1.03);
+  color: #fff;
+  background: var(--brand);
+  border-color: var(--brand);
+  box-shadow:
+    0 0 0 2px rgba(139, 23, 36, 0.24),
+    0 10px 26px rgba(139, 23, 36, 0.34),
+    0 0 26px rgba(139, 23, 36, 0.28);
+}
+
+[data-theme="dark"] .button-link:hover,
+[data-theme="dark"] .button-link:focus-visible {
+  color: var(--footer);
+  background: var(--button);
+  border-color: var(--button);
+  box-shadow:
+    0 0 0 2px rgba(255, 213, 218, 0.28),
+    0 10px 26px rgba(255, 213, 218, 0.28);
+}
+
+.button-link:hover::before,
+.button-link:focus-visible::before {
+  opacity: 1;
 }
 
 .section-heading {
@@ -605,8 +649,32 @@ img {
 }
 
 .project-card {
+  position: relative;
   display: grid;
   gap: 14px;
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              filter 260ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-6px) scale(1.02);
+  filter: drop-shadow(0 12px 20px rgba(139, 23, 36, 0.22));
+}
+
+.project-card .project-label {
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.project-card:hover .project-label,
+.project-card:focus-visible .project-label {
+  color: var(--umn-maroon);
+  transform: translateY(2px);
+}
+
+[data-theme="dark"] .project-card:hover .project-label,
+[data-theme="dark"] .project-card:focus-visible .project-label {
+  color: var(--umn-maroon);
 }
 
 .project-thumb {
@@ -616,13 +684,51 @@ img {
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: var(--placeholder-bg);
+  transition: border-color 260ms ease,
+              box-shadow 300ms ease,
+              transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.project-thumb img,
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 0 rgba(139, 23, 36, 0);
+  transition: box-shadow 280ms ease;
+  pointer-events: none;
+}
+
+.project-card:hover .project-thumb,
+.project-card:focus-visible .project-thumb {
+  border-color: rgba(139, 23, 36, 0.55);
+  box-shadow:
+    0 0 0 2px rgba(139, 23, 36, 0.18),
+    0 14px 32px rgba(139, 23, 36, 0.28),
+    0 0 32px rgba(139, 23, 36, 0.22);
+}
+
+.project-card:hover .project-thumb img,
+.project-card:focus-visible .project-thumb img {
+  transform: scale(1.05);
+}
+
+.project-thumb img {
+  transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .photo-slot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: var(--surface);
+  transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .project-label {
@@ -644,7 +750,7 @@ img {
 
 .resume-copy {
   display: grid;
-  gap: 26px;
+  gap: 16px;
 }
 
 .resume-group h2 {
@@ -680,7 +786,6 @@ img {
   align-content: start;
 }
 
-.resume-preview-card,
 .meet-card,
 .snapshot-card {
   background: var(--surface);
@@ -690,7 +795,9 @@ img {
 .resume-preview-card {
   display: grid;
   place-items: center;
-  padding: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .resume-logo-wrap {
@@ -739,8 +846,8 @@ img {
   display: block;
   width: 100%;
   height: 620px;
-  border: 1px solid var(--card-border);
-  background: var(--surface);
+  border: 0;
+  background: transparent;
 }
 
 .photo-grid {
@@ -753,10 +860,29 @@ img {
   position: relative;
   width: 100%;
   aspect-ratio: 1.28 / 0.86;
-  border: 1px dashed var(--placeholder-dash);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
   background:
-    linear-gradient(135deg, rgba(121, 178, 235, 0.34), rgba(221, 237, 252, 0.34)),
+    linear-gradient(135deg, rgba(121, 178, 235, 0.16), rgba(221, 237, 252, 0.14)),
     var(--placeholder-bg);
+  transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              box-shadow 320ms ease,
+              border-color 280ms ease;
+}
+
+.photo-slot:hover,
+.photo-slot:focus-within {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(139, 23, 36, 0.55);
+  box-shadow:
+    0 0 0 2px rgba(139, 23, 36, 0.18),
+    0 16px 34px rgba(139, 23, 36, 0.28),
+    0 0 32px rgba(139, 23, 36, 0.22);
+}
+
+.photo-slot:hover img,
+.photo-slot:focus-within img {
+  transform: scale(1.04);
 }
 
 .site-footer-upper {
@@ -792,6 +918,54 @@ img {
 .meet-card {
   position: relative;
   overflow: hidden;
+}
+
+.snapshot-card,
+.alter-ego-card,
+.resume-preview-card {
+  transition: transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              box-shadow 320ms ease,
+              border-color 280ms ease;
+}
+
+.snapshot-card:hover,
+.snapshot-card:focus-within,
+.alter-ego-card:hover,
+.alter-ego-card:focus-within,
+.resume-preview-card:hover,
+.resume-preview-card:focus-within {
+  transform: translateY(-5px) scale(1.015);
+  border-color: rgba(139, 23, 36, 0.55);
+  box-shadow:
+    0 0 0 2px rgba(139, 23, 36, 0.18),
+    0 16px 34px rgba(139, 23, 36, 0.28),
+    0 0 32px rgba(139, 23, 36, 0.22);
+}
+
+.meet-card {
+  display: block;
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              box-shadow 300ms ease,
+              border-color 280ms ease;
+}
+
+.meet-card img {
+  transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.meet-card:hover,
+.meet-card:focus-visible {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(139, 23, 36, 0.55);
+  box-shadow:
+    0 0 0 2px rgba(139, 23, 36, 0.18),
+    0 18px 34px rgba(139, 23, 36, 0.28),
+    0 0 32px rgba(139, 23, 36, 0.22);
+}
+
+.meet-card:hover img,
+.meet-card:focus-visible img {
+  transform: scale(1.06);
 }
 
 .snapshot-slideshow {

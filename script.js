@@ -90,9 +90,22 @@ async function initSlideshows() {
     if (!track || !currentImage || !nextImage) return;
 
     const requestedRandomCount = Number(slideshowRoot.dataset.randomCount || fallbackSlides.length);
-    const slides = getRandomSlides(fallbackSlides, requestedRandomCount).map((slide) =>
-      slide.includes("?") ? slide : `${slide}?${cacheBuster}`
-    );
+    const buildRandomOrder = () =>
+      getRandomSlides(fallbackSlides, requestedRandomCount).map((slide) =>
+        slide.includes("?") ? slide : `${slide}?${cacheBuster}`
+      );
+
+    // `slides` is re-shuffled every time we complete a cycle so the order
+    // feels fresh each pass through the deck.
+    let slides = buildRandomOrder();
+
+    // ---------------------------------------------------------------
+    // Speed controls — adjust these on the slideshow element in HTML:
+    //   <div class="snapshot-card snapshot-slideshow" data-slideshow
+    //        data-speed="1900"        <- ms between slides (lower = faster)
+    //        data-hover-speed="5400"  <- ms between slides while hovered
+    //        data-random-count="6">   <- number of random slides to pick
+    // ---------------------------------------------------------------
     const baseSpeed = Number(slideshowRoot.dataset.speed || 3400);
     const hoverSpeed = Number(slideshowRoot.dataset.hoverSpeed || baseSpeed * 2.1);
     let currentIndex = 0;
@@ -113,12 +126,18 @@ async function initSlideshows() {
       timerId = window.setTimeout(() => {
         if (isAnimating) return;
         isAnimating = true;
-        const transitionDuration = currentSpeed >= hoverSpeed ? 1600 : 1100;
+        const transitionDuration = currentSpeed >= hoverSpeed ? 900 : 620;
         track.style.transition = `transform ${transitionDuration}ms cubic-bezier(0.2, 0.7, 0.2, 1)`;
         track.style.transform = "translateX(-100%)";
 
         window.setTimeout(() => {
-          currentIndex = (currentIndex + 1) % slides.length;
+          const nextIndex = (currentIndex + 1) % slides.length;
+          // When we wrap back to the start, re-shuffle so the next pass
+          // through the deck is in a new random order.
+          if (nextIndex === 0) {
+            slides = buildRandomOrder();
+          }
+          currentIndex = nextIndex;
           currentImage.src = slides[currentIndex];
           nextImage.src = slides[(currentIndex + 1) % slides.length];
           track.style.transition = "none";
@@ -163,7 +182,7 @@ function normalizeHTMLWhitespace(html) {
     .trim();
 }
 
-function typewriteInto(element, html, speed, { onDone } = {}) {
+function typewriteInto(element, html, speed, { onDone, keepCursor = true } = {}) {
   element.innerHTML = html;
   element.classList.add("typewriter-ready");
 
@@ -184,12 +203,21 @@ function typewriteInto(element, html, speed, { onDone } = {}) {
   cursor.setAttribute("aria-hidden", "true");
   element.appendChild(cursor);
 
+  const finish = () => {
+    if (keepCursor) {
+      cursor.classList.add("is-done");
+      element.appendChild(cursor);
+    } else if (cursor.parentNode) {
+      cursor.parentNode.removeChild(cursor);
+    }
+    if (onDone) onDone();
+  };
+
   if (prefersReducedMotion || !segments.length) {
     segments.forEach((seg) => {
       seg.node.nodeValue = seg.text;
     });
-    cursor.classList.add("is-done");
-    if (onDone) onDone();
+    finish();
     return;
   }
 
@@ -207,10 +235,7 @@ function typewriteInto(element, html, speed, { onDone } = {}) {
       segIdx += 1;
     }
     if (segIdx >= segments.length) {
-      cursor.classList.add("is-done");
-      // Move cursor to final position (end of element)
-      element.appendChild(cursor);
-      if (onDone) onDone();
+      finish();
       return;
     }
     const seg = segments[segIdx];
@@ -232,8 +257,11 @@ function initImmediateTypewriters() {
   els.forEach((el, i) => {
     const speed = Number(el.dataset.typeSpeed || 40);
     const html = normalizeHTMLWhitespace(el.getAttribute("data-type-html") || el.innerHTML);
-    // Keep title visible before typing starts
-    window.setTimeout(() => typewriteInto(el, html, speed), 220 + i * 90);
+    // Headings keep a blinking cursor after the animation completes.
+    window.setTimeout(
+      () => typewriteInto(el, html, speed, { keepCursor: true }),
+      220 + i * 90
+    );
   });
 }
 
@@ -259,7 +287,10 @@ function initOnRevealTypewriters() {
         const html = el.dataset.pendingType;
         if (!html) return;
         el.style.minHeight = "";
-        typewriteInto(el, html, speed);
+        // Non-heading text: cursor disappears when typing finishes UNLESS
+        // the element opts into a persistent cursor with `data-keep-cursor`.
+        const keepCursor = el.hasAttribute("data-keep-cursor");
+        typewriteInto(el, html, speed, { keepCursor });
         el.removeAttribute("data-pending-type");
         observer.unobserve(el);
       });
