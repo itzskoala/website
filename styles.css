@@ -417,12 +417,12 @@ img {
 }
 
 .portrait-panel {
-  animation: portrait-float 3.2s ease-in-out infinite;
+  animation: portrait-float 1.2s ease-in-out infinite;
   will-change: transform;
 }
 
 .portrait-panel .social-row {
-  animation: social-counter 3.2s ease-in-out infinite;
+  animation: social-counter 1.2s ease-in-out infinite;
 }
 
 .portrait-panel img {
