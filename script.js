@@ -458,21 +458,19 @@ function initCustomCursor() {
 
 function initAlterEgoVideo() {
   const videos = [
-    "hT_nvWreIhg", // Counting Stars – OneRepublic
-    "ktvTqknDobU", // Radioactive – Imagine Dragons
-    "y6Sxv-sUYtM", // Happy – Pharrell Williams
-    "OPf0YbXqDm0", // Uptown Funk – Mark Ronson ft. Bruno Mars
-    "iEPTlhErAge", // Moves Like Jagger – Maroon 5
-    "Sv6dMFF_ezg", // We Are Young – fun.
-    "ru0K8uYEZWw", // Can't Stop the Feeling – Justin Timberlake
-    "fWNaR-rxAic", // Call Me Maybe – Carly Rae Jepsen
+    "hT_nvWreIhg", // Counting Stars – OneRepublic /
+    "ktvTqknDobU", // Radioactive – Imagine Dragons /
+    "OPf0YbXqDm0", // Uptown Funk – Mark Ronson ft. Bruno Mars /
+    // "iEPTlhErAge", // Moves Like Jagger – Maroon 5 /
+    "ru0K8uYEZWw", // Can't Stop the Feeling – Justin Timberlake /
+    "fWNaR-rxAic", // Call Me Maybe – Carly Rae Jepsen / 
     "KQ6zr6kCPj8", // Party Rock Anthem – LMFAO
     "PT2_F-1esPk", // Closer – The Chainsmokers
-    "rYEDA3JcQqw", // Rolling in the Deep – Adele
-    "hLQl3WQQoQ0", // Someone Like You – Adele
+    "rYEDA3JcQqw", // Rolling in the Deep – Adele / 
+    "hLQl3WQQoQ0", // Someone Like You – Adele  / 
     "JGwWNGJdvx8", // Shape of You – Ed Sheeran
-    "fRh_vgS2dFE", // Sorry – Justin Bieber
-    "nlcIKh6sBtc", // Royals – Lorde
+    "fRh_vgS2dFE", // Sorry – Justin Bieber /
+    "nlcIKh6sBtc", // Royals – Lorde /
   ];
 
   const frame = document.getElementById("alter-ego-frame");
