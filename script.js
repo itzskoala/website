@@ -463,6 +463,7 @@ function initAlterEgoVideo() {
     "y6Sxv-sUYtM", // Happy – Pharrell Williams
     "OPf0YbXqDm0", // Uptown Funk – Mark Ronson ft. Bruno Mars
     "iEPTlhErAge", // Moves Like Jagger – Maroon 5
+    "Sv6dMFF_ezg", // We Are Young – fun.
     "ru0K8uYEZWw", // Can't Stop the Feeling – Justin Timberlake
     "fWNaR-rxAic", // Call Me Maybe – Carly Rae Jepsen
     "KQ6zr6kCPj8", // Party Rock Anthem – LMFAO
