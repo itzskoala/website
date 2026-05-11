@@ -463,8 +463,6 @@ function initAlterEgoVideo() {
     "y6Sxv-sUYtM", // Happy – Pharrell Williams
     "OPf0YbXqDm0", // Uptown Funk – Mark Ronson ft. Bruno Mars
     "iEPTlhErAge", // Moves Like Jagger – Maroon 5
-    "8UVNT4wvIGY", // Somebody That I Used to Know – Gotye
-    "Sv6dMFF_ezg", // We Are Young – fun.
     "ru0K8uYEZWw", // Can't Stop the Feeling – Justin Timberlake
     "fWNaR-rxAic", // Call Me Maybe – Carly Rae Jepsen
     "KQ6zr6kCPj8", // Party Rock Anthem – LMFAO
@@ -473,7 +471,6 @@ function initAlterEgoVideo() {
     "hLQl3WQQoQ0", // Someone Like You – Adele
     "JGwWNGJdvx8", // Shape of You – Ed Sheeran
     "fRh_vgS2dFE", // Sorry – Justin Bieber
-    "pB-5XG-DbAA", // Stay With Me – Sam Smith
     "nlcIKh6sBtc", // Royals – Lorde
   ];
 
