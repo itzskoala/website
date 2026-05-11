@@ -398,8 +398,67 @@ function initScrollAnimations() {
 }
 
 /* --------------------------------------------
+   Custom cursor
+   -------------------------------------------- */
+function initCustomCursor() {
+  const dot = document.createElement("div");
+  dot.className = "cursor-dot";
+  const ring = document.createElement("div");
+  ring.className = "cursor-ring";
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  let mouseX = -200,
+    mouseY = -200;
+  let ringX = -200,
+    ringY = -200;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
+    dot.classList.add("is-visible");
+    ring.classList.add("is-visible");
+  });
+
+  document.addEventListener("mouseleave", () => {
+    dot.classList.remove("is-visible");
+    ring.classList.remove("is-visible");
+  });
+
+  document.addEventListener("mouseenter", () => {
+    dot.classList.add("is-visible");
+    ring.classList.add("is-visible");
+  });
+
+  (function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + "px";
+    ring.style.top = ringY + "px";
+    requestAnimationFrame(animateRing);
+  })();
+
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.closest("a, button, label, select, [role='button']")) {
+      dot.classList.add("cursor-hover");
+      ring.classList.add("cursor-hover");
+    }
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    if (e.target.closest("a, button, label, select, [role='button']")) {
+      dot.classList.remove("cursor-hover");
+      ring.classList.remove("cursor-hover");
+    }
+  });
+}
+
+/* --------------------------------------------
    Kick things off
    -------------------------------------------- */
+initCustomCursor();
 initScrollAnimations();
 initImmediateTypewriters();
 initOnRevealTypewriters();
