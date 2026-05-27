@@ -801,6 +801,7 @@ img {
 .resume-group li {
   font-size: clamp(0.95rem, 1vw, 1.04rem);
   line-height: 1.62;
+  margin: 0;
 }
 
 .resume-group ul {
