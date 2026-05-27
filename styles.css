@@ -779,6 +779,7 @@ img {
 .resume-copy {
   display: grid;
   gap: 16px;
+  align-content: start;
 }
 
 .resume-group h2 {
