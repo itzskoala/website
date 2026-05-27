@@ -242,7 +242,7 @@ img {
 /* ======================
    Resume bullet icons
    ====================== */
-.resume-role {
+.resume-group p.resume-role {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -276,7 +276,7 @@ img {
 .resume-group ul.icon-list li {
   position: relative;
   padding-left: 30px;
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .resume-group ul.icon-list li::before {
@@ -292,7 +292,7 @@ img {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .resume-group p.bullet-row .bullet-emoji {
@@ -778,7 +778,7 @@ img {
 
 .resume-copy {
   display: grid;
-  gap: 16px;
+  gap: 28px;
   align-content: start;
 }
 
@@ -801,7 +801,7 @@ img {
 .resume-group p,
 .resume-group li {
   font-size: clamp(0.95rem, 1vw, 1.04rem);
-  line-height: 1.62;
+  line-height: 1.4;
   margin: 0;
 }
 
