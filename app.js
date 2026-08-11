@@ -21,16 +21,6 @@
     ],
   };
 
-  const PROJECTS = [
-    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager built with an ETL pipeline, Ollama, and a SQL database." },
-    { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
-    { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
-    { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
-    { id: "brains", title: "Brains vs. Brawn", kind: "GitHub Repository", url: "https://github.com/itzskoala/brains-versus-brawns", img: "./assets/placeholders/ai-ufc.jpg", c1: "#11998e", c2: "#38ef7d", tags: ["Regression Models", "Neural Networks", "EDA", "K-means Clustering"], desc: "An ML project pitting strategy against strength." },
-    { id: "adriana", title: "AdrianaOye", kind: "GitHub Repository", url: "https://github.com/itzskoala/AdrianaOye", img: "./assets/placeholders/icon-social-listening.jpg", c1: "#0f2027", c2: "#2c5364", tags: ["Social Listening", "NLP", "Web Scrapping"], desc: "A social-listening application I made for Telemundo Minnesota." },
-    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", img: "./assets/placeholders/icon-quotify.png", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "UI/UX", "Social Media Marketing", "Graphic Design", "App Development"], desc: "A motivational quotes app." },
-    { id: "eda", title: "Exploratory Data Analysis", kind: "GitHub Repository", url: "https://github.com/itzskoala/exploratory-data-analysis", img: "./assets/placeholders/icon-eda.png", c1: "#373b44", c2: "#4286f4", tags: ["Pandas", "EDA", "Evaluation Metrics"], desc: "Data exploration of different datasets in Python." },
-  ];
 
   const EXPERIENCE = {
     work: [
@@ -54,11 +44,22 @@
       { name: "Dean's List, College of Liberal Arts", meta: "2023 – 2025" },
     ],
     documents: [
-      { title: "Resume", kind: "PDF", url: "https://drive.google.com/file/d/1ezYjvkXrSOFABlV-6Ye4bsRwKC7lWHEo/view", c1: "#7a0019", c2: "#ffc72c" },
-      { title: "ML / NSF Research Poster", kind: "PDF", url: "https://www.ndsu.edu/sites/default/files/fileadmin/cs/REU_Posters/Kotala_FS_Poster.pdf", c1: "#373b44", c2: "#4286f4" },
-      { title: "GenAI + Political Communication", kind: "Paper", url: "https://drive.google.com/file/d/1mlgH7KUyDHaKGrPODIjCrjtLPGBSv-T4/view", c1: "#c33764", c2: "#1d2671" },
+      { title: "Resume", kind: "PDF", url: "https://drive.google.com/file/d/1lbj5pGKrKrpnJvDT8lyNn5AD5hXTpZ2c/view", thumb: "./assets/docs/resume.jpg", c1: "#7a0019", c2: "#ffc72c" },
+      { title: "ML / NSF Research Poster", kind: "PDF", url: "https://www.ndsu.edu/sites/default/files/fileadmin/cs/REU_Posters/Kotala_FS_Poster.pdf", thumb: "./assets/docs/nsf-poster.jpg", c1: "#373b44", c2: "#4286f4" },
+      { title: "GenAI + Political Communication", kind: "Paper", url: "https://drive.google.com/file/d/1mlgH7KUyDHaKGrPODIjCrjtLPGBSv-T4/view", thumb: "./assets/docs/genai-paper.jpg", c1: "#c33764", c2: "#1d2671" },
     ],
   };
+
+    const PROJECTS = [
+    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
+    { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
+    { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
+    { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
+    { id: "brains", title: "Brains vs. Brawn", kind: "GitHub Repository", url: "https://github.com/itzskoala/brains-versus-brawns", img: "./assets/placeholders/ai-ufc.jpg", c1: "#11998e", c2: "#38ef7d", tags: ["Regression Models", "Neural Networks", "EDA", "K-means Clustering"], desc: "An ML project pitting strategy against strength." },
+    { id: "adriana", title: "AdrianaOye", kind: "GitHub Repository", url: "https://github.com/itzskoala/AdrianaOye", img: "./assets/placeholders/icon-social-listening.jpg", c1: "#0f2027", c2: "#2c5364", tags: ["Social Listening", "NLP", "Web Scrapping"], desc: "A social-listening application I made for Telemundo Minnesota." },
+    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", img: "./assets/placeholders/icon-quotify.png", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "UI/UX", "Social Media Marketing", "Graphic Design", "App Development"], desc: "A motivational quotes app." },
+    { id: "eda", title: "Exploratory Data Analysis", kind: "GitHub Repository", url: "https://github.com/itzskoala/exploratory-data-analysis", img: "./assets/placeholders/icon-eda.png", c1: "#373b44", c2: "#4286f4", tags: ["Pandas", "EDA", "Evaluation Metrics"], desc: "Data exploration of different datasets in Python." },
+  ];
 
   const PHOTOS = [
     { src: "./assets/photography/caribbean-sunset.jpg", cap: "Sunset on the Caribbean" },
@@ -86,7 +87,7 @@
   // YouTube URL as `yt` — cover art loads from the thumbnail. To add a whole
   // playlist, append another { name, tracks: [...] } object.
   const PLAYLISTS = [
-    { name: "Español", tracks: [
+    { name: "Spanish", tracks: [
       { title: "Eres para Mí", artist: "Julieta Venegas", yt: "https://www.youtube.com/watch?v=gvjjheYHfO0" },
       { title: "Don", artist: "Miranda!", yt: "https://www.youtube.com/watch?v=32DOcN9A0TQ" },
       { title: "Lento", artist: "Julieta Venegas", yt: "https://www.youtube.com/watch?v=ZSIzwYzCkHQ" },
@@ -284,7 +285,7 @@
   function viewExperience() {
     const docs = EXPERIENCE.documents.map((d) => `
       <div class="card" data-open="${esc(d.url)}">
-        <div class="card-art" style="background:${grad(d.c1, d.c2)};font-size:2rem">📄</div>
+        <div class="card-art doc-art" style="background:${grad(d.c1, d.c2)}">${d.thumb ? `<img src="${d.thumb}" alt="" loading="lazy" class="${d.thumbFit === "contain" ? "fit-contain" : "fit-cover"}">` : `<span style="font-size:2rem">📄</span>`}</div>
         <div class="card-title">${esc(d.title)}</div>
         <div class="card-sub">${esc(d.kind)} ↗</div>
       </div>`).join("");
@@ -674,16 +675,6 @@
     "Software Engineering is like building with Legos and Marketing is like getting everybody to look at my Legos.": "La ingeniería de software es como construir con Legos y el marketing es como lograr que todos miren mis Legos.",
     "I wear multiple hats and bounce between leading teams to being a team player. My ultimate goal is to create impactful, inclusive innovations in technology and media.": "Uso muchos sombreros y alterno entre liderar equipos y ser parte del equipo. Mi meta final es crear innovaciones inclusivas y de impacto en la tecnología y los medios.",
     "In my free time, you’ll find me writing short stories, on late night runs, studying for the DELE (Spanish Certification), and spending time with my family in the lulling flatlands of Fargo, North Dakota.": "En mi tiempo libre me encontrarás escribiendo cuentos, saliendo a correr de noche, estudiando para el DELE (certificación de español) y pasando tiempo con mi familia en las tranquilas llanuras de Fargo, Dakota del Norte.",
-    // projects
-    "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
-    "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA .",
-    "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
-    "A trip-planning project via a crew of agents.": "Un proyecto de planificación de viajes mediante un equipo de agentes.",
-    "A multi-agent social media content workflow built with CrewAI.": "Un flujo de contenido para redes sociales multiagente creado con CrewAI.",
-    "An ML project pitting strategy against strength.": "Un proyecto de ML que enfrenta la estrategia contra la fuerza.",
-    "A social-listening application I made for Telemundo Minnesota.": "Una aplicación de escucha social que hice para Telemundo Minnesota.",
-    "A motivational quotes app.": "Una app de frases motivacionales.",
-    "Data exploration of different datasets in Python.": "Exploración de datos de distintos conjuntos de datos en Python.",
     // experience
     "Experience": "Experiencia", "Sri Kotala · work, education, research & awards": "Sri Kotala · trabajo, educación, investigación y premios",
     "Work Experience": "Experiencia laboral", "Education": "Educación", "Research": "Investigación",
@@ -705,6 +696,16 @@
     "Dean's List, College of Liberal Arts": "Cuadro de Honor, College of Liberal Arts",
     "ML / NSF Research Poster": "Póster de investigación ML / NSF",
     "GenAI + Political Communication": "IA Generativa + Comunicación Política", "Paper": "Artículo",
+    // projects
+    "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
+    "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza los archivos automáticamente.",
+    "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
+    "A trip-planning project via a crew of agents.": "Un proyecto de planificación de viajes mediante un equipo de agentes.",
+    "A multi-agent social media content workflow built with CrewAI.": "Un flujo de contenido para redes sociales multiagente creado con CrewAI.",
+    "An ML project pitting strategy against strength.": "Un proyecto de ML que enfrenta la estrategia contra la fuerza.",
+    "A social-listening application I made for Telemundo Minnesota.": "Una aplicación de escucha social que hice para Telemundo Minnesota.",
+    "A motivational quotes app.": "Una app de frases motivacionales.",
+    "Data exploration of different datasets in Python.": "Exploración de datos de distintos conjuntos de datos en Python.",
     // photos
     "Clam on a Chilean beach": "Almeja en una playa chilena", "City cat": "Gato callejero",
     "My dog": "Mi perro", "Cool Mexican fish": "Peces mexicanos geniales", "Mrs. Kipling!?": "¿¡La Sra. Kipling!?",
