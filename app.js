@@ -22,7 +22,7 @@
   };
 
   const PROJECTS = [
-    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
+    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager built with an ETL pipeline, Ollama, and a SQL database." },
     { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
     { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
     { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
@@ -70,16 +70,16 @@
     { src: "./assets/photography/city.jpg", cap: "Valparaíso, Chile" },
     { src: "./assets/photography/fishes.jpg", cap: "Cool Mexican fish" },
     { src: "./assets/photography/lizard.jpg", cap: "Mrs. Kipling!?" },
-    { src: "./assets/photography/roses.jpeg", cap: "Red roses" },
+    { src: "./assets/photography/roses.jpeg", cap: "Red tulips" },
     { src: "./assets/photography/statue.jpg", cap: "Sentado frente al mar" },
   ];
 
   const LINKS = [
     { title: "LinkedIn", sub: "in/skotala", url: "https://linkedin.com/in/skotala/", c1: "#0a66c2", c2: "#0a66c2", icon: '<path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM0 8h5v16H0zM7.5 8h4.78v2.2h.07c.66-1.25 2.27-2.57 4.67-2.57 5 0 5.93 3.29 5.93 7.57V24h-5v-7.1c0-1.69-.03-3.86-2.35-3.86-2.35 0-2.71 1.84-2.71 3.74V24h-5z" fill="currentColor"/>' },
     { title: "GitHub", sub: "itzskoala", url: "https://github.com/itzskoala", c1: "#333", c2: "#111", icon: '<path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.2 9.2 7.7 10.7.6.1.8-.3.8-.6v-2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-3 0 0 1-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0C16.9 4.7 18 5 18 5c.6 1.6.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.4-2.6 5.3-5.1 5.6.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.3 5.5 18.3.5 12 .5z" fill="currentColor"/>' },
-    { title: "Email", sub: "holasoykoalo7@gmail.com", url: "mailto:holasoykoalo7@gmail.com", c1: "#7a0019", c2: "#ffc72c", icon: '<rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 7.5 12 13 20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.7"/>' },
+    { title: "Email", sub: "sri.kotala@gmail.com", url: "mailto:sri.kotala@gmail.com", c1: "#7a0019", c2: "#ffc72c", icon: '<rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 7.5 12 13 20.5 7.5" fill="none" stroke="currentColor" stroke-width="1.7"/>' },
     { title: "Strava", sub: "Stalk my runs", url: "https://www.strava.com/athletes/45513083", c1: "#fc4c02", c2: "#fc4c02", icon: '<path d="M9 0 3 12h4l2-4 2 4h4zM13 12l-2 4-2-4H6l5 10 5-10z" fill="currentColor"/>' },
-    { title: "Book 30 min with me", sub: "Google Calendar", url: "https://calendar.app.google/FHGY837ExTHpC9SN6", c1: "#11998e", c2: "#38ef7d", icon: '<rect x="3" y="4.5" width="18" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.7"/>' },
+    { title: "Book 30 min with me", sub: "Google Calendar", url: "https://calendar.app.google/rDoTnrGBcHyW3qWQ7", c1: "#11998e", c2: "#38ef7d", icon: '<rect x="3" y="4.5" width="18" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.7"/>' },
   ];
 
   // Music library. Each playlist is a folder of songs. To add a song, paste a
@@ -676,7 +676,7 @@
     "In my free time, you’ll find me writing short stories, on late night runs, studying for the DELE (Spanish Certification), and spending time with my family in the lulling flatlands of Fargo, North Dakota.": "En mi tiempo libre me encontrarás escribiendo cuentos, saliendo a correr de noche, estudiando para el DELE (certificación de español) y pasando tiempo con mi familia en las tranquilas llanuras de Fargo, Dakota del Norte.",
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
-    "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza archivos automáticamente.",
+    "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA .",
     "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
     "A trip-planning project via a crew of agents.": "Un proyecto de planificación de viajes mediante un equipo de agentes.",
     "A multi-agent social media content workflow built with CrewAI.": "Un flujo de contenido para redes sociales multiagente creado con CrewAI.",
@@ -708,7 +708,7 @@
     // photos
     "Clam on a Chilean beach": "Almeja en una playa chilena", "City cat": "Gato callejero",
     "My dog": "Mi perro", "Cool Mexican fish": "Peces mexicanos geniales", "Mrs. Kipling!?": "¿¡La Sra. Kipling!?",
-    "Red roses": "Rosas rojas", "Photo": "Foto", "Sunset on the Caribbean": "Atardecer en el Caribe",
+    "Red tulips": "Tulipanes rojas", "Photo": "Foto", "Sunset on the Caribbean": "Atardecer en el Caribe",
     "Turtles in Crystal Springs": "Tortugas en Crystal Springs",
     // connect
     "Let's be friends 😄": "Seamos amigos 😄", "Email": "Correo", "Stalk my runs": "Espía mis carreras",
