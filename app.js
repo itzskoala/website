@@ -22,6 +22,7 @@
   };
 
   const PROJECTS = [
+    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
     { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
     { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
     { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
@@ -675,6 +676,7 @@
     "In my free time, you’ll find me writing short stories, on late night runs, studying for the DELE (Spanish Certification), and spending time with my family in the lulling flatlands of Fargo, North Dakota.": "En mi tiempo libre me encontrarás escribiendo cuentos, saliendo a correr de noche, estudiando para el DELE (certificación de español) y pasando tiempo con mi familia en las tranquilas llanuras de Fargo, Dakota del Norte.",
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
+    "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza archivos automáticamente.",
     "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
     "A trip-planning project via a crew of agents.": "Un proyecto de planificación de viajes mediante un equipo de agentes.",
     "A multi-agent social media content workflow built with CrewAI.": "Un flujo de contenido para redes sociales multiagente creado con CrewAI.",
