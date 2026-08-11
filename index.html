@@ -4,235 +4,133 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sri Kotala</title>
-    <meta
-      name="description"
-      content="Sri Kotala portfolio with about, resume, projects, and photography."
-    />
+    <meta name="description" content="Sri Kotala's portfolio, reimagined as a Spotify player. Projects, experience, research, and photography." />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./app.css" />
   </head>
-  <body class="page-fade">
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a class="topbar-brand" href="./index.html" aria-label="Sri Kotala home">
-          <img src="./favicon.png" alt="Koala logo" />
-          <span>Sri Kotala</span>
-        </a>
-        <div class="topbar-actions">
-          <nav class="topbar-nav" aria-label="Primary">
-            <a class="topbar-link is-active" href="./index.html">About</a>
-            <a class="topbar-link" href="./resume.html">Resume</a>
-            <a class="topbar-link" href="./projects.html">Projects</a>
-            <a class="topbar-link" href="./photography.html">Photography</a>
+  <body class="sp-body">
+    <div class="sp">
+      <!-- ===== Sidebar ===== -->
+      <aside class="side">
+        <div class="side-top">
+          <div class="brand" data-route="home" role="link" tabindex="0" aria-label="Home"><img src="./favicon.png" alt="Koala logo" /><span>Sri<span class="g"> Kotala</span></span></div>
+          <nav class="side-nav" aria-label="App">
+            <a data-nav="home"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>Home</a>
+            <a data-nav="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>Search</a>
           </nav>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
-            <span class="theme-icon theme-icon-sun" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#ffd766" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4.2" fill="#ffd766" stroke="none"/>
-                <g stroke="#ffd766">
-                  <line x1="12" y1="2.8" x2="12" y2="5.2"/>
-                  <line x1="12" y1="18.8" x2="12" y2="21.2"/>
-                  <line x1="2.8" y1="12" x2="5.2" y2="12"/>
-                  <line x1="18.8" y1="12" x2="21.2" y2="12"/>
-                  <line x1="5.4" y1="5.4" x2="7.1" y2="7.1"/>
-                  <line x1="16.9" y1="16.9" x2="18.6" y2="18.6"/>
-                  <line x1="5.4" y1="18.6" x2="7.1" y2="16.9"/>
-                  <line x1="16.9" y1="7.1" x2="18.6" y2="5.4"/>
-                </g>
-              </svg>
-            </span>
-            <span class="theme-icon theme-icon-moon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M20.5 14.2A8.2 8.2 0 1 1 10 3.5a6.5 6.5 0 0 0 10.5 10.7Z" fill="#e9e4ff" stroke="#cdc5ff" stroke-width="1.2" stroke-linejoin="round"/>
-                <circle cx="15.6" cy="8" r="0.7" fill="#fff8c9"/>
-                <circle cx="17.6" cy="11.2" r="0.45" fill="#fff8c9"/>
-                <circle cx="13.4" cy="5.6" r="0.4" fill="#fff8c9"/>
-              </svg>
-            </span>
+        </div>
+        <div class="side-lib">
+          <div class="lib-head"><span>My Portfolio</span></div>
+          <ul class="lib-list">
+            <li data-lib="about"><div class="lib-cover"><img src="./assets/headshot-angel.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">This Is Sri Kotala</div><div class="lib-sub">Artist profile</div></div></li>
+            <li data-lib="projects"><div class="lib-cover"><img src="./assets/covers/projects.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Projects</div><div class="lib-sub">Playlist · builds</div></div></li>
+            <li data-lib="experience"><div class="lib-cover"><img src="./assets/covers/experience.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Experience & Research</div><div class="lib-sub">Playlist · resume</div></div></li>
+            <li data-lib="photos"><div class="lib-cover"><img src="./assets/covers/photography.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Photography</div><div class="lib-sub">Playlist · photos</div></div></li>
+            <li data-lib="connect"><div class="lib-cover"><img src="./assets/covers/connect.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Let's Connect</div><div class="lib-sub">Links & booking</div></div></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- ===== Main ===== -->
+      <main class="main" data-main>
+        <div class="main-head">
+          <div class="nav-arrows">
+            <button class="round-btn" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="round-btn" data-fwd aria-label="Forward"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+          <label class="search-box" data-search-box>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+            <input type="search" placeholder="What do you want to explore?" data-search-input aria-label="Search" />
+          </label>
+          <div class="head-spacer"></div>
+          <div class="lang" data-lang-wrap>
+            <button class="theme-btn lang-btn" type="button" data-lang-toggle aria-label="Language" title="Language">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+              <span class="lang-code" data-lang-code>EN</span>
+            </button>
+            <div class="lang-menu" data-lang-menu hidden>
+              <button type="button" class="lang-opt" data-lang="en">English</button>
+              <button type="button" class="lang-opt" data-lang="es">Español</button>
+            </div>
+          </div>
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+            <svg class="theme-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <mask id="theme-moon-mask">
+                <rect x="0" y="0" width="24" height="24" fill="#fff"/>
+                <circle class="mask-c" cx="12" cy="12" r="6" fill="#000"/>
+              </mask>
+              <circle class="core" cx="12" cy="12" r="5.2" fill="currentColor" stroke="none" mask="url(#theme-moon-mask)"/>
+              <g class="rays" stroke="currentColor">
+                <line x1="12" y1="1.5" x2="12" y2="4"/>
+                <line x1="12" y1="20" x2="12" y2="22.5"/>
+                <line x1="1.5" y1="12" x2="4" y2="12"/>
+                <line x1="20" y1="12" x2="22.5" y2="12"/>
+                <line x1="18.7" y1="5.3" x2="16.9" y2="7.1"/>
+                <line x1="5.3" y1="18.7" x2="7.1" y2="16.9"/>
+                <line x1="5.3" y1="5.3" x2="7.1" y2="7.1"/>
+                <line x1="18.7" y1="18.7" x2="16.9" y2="16.9"/>
+              </g>
+            </svg>
           </button>
         </div>
-      </div>
-    </header>
+        <div class="view" data-view></div>
+      </main>
 
-    <main>
-      <section class="page-section">
-        <div class="about-grid">
-          <div class="portrait-panel">
-            <img src="./assets/headshot.png" alt="Sri Kotala portrait placeholder" />
-
-            <div class="social-row">
-              <a class="social-chip" href="https://linkedin.com/in/skotala/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <img class="social-icon" src="./assets/placeholders/icon-linkedin.svg" alt="LinkedIn icon" />
-              </a>
-              <a class="social-chip" href="https://github.com/itzskoala" target="_blank" rel="noreferrer" aria-label="GitHub">
-                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.17 7.69 10.66.56.1.77-.24.77-.54 0-.27-.01-1.17-.02-2.12-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.02-.12-.29-.5-1.44.11-3 0 0 .95-.3 3.1 1.15.9-.25 1.87-.38 2.83-.38.96 0 1.93.13 2.83.38 2.15-1.45 3.1-1.15 3.1-1.15.61 1.56.23 2.71.11 3 .72.79 1.16 1.79 1.16 3.02 0 4.33-2.63 5.28-5.14 5.56.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.78.54 4.47-1.49 7.68-5.7 7.68-10.66C23.25 5.48 18.27.5 12 .5z"/></svg>
-              </a>
-              <a class="social-chip social-chip--email" href="mailto:kotal008@umn.edu" aria-label="Email" data-tooltip="kotal008@umn.edu">
-                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7.5 L12 13 L20.5 7.5"/></svg>
-              </a>
-              <!-- <a class="social-chip" href="https://www.strava.com/athletes/45513083" target="_blank" rel="noreferrer" aria-label="Strava">
-                <img class="social-icon" src="./assets/placeholders/icon-strava.svg" alt="Strava icon" />
-              </a> -->
-            </div>
-          </div>
-
-          <div class="about-copy">
-            <h1
-              class="typewriter"
-              data-typewriter
-              data-type-speed="34"
-              data-type-html="Hi, I&rsquo;m Sri, an undergraduate from <span class=&quot;highlight&quot;>UMN-TC</span> graduating in CS &amp; Advertising"
-            >
-              Hi, I’m Sri, an undergraduate from
-              <span class="highlight">UMN-TC</span> graduating in CS &
-              Advertising
-            </h1>
-
-            <p class="type-on-reveal" data-type-speed="14">
-              I live in Minneapolis and I’m on a mission to learn as many things
-              as possible!
-            </p>
-
-            <p class="type-on-reveal" data-type-speed="12">
-              Software Engineering is like building with Legos and Marketing is
-              like getting everybody to look at my Legos.
-            </p>
-
-            <p class="type-on-reveal" data-type-speed="10">
-              I wear multiple hats and bounce between leading teams to being a
-              team player. My ultimate goal is to create impactful, inclusive
-              innovations in technology and media.
-            </p>
-
-            <p class="type-on-reveal" data-type-speed="10" data-keep-cursor>
-              In my free time, you’ll find me writing short stories, on late
-              night runs, studying for the DELE (Spanish Certification), and
-              spending time with my mom :)
-            </p>
-
-            <div class="about-actions">
-              <a class="button-link" href="./resume.html">More about Me &rarr;</a>
-            </div>
+      <!-- ===== Player ===== -->
+      <footer class="player">
+        <canvas class="viz" data-viz aria-hidden="true"></canvas>
+        <div class="now">
+          <div class="now-art" data-now-art>🎧</div>
+          <div class="now-meta">
+            <div class="now-title" data-now-title>Press play</div>
+            <div class="now-artist" data-now-artist>A dive into my favorite songs</div>
           </div>
         </div>
-      </section>
-
-
-      <section class="page-section">
-        <h2 class="section-heading">RECENT PROJECTS</h2>
-        <div class="project-grid">
-          <a class="project-card" href="https://huggingface.co/spaces/holasoykoalo7/ai-me" target="_blank" rel="noreferrer">
-            <div class="project-thumb">
-              <img src="./assets/placeholders/talk-2-me.png" alt="Talk-2-Me project" />
-            </div>
-            <div class="project-label">Talk2Me</div>
-          </a>
-          <a class="project-card" href="https://github.com/itzskoala/vacation-builder" target="_blank" rel="noreferrer">
-            <div class="project-thumb">
-              <img src="./assets/placeholders/paradise-icon.jpg" alt="Project image placeholder" />
-            </div>
-            <div class="project-label">Vacation Builder</div>
-          </a>
-          <a class="project-card" href="https://github.com/itzskoala/content-creator-flow" target="_blank" rel="noreferrer">
-            <div class="project-thumb">
-              <img src="./assets/placeholders/social-media-ai.png"" alt="Project image placeholder" />
-            </div>
-            <div class="project-label">Content Creator w/ CrewAI</div>
-          </a>
-          <a class="project-card" href="https://github.com/itzskoala/brains-versus-brawns" target="_blank" rel="noreferrer">
-            <div class="project-thumb">
-              <img src="./assets/placeholders/ai-ufc.jpg" alt="Project image placeholder" />
-            </div>
-            <div class="project-label">Brains vs. Brawn</div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <section class="site-footer-upper">
-        <div class="footer-grid">
-          <div>
-            <h2 class="footer-heading">SNAPSHOTS</h2>
-            <div class="snapshot-card snapshot-slideshow" data-slideshow data-speed="1800">
-              <div class="snapshot-window">
-                <div class="snapshot-track" data-slideshow-track>
-                  <img
-                    class="snapshot-slide"
-                    src="./assets/slideshow/slide-1.jpg"
-                    alt="Snapshot slideshow image"
-                    data-slideshow-current
-                  />
-                  <img
-                    class="snapshot-slide"
-                    src="./assets/slideshow/slide-2.jpg"
-                    alt="Next snapshot slideshow image"
-                    data-slideshow-next
-                  />
-                </div>
-              </div>
-              <!-- <div class="snapshot-overlay">
-                <span class="snapshot-badge">Folder: `assets/slideshow`</span>
-                <span class="snapshot-badge">Speed: `data-speed=\"3400\"`</span>
-              </div> -->
-            </div>
+        <div class="center">
+          <div class="controls">
+            <button class="ctrl" data-shuffle aria-label="Shuffle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg></button>
+            <button class="ctrl" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5 9 12l11 7z"/></svg></button>
+            <button class="ctrl ctrl-play" data-playpause aria-label="Play">
+              <svg data-icon-play viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg data-icon-pause viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            </button>
+            <button class="ctrl" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5l11 7-11 7z"/></svg></button>
+            <button class="ctrl" data-repeat aria-label="Repeat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></button>
           </div>
-
-          <div>
-            <h2 class="footer-heading">2010s MUSIC FOR YOU 😉</h2>
-            <div class="alter-ego-card">
-              <iframe
-                id="alter-ego-frame"
-                class="alter-ego-frame"
-                width="560"
-                height="315"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="footer-heading">MEET W/ ME!</h2>
-            <a class="meet-card" href="https://calendar.app.google/FHGY837ExTHpC9SN6" target="_blank" rel="noreferrer">
-              <img src="./assets/placeholders/meet-card.png" alt="Meet image placeholder" />
-              <div class="meet-caption">30 min with Sri</div>
-            </a>
+          <div class="progress">
+            <span class="time" data-cur>0:00</span>
+            <input class="range fill" type="range" min="0" max="1000" value="0" data-seek aria-label="Seek" />
+            <span class="time" data-dur>0:00</span>
           </div>
         </div>
-      </section>
-
-      <div class="site-footer-lower-wrap">
-        <div class="site-footer-lower">
-          <p class="footer-friends">Let's be friends 😄</p>
-          <div class="footer-socials">
-            <a class="social-chip" href="https://linkedin.com/in/skotala/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <img class="social-icon" src="./assets/placeholders/icon-linkedin.svg" alt="LinkedIn icon" />
-            </a>
-            <a class="social-chip" href="https://github.com/itzskoala" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.17 7.69 10.66.56.1.77-.24.77-.54 0-.27-.01-1.17-.02-2.12-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.64-1.25-1.64-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.16-3.02-.12-.29-.5-1.44.11-3 0 0 .95-.3 3.1 1.15.9-.25 1.87-.38 2.83-.38.96 0 1.93.13 2.83.38 2.15-1.45 3.1-1.15 3.1-1.15.61 1.56.23 2.71.11 3 .72.79 1.16 1.79 1.16 3.02 0 4.33-2.63 5.28-5.14 5.56.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.78.54 4.47-1.49 7.68-5.7 7.68-10.66C23.25 5.48 18.27.5 12 .5z"/></svg>
-            </a>
-            <a class="social-chip social-chip--email" href="mailto:kotal008@umn.edu" aria-label="Email" data-tooltip="kotal008@umn.edu">
-              <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7.5 L12 13 L20.5 7.5"/></svg>
-            </a>
-            <a class="social-chip" href="https://www.strava.com/athletes/45513083" target="_blank" rel="noreferrer" aria-label="Strava">
-              <img class="social-icon" src="./assets/placeholders/icon-strava.svg" alt="Strava icon" />
-            </a>
-
+        <div class="right">
+          <button class="ctrl" data-queue-toggle aria-label="Playlist" title="Playlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="15" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/><path d="M16 8v9" /><circle cx="19" cy="17" r="2.4"/></svg></button>
+          <div class="vol">
+            <button class="ctrl" data-mute aria-label="Mute" title="Mute">
+              <svg data-vol-on viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+              <svg data-vol-off viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="17" y1="9" x2="23" y2="15"/><line x1="23" y1="9" x2="17" y2="15"/></svg>
+            </button>
+            <input class="range fill" type="range" min="0" max="100" value="75" data-volume aria-label="Volume" />
           </div>
         </div>
-      </div>
-    </footer>
-    <script src="./script.js"></script>
+      </footer>
+
+      <!-- Library / playlist popover — kept outside .player so its overflow:hidden can't clip it. Filled by JS. -->
+      <div class="queue-panel" data-queue-panel hidden></div>
+    </div>
+
+    <!-- lightbox + audio -->
+    <div class="lightbox" data-lightbox>
+      <button class="lightbox-close" data-lb-close aria-label="Close">&times;</button>
+      <img data-lb-img alt="" />
+      <div class="lightbox-cap" data-lb-cap></div>
+    </div>
+    <!-- hidden YouTube audio host (IFrame API replaces this div) -->
+    <div class="yt-hide"><div id="yt-host"></div></div>
+
+    <script src="./app.js"></script>
   </body>
 </html>
