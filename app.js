@@ -51,6 +51,7 @@
   };
 
     const PROJECTS = [
+    { id: "linkedinfinder", title: "LinkedIn Candidate Finder", kind: "GitHub Repository", url: "https://github.com/itzskoala/LinkedIn-candidate-finder", img: "./assets/placeholders/linkedin-candidate-finder.png", c1: "#0077b5", c2: "#00a0dc", tags: ["Python", "Web Scraping", "Recruiting", "Automation"], desc: "A tool that searches LinkedIn to surface candidates matching a given role." },
     { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
     { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
     { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
@@ -189,7 +190,7 @@
     const h = new Date().getHours();
     const greet = h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
     return { tint: "#1f1f1f", html: `<div class="view-pad">
-      <h1 class="greeting">${greet}!</h1>
+      <h1 class="greeting">${greet}!<span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></h1>
       <p class="greeting-sub">Welcome to my tiny corner of the internet!</p>
       <div class="tiles">${SECTIONS.map(tile).join("")}</div>
 
@@ -387,6 +388,37 @@
     if (typeof translateEl === "function") translateEl(viewEl);
     setHeaderTint(out.tint);
     main.scrollTop = 0;
+    setupReveals(viewEl);
+  }
+
+  /* Staggered fade+rise as elements enter the scroll viewport (once each).
+     First paint animates the above-the-fold items in as a staggered intro. */
+  const prefersReduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let revealIO = null;
+  function setupReveals(rootEl) {
+    if (prefersReduced) return;
+    const els = [...rootEl.querySelectorAll(".hero, .shelf-head, .tile, .card, .track-row, .photo, .connect-card, .doc-card")];
+    if (!els.length) return;
+    const idx = new Map();
+    els.forEach((el) => {
+      const p = el.parentElement, i = idx.get(p) || 0;
+      idx.set(p, i + 1);
+      el.classList.add("reveal");
+      el.style.setProperty("--ri", Math.min(i, 8));
+    });
+    if (!revealIO) {
+      revealIO = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          revealIO.unobserve(el);
+          el.classList.add("in");
+          const done = () => { el.classList.remove("reveal", "in"); el.style.removeProperty("--ri"); el.removeEventListener("transitionend", done); };
+          el.addEventListener("transitionend", done);
+        });
+      }, { root: main, rootMargin: "0px 0px -6% 0px", threshold: 0.04 });
+    }
+    els.forEach((el) => revealIO.observe(el));
   }
 
   function route() {
@@ -698,6 +730,7 @@
     "GenAI + Political Communication": "IA Generativa + Comunicación Política", "Paper": "Artículo",
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
+    "A tool that searches LinkedIn to surface candidates matching a given role.": "Una herramienta que busca en LinkedIn para encontrar candidatos que coincidan con un puesto determinado.",
     "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza los archivos automáticamente.",
     "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
     "A trip-planning project via a crew of agents.": "Un proyecto de planificación de viajes mediante un equipo de agentes.",
