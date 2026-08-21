@@ -194,7 +194,7 @@ button { font-family: inherit; }
 .tile {
   display: flex; align-items: center; gap: 14px; height: 72px;
   background: var(--card-hover); border-radius: 6px; overflow: hidden; cursor: pointer;
-  position: relative; transition: background .15s, transform .25s cubic-bezier(.2,.8,.3,1.25), box-shadow .25s ease;
+  position: relative; transition: background .15s, transform .3s cubic-bezier(.22,.72,.24,1.06), box-shadow .3s ease;
 }
 .tile:hover {
   background: var(--elevated); z-index: 3;
@@ -221,7 +221,7 @@ button { font-family: inherit; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
 .card {
   background: var(--card); border-radius: 8px; padding: 14px; cursor: pointer;
-  transition: background .2s, transform .25s cubic-bezier(.2,.8,.3,1.25), box-shadow .25s ease; position: relative;
+  transition: background .2s, transform .3s cubic-bezier(.22,.72,.24,1.06), box-shadow .3s ease; position: relative;
 }
 .card:hover {
   background: var(--card-hover); z-index: 3;
@@ -231,6 +231,32 @@ button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .tile, .card { transition: background .2s; }
   .tile:hover, .card:hover { transform: none; }
+}
+
+/* ===== Scroll-reveal: staggered fade + rise as content enters view ===== */
+.reveal { opacity: 0; transform: translateY(14px); will-change: opacity, transform; }
+.reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+  transition-delay: calc(var(--ri, 0) * 55ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== Equalizer accent (Home greeting) — animates only while music plays ===== */
+.eq { display: inline-flex; align-items: flex-end; gap: 3px; height: .78em; margin-left: 14px; vertical-align: baseline; }
+.eq i {
+  width: 3px; height: 30%; border-radius: 2px; background: var(--gold);
+  transform-origin: bottom;
+}
+.sp.playing .eq i { animation: eq-bounce .9s ease-in-out infinite; }
+.sp.playing .eq i:nth-child(2) { animation-duration: .62s; animation-delay: -.18s; }
+.sp.playing .eq i:nth-child(3) { animation-duration: 1.05s; animation-delay: -.35s; }
+.sp.playing .eq i:nth-child(4) { animation-duration: .74s; animation-delay: -.5s; }
+@keyframes eq-bounce { 0%,100% { height: 22%; } 50% { height: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .sp.playing .eq i { animation: none; height: 45%; }
 }
 .card-art {
   width: 100%; aspect-ratio: 1; border-radius: 6px; margin-bottom: 12px; overflow: hidden;
