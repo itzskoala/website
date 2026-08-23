@@ -801,20 +801,21 @@
   (function uiSounds() {
     let muted = localStorage.getItem("uiSound") === "off", c = null, last = 0;
     function ac() { if (!c) { try { c = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } } if (c.state === "suspended") c.resume(); return c; }
-    function warm(x) { if (!x._w) { const lp = x.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1600; lp.Q.value = 0.3; lp.connect(x.destination); x._w = lp; } return x._w; }
+    function warm(x) { if (!x._w) { const lp = x.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 950; lp.Q.value = 0.6; lp.connect(x.destination); x._w = lp; } return x._w; }
     function pop(freq, vol, dur) {
       if (muted) return; const x = ac(); if (!x) return; const t = x.currentTime;
-      const o = x.createOscillator(), sub = x.createOscillator(), g = x.createGain();
-      o.type = "sine"; sub.type = "sine";
-      o.frequency.setValueAtTime(freq * 1.35, t); o.frequency.exponentialRampToValueAtTime(freq, t + 0.09);
+      const o = x.createOscillator(), det = x.createOscillator(), sub = x.createOscillator(), g = x.createGain();
+      o.type = "sine"; det.type = "sine"; sub.type = "sine";
+      o.frequency.setValueAtTime(freq * 1.18, t); o.frequency.exponentialRampToValueAtTime(freq, t + 0.13);
+      det.frequency.setValueAtTime(freq * 1.19, t); det.frequency.exponentialRampToValueAtTime(freq * 1.005, t + 0.13); // gentle detune = body
       sub.frequency.setValueAtTime(freq * 0.5, t);
-      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.022); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      o.connect(g); sub.connect(g); g.connect(warm(x));
-      o.start(t); sub.start(t); o.stop(t + dur + 0.05); sub.stop(t + dur + 0.05);
+      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.045); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g); det.connect(g); sub.connect(g); g.connect(warm(x));
+      o.start(t); det.start(t); sub.start(t); o.stop(t + dur + 0.05); det.stop(t + dur + 0.05); sub.stop(t + dur + 0.05);
     }
-    const hover = () => { const n = performance.now(); if (n - last < 90) return; last = n; pop(540, 0.013, 0.13); };
-    const tick = () => pop(340, 0.05, 0.26);
-    const swoosh = () => { pop(300, 0.045, 0.22); setTimeout(() => pop(440, 0.035, 0.2), 70); };
+    const hover = () => { const n = performance.now(); if (n - last < 90) return; last = n; pop(500, 0.011, 0.16); };
+    const tick = () => pop(300, 0.045, 0.34);
+    const swoosh = () => { pop(270, 0.04, 0.28); setTimeout(() => pop(400, 0.03, 0.26), 80); };
     const HOVER = ".side-nav a, .lib-list li, .card, .tile, .connect-card, .ctrl, .theme-btn, .photo, .ghost-btn, .play-big, .round-btn, .show-all, .track-row.link";
     const CLICK = "a, button, .card, .tile, .lib-list li, .connect-card, .photo, .track-row.link";
     document.addEventListener("pointerover", (e) => { if (e.target.closest && e.target.closest(HOVER)) hover(); }, { passive: true });
