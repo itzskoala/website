@@ -24,7 +24,7 @@
 
   const EXPERIENCE = {
     work: [
-      { name: "Software Engineer — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – Present" },
+      { name: "Software Engineer Intern — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – August 2026" },
       { name: "Account Executive", sub: "Telemundo Minnesota", meta: "Jun 2026 – Present" },
       { name: "Research Assistant", sub: "Hubbard School of Journalism & Mass Communication", meta: "Sep 2024 – May 2026" },
       { name: "Teaching Assistant", sub: "UMN College of Science & Engineering", meta: "Jan 2024 – May 2026" },
@@ -35,7 +35,7 @@
       { name: "B.A. Strategic Communication: Advertising & PR", sub: "University of Minnesota Twin Cities", meta: "Class of 2026 · GPA 3.94" },
     ],
     research: [
-      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - August 2026" },
+      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - August 2024" },
       { name: "Political Communication & AI", sub: "Hubbard School, UMN · 2026 ICA Finalist", meta: "Sep 2024 – May 2026" },
     ],
     awards: [
