@@ -98,6 +98,13 @@
       { title: "La Chona", artist: "Los Tucanes De Tijuana", yt: "https://www.youtube.com/watch?v=41xlHlhGz7o" },
       { title: "Latina Foreva", artist: "Karol G", yt: "https://www.youtube.com/watch?v=BgMU9Vuj17Y" },
       { title: "Una Noche en Medellín (Remix)", artist: "Karol G, Cris Mj, Ryan Castro", yt: "https://www.youtube.com/watch?v=jWNXYYVHeJI" },
+      { title: "Oh Qué Será?", artist: "Willie Colón", yt: "https://www.youtube.com/watch?v=TXYMMsoTMLQ" },
+      { title: "Suavemente", artist: "Elvis Crespo", yt: "https://www.youtube.com/watch?v=QH0zo6AcP6g" },
+      { title: "Al Compás De Mi Caballo", artist: "Los Imperials", yt: "https://www.youtube.com/watch?v=t2KBSeK7z0Q" },
+      { title: "Se Me Perdió La Cadenita", artist: "La Sonora Dinamita", yt: "https://www.youtube.com/watch?v=EjZna5PFSNI" },
+      { title: "Tabaco Y Ron", artist: "Rodolfo y Su Típica RA7", yt: "https://www.youtube.com/watch?v=CPGcW2CtPfE" },
+      { title: "Porro Bonito", artist: "Orquesta Ritmo de Sabanas", yt: "https://www.youtube.com/watch?v=rxUSEyEmo1Q" },
+      { title: "El Cucuy", artist: "Andy Gonzales Y Sus Amigos", yt: "https://www.youtube.com/watch?v=5cocFq5SKQg" },
     ] },
     { name: "Telugu", tracks: [
       { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
@@ -141,6 +148,13 @@
       { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
       { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
       { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
+      { title: "A Horse With No Name", artist: "America", yt: "https://www.youtube.com/watch?v=na47wMFfQCo" },
+      { title: "Let It Happen", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=NMRhx71bGo4" },
+      { title: "Dracula", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=jwVMgGs50vE" },
+      { title: "Smooth Operator", artist: "Sade", yt: "https://www.youtube.com/watch?v=mRNcPbCJNJ8" },
+      { title: "Rasputin", artist: "Boney M.", yt: "https://www.youtube.com/watch?v=6JhVo2zS8hU" },
+      { title: "Livin' La Vida Loca", artist: "Ricky Martin", yt: "https://www.youtube.com/watch?v=CN5hQOI__10" },
+      { title: "Oops!...I Did It Again", artist: "Britney Spears", yt: "https://www.youtube.com/watch?v=wsHbHR3Os6U" },
     ] },
   ];
   // Flatten into one list the player indexes into; each playlist keeps its global indices.
