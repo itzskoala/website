@@ -806,6 +806,7 @@
     "Dean's List, College of Liberal Arts": "Cuadro de Honor, College of Liberal Arts",
     "ML / NSF Research Poster": "Póster de investigación ML / NSF",
     "GenAI + Political Communication": "IA Generativa + Comunicación Política", "Paper": "Artículo",
+    "LegalAI File Manager Documentation": "Documentación de LegalAI File Manager",
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
     "GitHub Repo": "Repositorio de GitHub", "Website": "Sitio web",
