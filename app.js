@@ -893,6 +893,18 @@
     let muted = localStorage.getItem("uiSound") === "off", c = null, last = 0;
     function ac() { if (!c) { try { c = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } } if (c.state === "suspended") c.resume(); return c; }
     function warm(x) { if (!x._w) { const lp = x.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 950; lp.Q.value = 0.6; lp.connect(x.destination); x._w = lp; } return x._w; }
+    // Short burst of filtered noise — the "squish" texture under a click, or the fizz of a confetti pop.
+    function noiseBurst(x, t, dur, freq, q, vol) {
+      const n = Math.max(1, Math.floor(x.sampleRate * dur));
+      const buf = x.createBuffer(1, n, x.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 1.6);
+      const src = x.createBufferSource(); src.buffer = buf;
+      const bp = x.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = freq; bp.Q.value = q;
+      const g = x.createGain(); g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      src.connect(bp); bp.connect(g); g.connect(x.destination);
+      src.start(t);
+    }
     function pop(freq, vol, dur) {
       if (muted) return; const x = ac(); if (!x) return; const t = x.currentTime;
       const o = x.createOscillator(), det = x.createOscillator(), sub = x.createOscillator(), g = x.createGain();
@@ -904,13 +916,25 @@
       o.connect(g); det.connect(g); sub.connect(g); g.connect(warm(x));
       o.start(t); det.start(t); sub.start(t); o.stop(t + dur + 0.05); det.stop(t + dur + 0.05); sub.stop(t + dur + 0.05);
     }
+    // Creamy keyboard-style click: a muted, lowpassed thock plus a soft squish of noise —
+    // no sharp clack, more like a lubed/cream switch bottoming out.
+    function squish() {
+      if (muted) return; const x = ac(); if (!x) return; const t = x.currentTime;
+      const o = x.createOscillator(), g = x.createGain();
+      o.type = "sine";
+      o.frequency.setValueAtTime(200, t); o.frequency.exponentialRampToValueAtTime(85, t + 0.1);
+      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.05, t + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.12);
+      o.connect(g); g.connect(warm(x));
+      o.start(t); o.stop(t + 0.14);
+      noiseBurst(x, t, 0.07, 1100, 1.1, 0.02);
+    }
     const hover = () => { const n = performance.now(); if (n - last < 90) return; last = n; pop(500, 0.011, 0.16); };
-    const tick = () => pop(300, 0.045, 0.34);
+    const tick = () => squish();
     const swoosh = () => { pop(270, 0.04, 0.28); setTimeout(() => pop(400, 0.03, 0.26), 80); };
     const HOVER = ".side-nav a, .lib-list li, .card, .tile, .connect-card, .ctrl, .theme-btn, .photo, .ghost-btn, .play-big, .round-btn, .show-all, .track-row.link";
     const CLICK = "a, button, .card, .tile, .lib-list li, .connect-card, .photo, .track-row.link";
     document.addEventListener("pointerover", (e) => { if (e.target.closest && e.target.closest(HOVER)) hover(); }, { passive: true });
-    document.addEventListener("pointerdown", (e) => { const el = e.target.closest && e.target.closest(CLICK); if (!el) return; if (el.matches("[data-theme-toggle], [data-theme-toggle] *")) swoosh(); else tick(); }, { passive: true });
+    document.addEventListener("pointerdown", (e) => { const el = e.target.closest && e.target.closest(CLICK); if (!el) return; if (el.matches("[data-theme-toggle], [data-theme-toggle] *, [data-lang-toggle], [data-lang-toggle] *")) swoosh(); else tick(); }, { passive: true });
 
     const btn = $("[data-sound-toggle]");
     if (btn) {
@@ -921,13 +945,46 @@
   })();
 
   /* ====================== CONFETTI (click the logo/name) ====================== */
+  // A burst radiating out from the logo, like the effect on quotableapp.net —
+  // not a rain of confetti falling from the top of the screen.
   (function confettiFX() {
     const brand = $(".brand");
     if (!brand) return;
     const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
     const colors = ["#ffc72c", "#7a0019", "#ffd75e", "#93122f", "#38ef7d", "#4facfe", "#ffffff"];
+    const gravity = 0.22, drag = 0.985;
     let canvas, cctx, particles = [], raf2 = null;
+    // A bright pop + a fizzy sparkle of noise — the little "poof" a confetti popper makes.
+    // A little party-horn "toot" that slides up, then a bright ascending twinkle — a
+    // celebratory "ta-da!" rather than a pop.
+    function playPopSound() {
+      if (localStorage.getItem("uiSound") === "off") return;
+      try {
+        const x = new (window.AudioContext || window.webkitAudioContext)();
+        const t = x.currentTime;
+        const horn = x.createOscillator(), hg = x.createGain(), hf = x.createBiquadFilter();
+        horn.type = "sawtooth";
+        horn.frequency.setValueAtTime(300, t);
+        horn.frequency.exponentialRampToValueAtTime(560, t + 0.09);
+        hf.type = "bandpass"; hf.frequency.value = 900; hf.Q.value = 3;
+        hg.gain.setValueAtTime(0.0001, t);
+        hg.gain.linearRampToValueAtTime(0.13, t + 0.02);
+        hg.gain.exponentialRampToValueAtTime(0.0001, t + 0.13);
+        horn.connect(hf); hf.connect(hg); hg.connect(x.destination);
+        horn.start(t); horn.stop(t + 0.15);
+        [[1046, 0.1], [1318, 0.16], [1568, 0.22]].forEach(([freq, dt]) => {
+          const o = x.createOscillator(), g = x.createGain();
+          o.type = "triangle"; o.frequency.setValueAtTime(freq, t + dt);
+          g.gain.setValueAtTime(0.0001, t + dt);
+          g.gain.linearRampToValueAtTime(0.09, t + dt + 0.015);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + dt + 0.3);
+          o.connect(g); g.connect(x.destination);
+          o.start(t + dt); o.stop(t + dt + 0.32);
+        });
+        setTimeout(() => x.close(), 700);
+      } catch (e) { /* audio unsupported — silently skip */ }
+    }
     function ensureCanvas() {
       if (canvas) return;
       canvas = document.createElement("canvas");
@@ -941,27 +998,34 @@
     }
     function spawn() {
       ensureCanvas();
-      const n = 90;
+      playPopSound();
+      const logo = brand.querySelector("img") || brand;
+      const r = logo.getBoundingClientRect();
+      const originX = r.left + r.width / 2, originY = r.top + r.height / 2;
+      const n = 160;
       for (let i = 0; i < n; i++) {
+        // Fan the burst upward and outward (like a popper), not a full 360° circle.
+        const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.15;
+        const speed = 5 + Math.random() * 11;
         particles.push({
-          x: Math.random() * canvas.width,
-          y: -20 - Math.random() * canvas.height * 0.4,
-          w: 6 + Math.random() * 5, h: 8 + Math.random() * 6,
+          x: originX, y: originY,
+          w: 5 + Math.random() * 5, h: 7 + Math.random() * 6,
           color: colors[(Math.random() * colors.length) | 0],
-          rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.25,
-          vy: 2.2 + Math.random() * 3, vx: (Math.random() - 0.5) * 1.6,
-          life: 0, maxLife: 150 + Math.random() * 60,
+          rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.3,
+          vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+          life: 0, maxLife: 90 + Math.random() * 50,
         });
       }
-      if (particles.length > 500) particles.splice(0, particles.length - 500);
+      if (particles.length > 700) particles.splice(0, particles.length - 700);
       if (!raf2) tick();
     }
     function tick() {
       cctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
+        p.vx *= drag; p.vy = p.vy * drag + gravity;
         p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
         const fadeIn = p.maxLife - p.life;
-        const alpha = fadeIn < 30 ? Math.max(0, fadeIn / 30) : 1;
+        const alpha = fadeIn < 25 ? Math.max(0, fadeIn / 25) : 1;
         cctx.save();
         cctx.globalAlpha = alpha;
         cctx.translate(p.x, p.y);
