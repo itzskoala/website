@@ -1040,6 +1040,15 @@
     brand.addEventListener("click", spawn);
   })();
 
+  /* ====================== TEXT SELECTION COLOR ====================== */
+  // Random UMN maroon or gold highlight, picked fresh each page load (see ::selection in app.css).
+  (function selectionColor() {
+    const useGold = Math.random() < 0.5;
+    const root = document.documentElement.style;
+    root.setProperty("--select-bg", useGold ? "var(--gold)" : "var(--maroon)");
+    root.setProperty("--select-fg", useGold ? "#1a1a1a" : "#ffffff");
+  })();
+
   /* ====================== INIT ====================== */
   window.addEventListener("hashchange", route);
   requestAnimationFrame(resizeCanvas);

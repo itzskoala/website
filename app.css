@@ -10,6 +10,10 @@
   --maroon-bright: #93122f;
 }
 
+/* Text-selection color — randomized maroon/gold (UMN colors) per page load, see app.js. */
+::selection { background: var(--select-bg, var(--gold)); color: var(--select-fg, #1a1a1a); }
+::-moz-selection { background: var(--select-bg, var(--gold)); color: var(--select-fg, #1a1a1a); }
+
 /* ---- Theme palettes (scoped to the app) ---- */
 .sp {
   --bg: #000000;
