@@ -24,7 +24,7 @@
 
   const EXPERIENCE = {
     work: [
-      { name: "Software Engineer — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – Present" },
+      { name: "Software Engineer Intern — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – August 2026" },
       { name: "Account Executive", sub: "Telemundo Minnesota", meta: "Jun 2026 – Present" },
       { name: "Research Assistant", sub: "Hubbard School of Journalism & Mass Communication", meta: "Sep 2024 – May 2026" },
       { name: "Teaching Assistant", sub: "UMN College of Science & Engineering", meta: "Jan 2024 – May 2026" },
@@ -35,7 +35,7 @@
       { name: "B.A. Strategic Communication: Advertising & PR", sub: "University of Minnesota Twin Cities", meta: "Class of 2026 · GPA 3.94" },
     ],
     research: [
-      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - August 2026" },
+      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - August 2024" },
       { name: "Political Communication & AI", sub: "Hubbard School, UMN · 2026 ICA Finalist", meta: "Sep 2024 – May 2026" },
     ],
     awards: [
@@ -52,7 +52,7 @@
 
     const PROJECTS = [
     { id: "linkedinfinder", title: "LinkedIn Candidate Finder", kind: "GitHub Repository", url: "https://github.com/itzskoala/LinkedIn-candidate-finder", img: "./assets/placeholders/linkedin-candidate-finder.png", c1: "#0077b5", c2: "#00a0dc", tags: ["Python", "Web Scraping", "Recruiting", "Automation"], desc: "A tool that searches LinkedIn to surface candidates matching a given role." },
-    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.jpg", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
+    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.png", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
     { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
     { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
     { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
@@ -98,6 +98,13 @@
       { title: "La Chona", artist: "Los Tucanes De Tijuana", yt: "https://www.youtube.com/watch?v=41xlHlhGz7o" },
       { title: "Latina Foreva", artist: "Karol G", yt: "https://www.youtube.com/watch?v=BgMU9Vuj17Y" },
       { title: "Una Noche en Medellín (Remix)", artist: "Karol G, Cris Mj, Ryan Castro", yt: "https://www.youtube.com/watch?v=jWNXYYVHeJI" },
+      { title: "Oh Qué Será?", artist: "Willie Colón", yt: "https://www.youtube.com/watch?v=TXYMMsoTMLQ" },
+      { title: "Suavemente", artist: "Elvis Crespo", yt: "https://www.youtube.com/watch?v=QH0zo6AcP6g" },
+      { title: "Al Compás De Mi Caballo", artist: "Los Imperials", yt: "https://www.youtube.com/watch?v=t2KBSeK7z0Q" },
+      { title: "Se Me Perdió La Cadenita", artist: "La Sonora Dinamita", yt: "https://www.youtube.com/watch?v=EjZna5PFSNI" },
+      { title: "Tabaco Y Ron", artist: "Rodolfo y Su Típica RA7", yt: "https://www.youtube.com/watch?v=CPGcW2CtPfE" },
+      { title: "Porro Bonito", artist: "Orquesta Ritmo de Sabanas", yt: "https://www.youtube.com/watch?v=rxUSEyEmo1Q" },
+      { title: "El Cucuy", artist: "Andy Gonzales Y Sus Amigos", yt: "https://www.youtube.com/watch?v=5cocFq5SKQg" },
     ] },
     { name: "Telugu", tracks: [
       { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
@@ -141,6 +148,13 @@
       { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
       { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
       { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
+      { title: "A Horse With No Name", artist: "America", yt: "https://www.youtube.com/watch?v=na47wMFfQCo" },
+      { title: "Let It Happen", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=NMRhx71bGo4" },
+      { title: "Dracula", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=jwVMgGs50vE" },
+      { title: "Smooth Operator", artist: "Sade", yt: "https://www.youtube.com/watch?v=mRNcPbCJNJ8" },
+      { title: "Rasputin", artist: "Boney M.", yt: "https://www.youtube.com/watch?v=6JhVo2zS8hU" },
+      { title: "Livin' La Vida Loca", artist: "Ricky Martin", yt: "https://www.youtube.com/watch?v=CN5hQOI__10" },
+      { title: "Oops!...I Did It Again", artist: "Britney Spears", yt: "https://www.youtube.com/watch?v=wsHbHR3Os6U" },
     ] },
   ];
   // Flatten into one list the player indexes into; each playlist keeps its global indices.
@@ -801,20 +815,21 @@
   (function uiSounds() {
     let muted = localStorage.getItem("uiSound") === "off", c = null, last = 0;
     function ac() { if (!c) { try { c = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } } if (c.state === "suspended") c.resume(); return c; }
-    function warm(x) { if (!x._w) { const lp = x.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1600; lp.Q.value = 0.3; lp.connect(x.destination); x._w = lp; } return x._w; }
+    function warm(x) { if (!x._w) { const lp = x.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 950; lp.Q.value = 0.6; lp.connect(x.destination); x._w = lp; } return x._w; }
     function pop(freq, vol, dur) {
       if (muted) return; const x = ac(); if (!x) return; const t = x.currentTime;
-      const o = x.createOscillator(), sub = x.createOscillator(), g = x.createGain();
-      o.type = "sine"; sub.type = "sine";
-      o.frequency.setValueAtTime(freq * 1.35, t); o.frequency.exponentialRampToValueAtTime(freq, t + 0.09);
+      const o = x.createOscillator(), det = x.createOscillator(), sub = x.createOscillator(), g = x.createGain();
+      o.type = "sine"; det.type = "sine"; sub.type = "sine";
+      o.frequency.setValueAtTime(freq * 1.18, t); o.frequency.exponentialRampToValueAtTime(freq, t + 0.13);
+      det.frequency.setValueAtTime(freq * 1.19, t); det.frequency.exponentialRampToValueAtTime(freq * 1.005, t + 0.13); // gentle detune = body
       sub.frequency.setValueAtTime(freq * 0.5, t);
-      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.022); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      o.connect(g); sub.connect(g); g.connect(warm(x));
-      o.start(t); sub.start(t); o.stop(t + dur + 0.05); sub.stop(t + dur + 0.05);
+      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.045); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g); det.connect(g); sub.connect(g); g.connect(warm(x));
+      o.start(t); det.start(t); sub.start(t); o.stop(t + dur + 0.05); det.stop(t + dur + 0.05); sub.stop(t + dur + 0.05);
     }
-    const hover = () => { const n = performance.now(); if (n - last < 90) return; last = n; pop(540, 0.013, 0.13); };
-    const tick = () => pop(340, 0.05, 0.26);
-    const swoosh = () => { pop(300, 0.045, 0.22); setTimeout(() => pop(440, 0.035, 0.2), 70); };
+    const hover = () => { const n = performance.now(); if (n - last < 90) return; last = n; pop(500, 0.011, 0.16); };
+    const tick = () => pop(300, 0.045, 0.34);
+    const swoosh = () => { pop(270, 0.04, 0.28); setTimeout(() => pop(400, 0.03, 0.26), 80); };
     const HOVER = ".side-nav a, .lib-list li, .card, .tile, .connect-card, .ctrl, .theme-btn, .photo, .ghost-btn, .play-big, .round-btn, .show-all, .track-row.link";
     const CLICK = "a, button, .card, .tile, .lib-list li, .connect-card, .photo, .track-row.link";
     document.addEventListener("pointerover", (e) => { if (e.target.closest && e.target.closest(HOVER)) hover(); }, { passive: true });
