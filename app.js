@@ -113,6 +113,8 @@
       { title: "En el 2000", artist: "Natalia Lafourcade", yt: "https://www.youtube.com/watch?v=Xqr-Ku5EaGE" },
       { title: "Bésame Mucho", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=7ejA6VDP4Ps" },
       { title: "Quién Será", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=r6QzhYYlsos" },
+      { title: "La Rosa de los Vientos", artist: "Makiza", yt: "https://www.youtube.com/watch?v=Yr6GczearGA" },
+      { title: "1977", artist: "Ana Tijoux", yt: "https://www.youtube.com/watch?v=yiQ7S38nKog" },
     ] },
     { name: "Telugu", tracks: [
       { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
