@@ -128,6 +128,9 @@
       { title: "Adirey Adirey", artist: "Jassie Gift & Kalpana", yt: "https://www.youtube.com/watch?v=OeUhzFRNomE" },
       { title: "Chandrullo Unde", artist: "Shankar Mahadevan", yt: "https://www.youtube.com/watch?v=_LnEnslmV5M" },
       { title: "Rooba Rooba", artist: "Chinmayi & Shahil Hada", yt: "https://www.youtube.com/watch?v=tL08JUXGJGo" },
+      { title: "Uppenantha", artist: "KK, Devi Sri Prasad", yt: "https://www.youtube.com/watch?v=TIOZUdc0aL8" },
+      { title: "Diyyalo Diyyala", artist: "Priya Himesh & Khushi Murali", yt: "https://www.youtube.com/watch?v=RAotnwMAXAA" },
+      { title: "Arey Rey", artist: "Mickey J Meyer & Karthik", yt: "https://www.youtube.com/watch?v=PTAScUlG7ZA" },
     ] },
     { name: "Hindi", tracks: [
       { title: "Lutt Le Gaya", artist: "Shashwat Sachdev", yt: "https://www.youtube.com/watch?v=84Lc9SYzGSM" },
@@ -164,6 +167,8 @@
       { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
       { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
       { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
+      { title: "Something Stupid", artist: "Lola Marsh", yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
+      { title: "Baby Blue", artist: "Badfinger", yt: "https://www.youtube.com/watch?v=33oAuvbRg-c" },
       { title: "Funkytown", artist: "Lipps Inc.", yt: "https://www.youtube.com/watch?v=OAC4ItP0xWM" },
       { title: "brutal", artist: "Olivia Rodrigo", yt: "https://www.youtube.com/watch?v=WGcUNV_f6pk" },
       { title: "A Horse With No Name", artist: "America", yt: "https://www.youtube.com/watch?v=na47wMFfQCo" },
