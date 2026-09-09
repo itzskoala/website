@@ -37,6 +37,7 @@
       <!-- ===== Main ===== -->
       <main class="main" data-main>
         <div class="main-head">
+          <button class="round-btn nav-burger" data-nav-burger aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
           <div class="nav-arrows">
             <button class="round-btn" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
             <button class="round-btn" data-fwd aria-label="Forward"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -120,6 +121,9 @@
 
       <!-- Library / playlist popover — kept outside .player so its overflow:hidden can't clip it. Filled by JS. -->
       <div class="queue-panel" data-queue-panel hidden></div>
+
+      <!-- Mobile sidebar drawer backdrop (sidebar itself is .side, reused as an overlay below 820px) -->
+      <div class="side-backdrop" data-side-backdrop></div>
     </div>
 
     <!-- lightbox + audio -->

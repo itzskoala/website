@@ -24,8 +24,8 @@
 
   const EXPERIENCE = {
     work: [
-      { name: "Software Engineer Intern — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – August 2026" },
       { name: "Account Executive", sub: "Telemundo Minnesota", meta: "Jun 2026 – Present" },
+      { name: "Software Engineer Intern — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – Aug 2026" },
       { name: "Research Assistant", sub: "Hubbard School of Journalism & Mass Communication", meta: "Sep 2024 – May 2026" },
       { name: "Teaching Assistant", sub: "UMN College of Science & Engineering", meta: "Jan 2024 – May 2026" },
       { name: "ML Engineer — NSF REU", sub: "North Dakota State University / Universidad de Chile", meta: "May 2024 – Aug 2024" },
@@ -35,7 +35,7 @@
       { name: "B.A. Strategic Communication: Advertising & PR", sub: "University of Minnesota Twin Cities", meta: "Class of 2026 · GPA 3.94" },
     ],
     research: [
-      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - August 2024" },
+      { name: "Feature Selection in Medical ML", sub: "NSF REU @ NDSU", meta: "May 2024 - Aug 2024" },
       { name: "Political Communication & AI", sub: "Hubbard School, UMN · 2026 ICA Finalist", meta: "Sep 2024 – May 2026" },
     ],
     awards: [
@@ -44,13 +44,15 @@
       { name: "Dean's List, College of Liberal Arts", meta: "2023 – 2025" },
     ],
     documents: [
-      { title: "Resume", kind: "PDF", url: "https://drive.google.com/file/d/1lbj5pGKrKrpnJvDT8lyNn5AD5hXTpZ2c/view", thumb: "./assets/docs/resume.jpg", c1: "#7a0019", c2: "#ffc72c" },
+      { title: "Resume", kind: "PDF", url: "https://drive.google.com/file/d/1iHG3jgFvb-Cs5JIJ4OLvf2t2dBRhxATp/view", thumb: "./assets/docs/resume.jpg", c1: "#7a0019", c2: "#ffc72c" },
       { title: "ML / NSF Research Poster", kind: "PDF", url: "https://www.ndsu.edu/sites/default/files/fileadmin/cs/REU_Posters/Kotala_FS_Poster.pdf", thumb: "./assets/docs/nsf-poster.jpg", c1: "#373b44", c2: "#4286f4" },
       { title: "GenAI + Political Communication", kind: "Paper", url: "https://drive.google.com/file/d/1mlgH7KUyDHaKGrPODIjCrjtLPGBSv-T4/view", thumb: "./assets/docs/genai-paper.jpg", c1: "#c33764", c2: "#1d2671" },
+      { title: "LegalAI File Manager Documentation", kind: "PDF", url: "https://drive.google.com/file/d/1zQEmWjGFmiWJXM4n4nGBScS-FOqJWOgj/view", thumb: "./assets/docs/legalai-doc.jpg", c1: "#1e3c72", c2: "#2a5298" },
     ],
   };
 
     const PROJECTS = [
+    { id: "worldwalker", title: "World Walker", kind: "GitHub Repository", url: "https://github.com/itzskoala/WorldWalker", img: "./assets/placeholders/worldwalker.jpg", c1: "#2193b0", c2: "#6dd5ed", tags: ["Python", "FastAPI", "Fitbit API", "Design Patterns"], desc: "A FastAPI app that pulls real step counts from Fitbit and Google Health and converts them into progress on a virtual walk around the world. Built with Observer, Facade, and Strategy design patterns to keep the metrics pipeline modular." },
     { id: "linkedinfinder", title: "LinkedIn Candidate Finder", kind: "GitHub Repository", url: "https://github.com/itzskoala/LinkedIn-candidate-finder", img: "./assets/placeholders/linkedin-candidate-finder.png", c1: "#0077b5", c2: "#00a0dc", tags: ["Python", "Web Scraping", "Recruiting", "Automation"], desc: "A tool that searches LinkedIn to surface candidates matching a given role." },
     { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.png", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
     { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
@@ -58,7 +60,7 @@
     { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
     { id: "brains", title: "Brains vs. Brawn", kind: "GitHub Repository", url: "https://github.com/itzskoala/brains-versus-brawns", img: "./assets/placeholders/ai-ufc.jpg", c1: "#11998e", c2: "#38ef7d", tags: ["Regression Models", "Neural Networks", "EDA", "K-means Clustering"], desc: "An ML project pitting strategy against strength." },
     { id: "adriana", title: "AdrianaOye", kind: "GitHub Repository", url: "https://github.com/itzskoala/AdrianaOye", img: "./assets/placeholders/icon-social-listening.jpg", c1: "#0f2027", c2: "#2c5364", tags: ["Social Listening", "NLP", "Web Scrapping"], desc: "A social-listening application I made for Telemundo Minnesota." },
-    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", img: "./assets/placeholders/icon-quotify.png", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "UI/UX", "Social Media Marketing", "Graphic Design", "App Development"], desc: "A motivational quotes app." },
+    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", site: "https://quotableapp.net/", img: "./assets/placeholders/icon-quotify.png", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "UI/UX", "Social Media Marketing", "Graphic Design", "App Development"], desc: "A motivational quotes app." },
     { id: "eda", title: "Exploratory Data Analysis", kind: "GitHub Repository", url: "https://github.com/itzskoala/exploratory-data-analysis", img: "./assets/placeholders/icon-eda.png", c1: "#373b44", c2: "#4286f4", tags: ["Pandas", "EDA", "Evaluation Metrics"], desc: "Data exploration of different datasets in Python." },
   ];
 
@@ -105,6 +107,9 @@
       { title: "Tabaco Y Ron", artist: "Rodolfo y Su Típica RA7", yt: "https://www.youtube.com/watch?v=CPGcW2CtPfE" },
       { title: "Porro Bonito", artist: "Orquesta Ritmo de Sabanas", yt: "https://www.youtube.com/watch?v=rxUSEyEmo1Q" },
       { title: "El Cucuy", artist: "Andy Gonzales Y Sus Amigos", yt: "https://www.youtube.com/watch?v=5cocFq5SKQg" },
+      { title: "En el 2000", artist: "Natalia Lafourcade", yt: "https://www.youtube.com/watch?v=Xqr-Ku5EaGE" },
+      { title: "Bésame Mucho", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=7ejA6VDP4Ps" },
+      { title: "Quién Será", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=r6QzhYYlsos" },
     ] },
     { name: "Telugu", tracks: [
       { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
@@ -116,6 +121,13 @@
       { title: "Top Lesi Poddi", artist: "Geetha Madhuri & Sagar", yt: "https://www.youtube.com/watch?v=QFkTD_2-Rsc" },
       { title: "Ayyo Paapam", artist: "Mamta Sharma & Ranjith", yt: "https://www.youtube.com/watch?v=yDfQmx9BPVo" },
       { title: "Sir Osthara", artist: "Suchitra", yt: "https://www.youtube.com/watch?v=zwx8MzlPi9w" },
+      { title: "Tillu Anna DJ Pedithe", artist: "Ram Miriyala", yt: "https://www.youtube.com/watch?v=M-954V9LORI" },
+      { title: "Meghaalu Lekunna", artist: "Yazin Nizar", yt: "https://www.youtube.com/watch?v=2AsTEQcN7xQ" },
+      { title: "Waiting For You", artist: "KK", yt: "https://www.youtube.com/watch?v=X4Wy4AyZlnU" },
+      { title: "Niluvaddham", artist: "Karthik & Sumangali", yt: "https://www.youtube.com/watch?v=nyRvRV3qqyc" },
+      { title: "Adirey Adirey", artist: "Jassie Gift & Kalpana", yt: "https://www.youtube.com/watch?v=OeUhzFRNomE" },
+      { title: "Chandrullo Unde", artist: "Shankar Mahadevan", yt: "https://www.youtube.com/watch?v=_LnEnslmV5M" },
+      { title: "Rooba Rooba", artist: "Chinmayi & Shahil Hada", yt: "https://www.youtube.com/watch?v=tL08JUXGJGo" },
     ] },
     { name: "Hindi", tracks: [
       { title: "Lutt Le Gaya", artist: "Shashwat Sachdev", yt: "https://www.youtube.com/watch?v=84Lc9SYzGSM" },
@@ -129,6 +141,10 @@
       { title: "Behti Hawa Sa Tha Woh", artist: "Shaan, Shantanu Moitra", yt: "https://www.youtube.com/watch?v=YEQNI92bagk" },
       { title: "Zoobi Doobi", artist: "Sonu Nigam", yt: "https://www.youtube.com/watch?v=sxB4bCU0F60" },
       { title: "Aal Izz Well", artist: "Sonu Nigam", yt: "https://www.youtube.com/watch?v=FEDZUR6WLnU" },
+      { title: "Oh Priya Priya", artist: "Adnan Sami", yt: "https://www.youtube.com/watch?v=ASahUxsb4QQ" },
+      { title: "Chaleya", artist: "Arijit Singh, Shilpa Rao", yt: "https://www.youtube.com/watch?v=VAdGW7QDJiU" },
+      { title: "Jhoome Jo Pathaan", artist: "Arijit Singh, Sukriti Kakar", yt: "https://www.youtube.com/watch?v=YxWlaYCA8MU" },
+      { title: "Disco Deewane", artist: "Nazia Hassan", yt: "https://www.youtube.com/watch?v=QljTHgNSmHQ" },
     ] },
     { name: "English", tracks: [
       { title: "Illegal", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=XuKq7zT_0nM" },
@@ -148,6 +164,8 @@
       { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
       { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
       { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
+      { title: "Funkytown", artist: "Lipps Inc.", yt: "https://www.youtube.com/watch?v=OAC4ItP0xWM" },
+      { title: "brutal", artist: "Olivia Rodrigo", yt: "https://www.youtube.com/watch?v=WGcUNV_f6pk" },
       { title: "A Horse With No Name", artist: "America", yt: "https://www.youtube.com/watch?v=na47wMFfQCo" },
       { title: "Let It Happen", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=NMRhx71bGo4" },
       { title: "Dracula", artist: "Tame Impala", yt: "https://www.youtube.com/watch?v=jwVMgGs50vE" },
@@ -178,6 +196,20 @@
   const ytId = (url) => { const m = String(url).match(/(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([A-Za-z0-9_-]{11})/); return m ? m[1] : (/^[A-Za-z0-9_-]{11}$/.test(url) ? url : ""); };
   const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
   const extSvg = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+  const githubSvg = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.7.5.7 5.5.7 11.8c0 5 3.2 9.2 7.7 10.7.6.1.8-.3.8-.6v-2c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-3 0 0 1-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0C16.9 4.7 18 5 18 5c.6 1.6.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.4-2.6 5.3-5.1 5.6.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.3 5.5 18.3.5 12 .5z"/></svg>';
+  // Projects with a `site` field get a play button that opens a small menu (repo vs. live site)
+  // instead of jumping straight to the GitHub URL.
+  function fabHtml(p, btnClass, label) {
+    if (!p.site) return `<button class="${btnClass}" data-open="${esc(p.url)}" aria-label="${esc(label)}">${playSvg}</button>`;
+    const wrapClass = btnClass === "card-fab" ? "fab-wrap card-fab-pos" : "fab-wrap";
+    return `<div class="${wrapClass}" data-fabwrap>
+      <button class="${btnClass}" data-fab-toggle aria-haspopup="true" aria-expanded="false" aria-label="${esc(label)}">${playSvg}</button>
+      <div class="fab-menu" data-fab-menu hidden>
+        <a class="fab-opt" data-open="${esc(p.url)}">${githubSvg}<span>GitHub Repo</span></a>
+        <a class="fab-opt" data-open="${esc(p.site)}">${extSvg}<span>Website</span></a>
+      </div>
+    </div>`;
+  }
 
   const main = $("[data-main]");
   const viewEl = $("[data-view]");
@@ -188,7 +220,7 @@
       <div class="card-art"><img src="${p.img}" alt="${esc(p.title)}" loading="lazy"></div>
       <div class="card-title">${esc(p.title)}</div>
       <div class="card-sub">${esc(p.kind)}</div>
-      <button class="card-fab" data-open="${esc(p.url)}" aria-label="Open ${esc(p.title)}">${playSvg}</button>
+      ${fabHtml(p, "card-fab", "Open " + p.title)}
     </div>`;
   }
 
@@ -277,7 +309,7 @@
         </div>
       </div>
       <div class="action-bar">
-        <button class="play-big" data-open="${esc(p.url)}" aria-label="Open project">${playSvg}</button>
+        ${fabHtml(p, "play-big", "Open project")}
       </div>
       <div class="view-pad">
         <p style="max-width:620px;line-height:1.6;color:var(--muted)">${esc(p.desc)}</p>
@@ -458,9 +490,26 @@
   function go(hash) { if (location.hash === "#" + hash) route(); else location.hash = hash; }
 
   /* ====================== CLICK DELEGATION ====================== */
+  function closeAllFabMenus() {
+    document.querySelectorAll("[data-fabwrap].is-open").forEach((w) => {
+      w.classList.remove("is-open");
+      const m = w.querySelector("[data-fab-menu]"); if (m) m.hidden = true;
+      const t = w.querySelector("[data-fab-toggle]"); if (t) t.setAttribute("aria-expanded", "false");
+    });
+  }
   document.addEventListener("click", (e) => {
+    const fabToggle = e.target.closest("[data-fab-toggle]");
+    if (fabToggle) {
+      e.preventDefault(); e.stopPropagation();
+      const wrap = fabToggle.closest("[data-fabwrap]");
+      const willOpen = !wrap.classList.contains("is-open");
+      closeAllFabMenus();
+      if (willOpen) { wrap.classList.add("is-open"); wrap.querySelector("[data-fab-menu]").hidden = false; fabToggle.setAttribute("aria-expanded", "true"); }
+      return;
+    }
     const open = e.target.closest("[data-open]");
-    if (open) { window.open(open.dataset.open, "_blank", "noopener"); e.preventDefault(); e.stopPropagation(); return; }
+    if (open) { window.open(open.dataset.open, "_blank", "noopener"); e.preventDefault(); e.stopPropagation(); closeAllFabMenus(); return; }
+    if (!e.target.closest("[data-fab-menu]")) closeAllFabMenus();
     const proj = e.target.closest("[data-project]");
     if (proj) { go("projects/" + proj.dataset.project); return; }
     const photo = e.target.closest("[data-photo]");
@@ -478,12 +527,26 @@
   $("[data-back]").addEventListener("click", () => history.back());
   $("[data-fwd]").addEventListener("click", () => history.forward());
 
+  /* ====================== MOBILE NAV DRAWER ====================== */
+  // Below 820px the sidebar becomes a slide-in drawer, toggled by the hamburger button.
+  (function mobileNav() {
+    const sideEl = $(".side"), burger = $("[data-nav-burger]"), backdrop = $("[data-side-backdrop]");
+    if (!sideEl || !burger || !backdrop) return;
+    function closeSide() { sideEl.classList.remove("is-open"); backdrop.classList.remove("show"); burger.setAttribute("aria-expanded", "false"); }
+    function openSide() { sideEl.classList.add("is-open"); backdrop.classList.add("show"); burger.setAttribute("aria-expanded", "true"); }
+    burger.addEventListener("click", (e) => { e.stopPropagation(); sideEl.classList.contains("is-open") ? closeSide() : openSide(); });
+    backdrop.addEventListener("click", closeSide);
+    sideEl.addEventListener("click", (e) => { if (e.target.closest("[data-route],[data-nav],[data-lib]")) closeSide(); });
+    window.addEventListener("hashchange", closeSide);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSide(); });
+  })();
+
   /* ====================== LIGHTBOX ====================== */
   const lb = $("[data-lightbox]"), lbImg = $("[data-lb-img]"), lbCap = $("[data-lb-cap]");
   function openLightbox(i) { const p = PHOTOS[i]; if (!p) return; lbImg.src = p.src; lbCap.textContent = p.cap; lb.classList.add("show"); }
   function closeLightbox() { lb.classList.remove("show"); lbImg.src = ""; }
   lb.addEventListener("click", (e) => { if (e.target === lb || e.target.closest("[data-lb-close]")) closeLightbox(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeLightbox(); closeAllFabMenus(); } });
 
   /* ====================== PLAYER (YouTube) + VISUALIZER ====================== */
   const canvas = $("[data-viz]"), ctx2d = canvas.getContext("2d");
@@ -733,6 +796,7 @@
     "Class of 2026 · GPA 3.67": "Promoción 2026 · GPA 3.67", "Class of 2026 · GPA 3.94": "Promoción 2026 · GPA 3.94",
     "Jun 2026 – Present": "jun 2026 – Presente", "Sep 2024 – May 2026": "sep 2024 – may 2026",
     "Jan 2024 – May 2026": "ene 2024 – may 2026", "May 2024 – Aug 2024": "may 2024 – ago 2024",
+    "Jun 2026 – Aug 2026": "jun 2026 – ago 2026", "May 2024 - Aug 2024": "may 2024 - ago 2024",
     "Feature Selection in Medical ML": "Selección de características en ML médico",
     "Political Communication & AI": "Comunicación política e IA",
     "Hubbard School, UMN · 2026 ICA Finalist": "Hubbard School, UMN · Finalista ICA 2026",
@@ -744,6 +808,8 @@
     "GenAI + Political Communication": "IA Generativa + Comunicación Política", "Paper": "Artículo",
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
+    "GitHub Repo": "Repositorio de GitHub", "Website": "Sitio web",
+    "A FastAPI app that pulls real step counts from Fitbit and Google Health and converts them into progress on a virtual walk around the world. Built with Observer, Facade, and Strategy design patterns to keep the metrics pipeline modular.": "Una app de FastAPI que toma los pasos reales de Fitbit y Google Health y los convierte en avance dentro de una caminata virtual alrededor del mundo. Construida con los patrones de diseño Observer, Facade y Strategy para mantener modular el flujo de métricas.",
     "A tool that searches LinkedIn to surface candidates matching a given role.": "Una herramienta que busca en LinkedIn para encontrar candidatos que coincidan con un puesto determinado.",
     "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza los archivos automáticamente.",
     "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
@@ -841,6 +907,62 @@
       btn.addEventListener("click", () => { muted = !muted; localStorage.setItem("uiSound", muted ? "off" : "on"); reflect(); if (!muted) tick(); });
       reflect();
     }
+  })();
+
+  /* ====================== CONFETTI (click the logo/name) ====================== */
+  (function confettiFX() {
+    const brand = $(".brand");
+    if (!brand) return;
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
+    const colors = ["#ffc72c", "#7a0019", "#ffd75e", "#93122f", "#38ef7d", "#4facfe", "#ffffff"];
+    let canvas, cctx, particles = [], raf2 = null;
+    function ensureCanvas() {
+      if (canvas) return;
+      canvas = document.createElement("canvas");
+      canvas.className = "confetti-canvas";
+      canvas.setAttribute("aria-hidden", "true");
+      document.body.appendChild(canvas);
+      cctx = canvas.getContext("2d");
+      const resize = () => { canvas.width = innerWidth; canvas.height = innerHeight; };
+      resize();
+      window.addEventListener("resize", resize);
+    }
+    function spawn() {
+      ensureCanvas();
+      const n = 90;
+      for (let i = 0; i < n; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: -20 - Math.random() * canvas.height * 0.4,
+          w: 6 + Math.random() * 5, h: 8 + Math.random() * 6,
+          color: colors[(Math.random() * colors.length) | 0],
+          rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.25,
+          vy: 2.2 + Math.random() * 3, vx: (Math.random() - 0.5) * 1.6,
+          life: 0, maxLife: 150 + Math.random() * 60,
+        });
+      }
+      if (particles.length > 500) particles.splice(0, particles.length - 500);
+      if (!raf2) tick();
+    }
+    function tick() {
+      cctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.life++;
+        const fadeIn = p.maxLife - p.life;
+        const alpha = fadeIn < 30 ? Math.max(0, fadeIn / 30) : 1;
+        cctx.save();
+        cctx.globalAlpha = alpha;
+        cctx.translate(p.x, p.y);
+        cctx.rotate(p.rot);
+        cctx.fillStyle = p.color;
+        cctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        cctx.restore();
+      });
+      particles = particles.filter((p) => p.life < p.maxLife && p.y < canvas.height + 40);
+      raf2 = particles.length ? requestAnimationFrame(tick) : null;
+    }
+    brand.addEventListener("click", spawn);
   })();
 
   /* ====================== INIT ====================== */
