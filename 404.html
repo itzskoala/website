@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found — Sri Kotala</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root { --bg: #000; --panel: #121212; --text: #fff; --muted: #b3b3b3; --gold: #ffc72c; --maroon: #7a0019; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid; place-items: center; min-height: 100%;
+        background: var(--bg); color: var(--text);
+        font-family: "Roboto", system-ui, -apple-system, sans-serif;
+        text-align: center; padding: 24px;
+      }
+      .card { max-width: 420px; }
+      .code {
+        font-weight: 900; font-size: clamp(3.5rem, 12vw, 6rem); line-height: 1;
+        background: linear-gradient(135deg, var(--maroon), var(--gold));
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+        margin: 0 0 8px;
+      }
+      h1 { font-size: 1.3rem; margin: 0 0 8px; }
+      p { color: var(--muted); margin: 0 0 28px; line-height: 1.5; }
+      a.home-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--gold); color: #1a1a1a; font-weight: 700; text-decoration: none;
+        padding: 12px 26px; border-radius: 999px; transition: transform .15s ease;
+      }
+      a.home-btn:hover { transform: scale(1.04); }
+      a.home-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="code" aria-hidden="true">404</p>
+      <h1>This track doesn't exist.</h1>
+      <p>The page you're looking for was moved, renamed, or never released. Let's get you back to the playlist.</p>
+      <a class="home-btn" href="/">Back to Home</a>
+    </div>
+  </body>
+</html>

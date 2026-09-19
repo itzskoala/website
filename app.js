@@ -52,19 +52,21 @@
   };
 
     const PROJECTS = [
-    { id: "worldwalker", title: "World Walker", kind: "GitHub Repository", url: "https://github.com/itzskoala/WorldWalker", img: "./assets/placeholders/worldwalker.jpg", c1: "#2193b0", c2: "#6dd5ed", tags: ["Python", "FastAPI", "Fitbit API", "Design Patterns"], desc: "A FastAPI app that pulls real step counts from Fitbit and Google Health and converts them into progress on a virtual walk around the world." },
-    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", site: "https://quotableapp.net/", img: "./assets/placeholders/icon-quotify.png", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "UI/UX", "Social Media Marketing", "Graphic Design", "App Development"], desc: "A motivational quotes app." },
-    { id: "brains", title: "Brains vs. Brawn", kind: "GitHub Repository", url: "https://github.com/itzskoala/brains-versus-brawns", img: "./assets/placeholders/ai-ufc.jpg", c1: "#11998e", c2: "#38ef7d", tags: ["Regression Models", "Neural Networks", "EDA", "K-means Clustering"], desc: "An ML project pitting strategy against strength." },
-    { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Context Engineering", "AgenticAI", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
-    { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Image Generation", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
-    { id: "linkedinfinder", title: "LinkedIn Candidate Finder", kind: "GitHub Repository", url: "https://github.com/itzskoala/LinkedIn-candidate-finder", img: "./assets/placeholders/linkedin-candidate-finder.png", c1: "#0077b5", c2: "#00a0dc", tags: ["Python", "Web Scraping", "Recruiting", "Automation"], desc: "A tool that searches LinkedIn to surface candidates matching a given role." },
-    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala", img: "./assets/placeholders/aifilemanager.png", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database"], desc: "An AI-powered file manager that automatically renames and sorts files." },
-    { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
-    { id: "adriana", title: "AdrianaOye", kind: "GitHub Repository", url: "https://github.com/itzskoala/AdrianaOye", img: "./assets/placeholders/icon-social-listening.jpg", c1: "#0f2027", c2: "#2c5364", tags: ["Social Listening", "NLP", "Web Scrapping"], desc: "A social-listening application I made for Telemundo Minnesota." },
-    { id: "eda", title: "Exploratory Data Analysis", kind: "GitHub Repository", url: "https://github.com/itzskoala/exploratory-data-analysis", img: "./assets/placeholders/icon-eda.png", c1: "#373b44", c2: "#4286f4", tags: ["Pandas", "EDA", "Evaluation Metrics"], desc: "Data exploration of different datasets in Python." },
+    { id: "worldwalker", title: "World Walker", kind: "GitHub Repository", url: "https://github.com/itzskoala/WorldWalker",site: "https://world-walker-livid.vercel.app/", img: "./assets/placeholders/worldwalker.jpg", c1: "#2193b0", c2: "#6dd5ed", tags: ["Webooks", "FastAPI", "Google Health", "Authentication", "PostgresSQL", "OpenStreetMap", "Design Patterns"], desc: "A FastAPI app that pulls step counts from my Fitbit Air via Google Cloud and converts them into progress on a virtual walk around the world." },
+    { id: "quotify", title: "Quotable", kind: "GitHub Repository", url: "https://github.com/itzskoala/quotify", site: "https://quotableapp.net/", img: "./assets/placeholders/icon-quotable.svg", c1: "#1d976c", c2: "#93f9b9", tags: ["Content-Based Filtering", "Node.js", "UI/UX", "Digital Marketing"], desc: "A motivational quotes app. Highlighting extraordinary people, places, and things so we too can become extraordinary 🌎🌷💛🏖️🏄" },
+    { id: "brains", title: "Brains vs. Brawn", kind: "GitHub Repository", url: "https://github.com/itzskoala/brains-versus-brawns", img: "./assets/placeholders/ai-ufc.jpg", c1: "#11998e", c2: "#38ef7d", tags: ["Regression Models", "Neural Networks", "EDA", "K-means Clustering"], desc: "Using regression models to predict a UFC fighter’s probability of winning and their most likely method of victory." },
+    { id: "paradise", title: "Paradise Builder", kind: "GitHub Repository", url: "https://github.com/itzskoala/vacation-builder", img: "./assets/placeholders/paradise-icon.jpg", c1: "#f7971e", c2: "#ffd200", tags: ["CrewAI", "Harness Engineering", "Serper API", "Google Travel Explore API"], desc: "A trip-planning project via a crew of agents." },
+    { id: "crewai", title: "Content Creator w/ CrewAI", kind: "GitHub Repository", url: "https://github.com/itzskoala/content-creator-flow", img: "./assets/placeholders/social-media-ai.png", c1: "#c33764", c2: "#1d2671", tags: ["CrewAI", "Harness Engineering", "Serper API"], desc: "A multi-agent social media content workflow built with CrewAI." },
+    { id: "linkedinfinder", title: "LinkedIn Candidate Finder", kind: "GitHub Repository", url: "https://github.com/itzskoala/LinkedIn-candidate-finder", img: "./assets/placeholders/linkedin-candidate-finder.png", c1: "#0077b5", c2: "#00a0dc", tags: ["Social listening", "Web Scraping", "Recruiting", "MCP", "Open Source LLMs"], desc: "A tool that searches LinkedIn to surface candidates matching a given role." },
+    { id: "aifilemanager", title: "AIFileManager", kind: "GitHub Repository", url: "https://github.com/itzskoala/LegaIAI-File-Manager", img: "./assets/placeholders/aifilemanager.png", c1: "#e58e26", c2: "#f9d423", tags: ["ETL", "Ollama", "Langchain", "SQL Database", "Pydantic", "MS Sharepoint Engineering", "MS Power Automate", "MS Azure"], desc: "An AI-powered file manager that automatically renames and sorts files." },
+    { id: "talk2me", title: "Talk2Me", kind: "Hugging Face Space", url: "https://huggingface.co/spaces/holasoykoalo7/ai-me", img: "./assets/placeholders/talk-2-me.png", c1: "#5f2c82", c2: "#49a09d", tags: ["HuggingFace", "Harness Engineering", "Gradio"], desc: "An interactive AI chat experience that allows you to talk to me." },
+    { id: "adriana", title: "AdrianaOye", kind: "GitHub Repository", url: "https://github.com/itzskoala/AdrianaOye", img: "./assets/placeholders/icon-social-listening.jpg", c1: "#0f2027", c2: "#2c5364", tags: ["Social Listening", "Gradio", "NLP", "Web Scrapping"], desc: "A social-listening application I made for Telemundo Minnesota." },
+    { id: "eda", title: "Exploratory Data Analysis", kind: "GitHub Repository", url: "https://github.com/itzskoala/exploratory-data-analysis", img: "./assets/placeholders/icon-eda.png", c1: "#373b44", c2: "#4286f4", tags: ["Pandas", "NumPy", "Seaborn", "Matplotlib", "Univariate, bivariate & multivariate analysis", "Data cleaning & preprocessing", "Statistical distributions", "Descriptive statistics"], desc: "Data exploration of different datasets in Python." },
   ];
 
   const PHOTOS = [
+    { src: "./assets/photography/bariloche.jpg", cap: "San Carlos de Bariloche" },
+    { src: "./assets/photography/punta-arenas-birds.jpg", cap: "Birds in Punta Arenas" },
     { src: "./assets/photography/caribbean-sunset.jpg", cap: "Sunset on the Caribbean" },
     { src: "./assets/photography/turtles-crystal-springs.jpg", cap: "Turtles in Crystal Springs" },
     { src: "./assets/photography/glacier.jpg", cap: "Mirador Grey, Patagonia" },
@@ -76,6 +78,8 @@
     { src: "./assets/photography/lizard.jpg", cap: "Mrs. Kipling!?" },
     { src: "./assets/photography/roses.jpeg", cap: "Red tulips" },
     { src: "./assets/photography/statue.jpg", cap: "Sentado frente al mar" },
+    { src: "./assets/photography/humboldt-cap.jpg", cap: "Aftermath of a long run" },
+    { src: "./assets/photography/dallas-eyeball.jpg", cap: "Giant Eyeball in Dallas" },
   ];
 
   const LINKS = [
@@ -286,7 +290,7 @@
       </div>
       <div class="view-pad">
         <div class="about-card">
-          <img src="./assets/headshot.png" alt="Sri Kotala">
+          <img src="./assets/headshot.jpg" alt="Sri Kotala" loading="lazy">
           <div><h2 class="about-lead">${PROFILE.intro}</h2>${PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
         </div>
         <div class="section-label">Popular</div>
@@ -361,7 +365,7 @@
         <div class="section-label">Work Experience</div><div class="tracklist">${trackRows(EXPERIENCE.work)}</div>
         <div class="section-label">Education</div>
         <div class="edu-block">
-          <img class="edu-logo" src="./assets/umn-goldy.png" onerror="this.onerror=null;this.src='./assets/umn.svg'" alt="University of Minnesota">
+          <img class="edu-logo" src="./assets/umn.svg" alt="University of Minnesota" loading="lazy">
           <div class="tracklist">${trackRows(EXPERIENCE.education)}</div>
         </div>
         <div class="section-label">Research</div><div class="tracklist">${trackRows(EXPERIENCE.research)}</div>
@@ -479,6 +483,23 @@
     els.forEach((el) => revealIO.observe(el));
   }
 
+  // Per-route tab titles — cosmetic (this is a client-rendered SPA, so crawlers
+  // still only ever see the static <title> in index.html), but it keeps the
+  // browser tab / bookmark / share-sheet title honest as people navigate.
+  const ROUTE_TITLES = {
+    home: "Sri Kotala", about: "About · Sri Kotala", projects: "Projects · Sri Kotala",
+    experience: "Experience & Research · Sri Kotala", photos: "Photography · Sri Kotala",
+    connect: "Let's Connect · Sri Kotala", search: "Search · Sri Kotala",
+  };
+  function setTitle(base, arg) {
+    if (base === "projects" && arg) {
+      const p = PROJECTS.find((x) => x.id === arg);
+      document.title = p ? `${p.title} · Sri Kotala` : ROUTE_TITLES.projects;
+    } else {
+      document.title = ROUTE_TITLES[base] || ROUTE_TITLES.home;
+    }
+  }
+
   function route() {
     const hash = (location.hash || "#home").slice(1);
     const [base, arg] = hash.split("/");
@@ -493,6 +514,7 @@
     else if (base === "connect") out = viewConnect();
     else if (base === "search") out = viewSearch(searchInput.value);
     else out = viewHome();
+    setTitle(base, arg);
     render(out);
     // active states
     document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("is-active", a.dataset.nav === base));
@@ -572,11 +594,30 @@
   let queue = TRACKS.map((_, i) => i), cur = -1, shuffle = false, repeat = false;
   let yt = null, ytReady = false, wantPlay = -1, isPlaying = false, seeking = false, raf, poll, errCount = 0;
 
+  // ---- mobile audio unlock ----
+  // Mobile browsers only allow the FIRST audio playback on a page to start from
+  // directly inside a user gesture. On a phone the YouTube iframe API script is
+  // often still loading when someone taps play, so the real playVideo() call ends
+  // up firing later from the async onReady callback — outside that gesture — and
+  // gets silently blocked. That's the "sometimes it just doesn't play" bug. Playing
+  // one silent frame synchronously on the page's first touch/click grants the page
+  // audio-playback permission immediately, so the later async call goes through.
+  const SILENT_WAV = "data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YSADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==";
+  (function unlockMobileAudio() {
+    let done = false;
+    function unlock() {
+      if (done) return; done = true;
+      try { const a = new Audio(SILENT_WAV); a.volume = 0; a.play().catch(() => {}); } catch (e) {}
+    }
+    document.addEventListener("touchstart", unlock, { once: true, passive: true });
+    document.addEventListener("pointerdown", unlock, { once: true, passive: true });
+  })();
+
   // ---- YouTube IFrame API (hidden player streams the audio) ----
   window.onYouTubeIframeAPIReady = function () {
     yt = new YT.Player("yt-host", {
       height: "1", width: "1",
-      playerVars: { controls: 0, disablekb: 1, playsinline: 1, rel: 0 },
+      playerVars: { controls: 0, disablekb: 1, playsinline: 1, rel: 0, origin: location.origin },
       events: {
         onReady: () => { ytReady = true; yt.setVolume(+volEl.value); if (wantPlay > -1) { const i = wantPlay; wantPlay = -1; playPos(i); } },
         onStateChange: onYtState,
@@ -822,7 +863,8 @@
     // projects
     "Hugging Face Space": "Espacio de Hugging Face", "GitHub Repository": "Repositorio de GitHub",
     "GitHub Repo": "Repositorio de GitHub", "Website": "Sitio web",
-    "A FastAPI app that pulls real step counts from Fitbit and Google Health and converts them into progress on a virtual walk around the world.": "Una app de FastAPI que toma los pasos reales de Fitbit y Google Health y los convierte en avance dentro de una caminata virtual alrededor del mundo.",
+    "A FastAPI app that pulls step counts from my Fitbit Air via Google Cloud and converts them into progress on a virtual walk around the world.": "Una app de FastAPI que toma los pasos de mi Fitbit Air a través de Google Cloud y los convierte en avance dentro de una caminata virtual alrededor del mundo.",
+    "Using regression models to predict a UFC fighter’s probability of winning and their most likely method of victory.": "Uso de modelos de regresión para predecir la probabilidad de victoria de un peleador de UFC y su método de victoria más probable.",
     "A tool that searches LinkedIn to surface candidates matching a given role.": "Una herramienta que busca en LinkedIn para encontrar candidatos que coincidan con un puesto determinado.",
     "An AI-powered file manager that automatically renames and sorts files.": "Un gestor de archivos con IA que renombra y organiza los archivos automáticamente.",
     "An interactive AI chat experience that allows you to talk to me.": "Una experiencia de chat con IA interactiva que te permite hablar conmigo.",
@@ -830,13 +872,16 @@
     "A multi-agent social media content workflow built with CrewAI.": "Un flujo de contenido para redes sociales multiagente creado con CrewAI.",
     "An ML project pitting strategy against strength.": "Un proyecto de ML que enfrenta la estrategia contra la fuerza.",
     "A social-listening application I made for Telemundo Minnesota.": "Una aplicación de escucha social que hice para Telemundo Minnesota.",
-    "A motivational quotes app.": "Una app de frases motivacionales.",
+    "A motivational quotes app. Highlighting extraordinary people, places, and things so we too can become extraordinary 🌎🌷💛🏖️🏄": "Una app de frases motivacionales. Destacando personas, lugares y cosas extraordinarias para que nosotros también podamos serlo 🌎🌷💛🏖️🏄",
     "Data exploration of different datasets in Python.": "Exploración de datos de distintos conjuntos de datos en Python.",
     // photos
     "Clam on a Chilean beach": "Almeja en una playa chilena", "City cat": "Gato callejero",
     "My dog": "Mi perro", "Cool Mexican fish": "Peces mexicanos geniales", "Mrs. Kipling!?": "¿¡La Sra. Kipling!?",
     "Red tulips": "Tulipanes rojas", "Photo": "Foto", "Sunset on the Caribbean": "Atardecer en el Caribe",
     "Turtles in Crystal Springs": "Tortugas en Crystal Springs",
+    "Aftermath of a long run": "Las secuelas de una carrera larga",
+    "Giant Eyeball in Dallas": "El ojo gigante de Dallas",
+    "Birds in Punta Arenas": "Aves en Punta Arenas",
     // connect
     "Let's be friends 😄": "Seamos amigos 😄", "Email": "Correo", "Stalk my runs": "Espía mis carreras",
     // player + library
