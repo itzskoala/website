@@ -1445,7 +1445,7 @@
     // speed looks the same regardless of page zoom (particle *size* is intentionally left alone,
     // since pieces should shrink along with the rest of the zoomed-out UI).
     const zoomFactor = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
-    const gravity = 1.1 / zoomFactor, drag = 0.985;
+    const gravity = 0.55 / zoomFactor, drag = 0.985;
     let canvas, cctx, particles = [], raf2 = null;
     // A mellow party-horn "toot" that glides up, then a soft ascending twinkle — a celebratory
     // "ta-da!" with the same creamy, rounded-off character as the rest of the UI sounds (a warm
