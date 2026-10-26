@@ -1,0 +1,13 @@
+{
+  "name": "srikotala-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sri Kotala's portfolio. Static vanilla-JS frontend + a small /api backend (Vercel Functions) for the Voicemail feature.",
+  "dependencies": {
+    "@huggingface/inference": "^4.13.30",
+    "@neondatabase/serverless": "^0.10.4",
+    "@vercel/blob": "^2.8.0",
+    "@vercel/functions": "^3.9.9",
+    "resend": "^4.0.1"
+  }
+}

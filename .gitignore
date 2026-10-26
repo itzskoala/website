@@ -1,3 +1,6 @@
 .DS_Store
 .vercel
 .env*
+node_modules
+.claude
+.agents

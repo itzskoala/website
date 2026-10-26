@@ -54,7 +54,32 @@
             <li data-lib="projects"><div class="lib-cover"><img src="./assets/covers/projects.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Projects</div><div class="lib-sub">Playlist · builds</div></div></li>
             <li data-lib="photos"><div class="lib-cover"><img src="./assets/covers/photography.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Photography</div><div class="lib-sub">Playlist · photos</div></div></li>
             <li data-lib="connect"><div class="lib-cover"><img src="./assets/covers/connect.jpg" alt=""></div><div class="lib-meta"><div class="lib-name">Let's Connect</div><div class="lib-sub">Links & booking</div></div></li>
+            <li data-lib="voicemail"><div class="lib-cover" style="background:linear-gradient(135deg,#7a0019,#33000a)"><svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.5 12L12.5 12A5 5 0 1 1 17.5 17L6.5 17A5 5 0 1 1 11.5 12ZM8.9 12A2.4 2.4 0 1 0 4.1 12A2.4 2.4 0 1 0 8.9 12ZM19.9 12A2.4 2.4 0 1 0 15.1 12A2.4 2.4 0 1 0 19.9 12Z"/></svg></div><div class="lib-meta"><div class="lib-name">Voicemail</div><div class="lib-sub">Send me a voice message!</div></div></li>
           </ul>
+        </div>
+
+        <!-- Pokémon roaming-pet widget — a pure easter egg, unrelated to the player. Sits here as a
+             natural third panel of the sidebar (not a floating overlay); resets on refresh. -->
+        <div class="poke-widget" data-poke-widget>
+          <div class="poke-resize" data-poke-resize aria-hidden="true"></div>
+          <div class="poke-head">
+            <button class="poke-collapse" data-poke-collapse aria-label="Collapse" aria-expanded="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <span class="poke-title">My Pokémon Widget</span>
+            <div class="poke-head-actions">
+              <button class="poke-ibtn" data-poke-add aria-label="Add Pokémon" title="Add Pokémon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <button class="poke-ibtn" data-poke-shuffle aria-label="Shuffle" title="Shuffle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+              </button>
+              <button class="poke-ibtn" data-poke-clear aria-label="Remove all" title="Remove all">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="poke-stage" data-poke-stage></div>
         </div>
       </aside>
 
@@ -148,6 +173,15 @@
 
       <!-- Mobile sidebar drawer backdrop (sidebar itself is .side, reused as an overlay below 820px) -->
       <div class="side-backdrop" data-side-backdrop></div>
+
+      <!-- Pokémon add-picker — small quick-pick style search modal opened by the widget's + button
+           (widget itself now lives in the sidebar, see <aside class="side"> above). -->
+      <div class="poke-picker" data-poke-picker hidden>
+        <div class="poke-picker-box">
+          <input class="poke-picker-input" type="text" data-poke-picker-input placeholder="Select a generation or start typing to search for a Pokémon…" autocomplete="off" spellcheck="false" />
+          <div class="poke-picker-list" data-poke-picker-list></div>
+        </div>
+      </div>
     </div>
 
     <!-- lightbox + audio -->
