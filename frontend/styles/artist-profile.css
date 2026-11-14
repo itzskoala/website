@@ -1,26 +1,39 @@
 /* artist-profile.css */
-.artist-page { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; background: #ff2d87; color: #fff; }
+.artist-page { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; background: #111; color: #fff; }
 
-.artist-tabs { display: flex; justify-content: flex-end; gap: 22px; padding: 64px 24px 14px; border-bottom: 1px solid rgba(255,255,255,.25); flex: 0 0 auto; }
+.artist-page-bg { position: absolute; inset: 0; z-index: 0; }
+.artist-slide {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.4s ease;
+}
+.artist-slide.is-active { opacity: 1; }
+.artist-page-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, transparent 15%, rgba(0,0,0,.55) 58%),
+    linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.3) 32%, rgba(0,0,0,.3) 66%, rgba(0,0,0,.68) 100%);
+}
+
+.artist-tabs { position: relative; z-index: 1; display: flex; justify-content: flex-end; gap: 22px; padding: 72px 32px 10px; flex: 0 0 auto; }
 .artist-tab {
   background: none; border: none; cursor: pointer; padding: 0 0 6px;
-  color: rgba(255,255,255,.65); font-weight: 700; font-size: .9rem; letter-spacing: .01em;
+  color: rgba(255,255,255,.7); font-weight: 700; font-size: .9rem; letter-spacing: .01em;
   border-bottom: 2px solid transparent; transition: color .15s, border-color .15s;
 }
 .artist-tab:hover { color: #fff; }
-.artist-tab.is-active { color: #fff; border-color: #fff; }
+.artist-tab.is-active { color: #fff; border-color: #ffc72c; }
 
-.artist-panel-content { flex: 1; min-height: 0; overflow: hidden; padding: 14px 24px; text-align: right; }
+.artist-panel-content { position: relative; z-index: 1; flex: 1; min-height: 0; overflow: hidden; padding: 8px 32px; text-align: right; }
 .artist-panel[hidden] { display: none; }
-.artist-headline { margin: 0 0 10px auto; font-size: .98rem; font-weight: 800; line-height: 1.4; color: #fff; max-width: 640px; }
-.artist-bio p { margin: 0 0 8px auto; line-height: 1.45; color: rgba(255,255,255,.92); font-size: .86rem; max-width: 640px; }
+.artist-headline { margin: 0 0 10px auto; font-size: 1.2rem; font-weight: 800; line-height: 1.4; color: #fff; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
+.artist-bio p { margin: 0 0 8px auto; line-height: 1.5; color: rgba(255,255,255,.95); font-size: 1rem; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 .artist-bio p:last-child { margin-bottom: 0; }
 
-.artist-section-label { margin: 14px 0 10px; font-size: 1.1rem; font-weight: 800; }
-.artist-section-strong { color: #fff; }
-.artist-section-soft { color: rgba(255,255,255,.55); font-weight: 700; }
+.artist-section-label { margin: 24px 0 12px; font-size: 1.35rem; font-weight: 800; }
+.artist-section-strong { color: #fff; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
+.artist-section-soft { color: rgba(255,255,255,.6); font-weight: 700; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 
-.interest-grid { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 640px; margin-left: auto; }
+.interest-grid { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; max-width: 880px; margin-left: auto; }
 .interest-card {
   display: flex; align-items: center; gap: 8px; text-align: left;
   background: rgba(225,226,232,.95); border-radius: 10px; padding: 4px 12px 4px 4px;
@@ -31,35 +44,35 @@
 .favorite-track-list { display: flex; flex-direction: column; gap: 8px; max-width: 420px; margin-left: auto; }
 .favorite-track {
   display: flex; align-items: center; gap: 10px; text-align: left;
-  background: rgba(255,255,255,.12); border-radius: 10px; padding: 7px 10px;
+  background: rgba(18,18,22,.55); backdrop-filter: blur(8px); border-radius: 10px; padding: 7px 10px;
 }
 .favorite-track-cover { width: 42px; height: 42px; border-radius: 6px; object-fit: cover; flex: 0 0 auto; }
 .favorite-track-info { flex: 1; min-width: 0; }
 .favorite-track-title { font-weight: 800; font-size: .82rem; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.favorite-track-meta { font-size: .68rem; color: rgba(255,255,255,.7); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.favorite-track-meta { font-size: .68rem; color: rgba(255,255,255,.75); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .favorite-track-play {
-  width: 28px; height: 28px; border-radius: 999px; border: none; background: #fff; color: #ff2d87;
+  width: 28px; height: 28px; border-radius: 999px; border: none; background: #ffc72c; color: #000;
   display: grid; place-items: center; cursor: pointer; flex: 0 0 auto; transition: transform .12s;
 }
 .favorite-track-play:hover { transform: scale(1.06); }
 .favorite-track-play svg { width: 12px; height: 12px; }
 
-.artist-page-foot { flex: 0 0 auto; padding: 0 24px 16px; text-align: left; }
-.artist-name { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 900; margin: 0; letter-spacing: -.03em; line-height: 1; color: #fff; }
+.artist-page-foot { position: relative; z-index: 1; flex: 0 0 auto; padding: 0 40px 32px; text-align: left; }
+.artist-name { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 900; margin: 0; letter-spacing: -.03em; line-height: 1; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
 
 .artist-icon-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
 .artist-icon-btn {
-  width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,.55);
-  background: none; color: #fff; cursor: pointer; display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,.6);
+  background: rgba(0,0,0,.25); color: #fff; cursor: pointer; display: grid; place-items: center;
   transition: background .15s, border-color .15s, transform .15s;
 }
-.artist-icon-btn:hover { background: rgba(255,255,255,.14); border-color: #fff; }
+.artist-icon-btn:hover { background: rgba(255,255,255,.2); border-color: #fff; }
 .artist-icon-btn:active { transform: scale(.92); }
 .artist-icon-btn svg { width: 15px; height: 15px; }
-.artist-icon-btn[data-star-btn].is-filled { background: rgba(255,255,255,.18); border-color: #fff; }
-.artist-icon-btn[data-star-btn].is-filled svg { fill: #fff; }
+.artist-icon-btn[data-star-btn].is-filled { background: #ffc72c; border-color: #ffc72c; color: #000; }
+.artist-icon-btn[data-star-btn].is-filled svg { fill: #000; }
 
 .artist-related { margin-top: 12px; }
-.artist-related-label { font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 8px; }
+.artist-related-label { font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-bottom: 8px; }
 .artist-related-avatars { display: flex; gap: 8px; }
-.artist-avatar-placeholder { width: 32px; height: 32px; border-radius: 999px; background: rgba(255,255,255,.22); border: 1px solid rgba(255,255,255,.3); }
+.artist-avatar-placeholder { width: 32px; height: 32px; border-radius: 999px; background: rgba(255,255,255,.25); border: 1px solid rgba(255,255,255,.4); }

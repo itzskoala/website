@@ -2,8 +2,8 @@
 import { $, esc } from "../utils/dom.js";
 import { PROFILE } from "../data/profile.js";
 import { INTERESTS } from "../data/interests.js";
-import { PLAYLISTS } from "../data/playlists.js";
-import "../data/tracks.js";
+import { SLIDESHOW_PHOTOS, SLIDESHOW_SPEED_MS } from "../data/slideshow.js";
+import { TRACKS } from "../data/tracks.js";
 import { playSvg } from "../utils/icons.js";
 import { ytId, ytThumb } from "../utils/youtube.js";
 import { playTrack } from "../player/controls.js";
@@ -11,9 +11,17 @@ import { playTrack } from "../player/controls.js";
 const starSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 15.09 8.76 22 9.76 17 14.63 18.18 21.52 12 18.26 5.82 21.52 7 14.63 2 9.76 8.91 8.76 12 2.5"/></svg>';
 const plusSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
 
-const favoritesPlaylist = PLAYLISTS.find((p) => p.name === "Favorites");
+// Favorite tracks live in their normal language playlist (data/playlists.js) — this just
+// points at which ones, by yt URL, so "My Favorites" can show them without a separate playlist.
+const FAVORITE_YT_IDS = [
+  "https://www.youtube.com/watch?v=gKwqu74RD_k", // House Of Balloons / Glass Table Girls — The Weeknd
+  "https://www.youtube.com/watch?v=F8dKVbP1Nzo", // Something Stupid — Lola Marsh
+  "https://www.youtube.com/watch?v=ttjfRtuAhp4", // BbY WOW — KAROL G, Judeline & rusowsky
+];
+const favoriteGlobalIndexes = FAVORITE_YT_IDS.map((yt) => TRACKS.findIndex((t) => t.yt === yt));
 
-function favoriteTrackCard(track, globalIdx) {
+function favoriteTrackCard(globalIdx) {
+  const track = TRACKS[globalIdx];
   const cover = track.cover || ytThumb(ytId(track.yt));
   const meta = [track.artist, track.album, track.year].filter(Boolean).join(" • ");
   return `
@@ -28,6 +36,7 @@ function favoriteTrackCard(track, globalIdx) {
 }
 
 export function viewAbout() {
+  const slides = SLIDESHOW_PHOTOS.map((src, i) => `<img class="artist-slide${i === 0 ? " is-active" : ""}" src="${src}" alt="">`).join("");
   const headline = PROFILE.headline.map((line) => esc(line)).join("<br>");
   const bio = PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("");
   const interestCards = INTERESTS.map((i) => `
@@ -35,9 +44,10 @@ export function viewAbout() {
       <img class="interest-thumb" src="${i.img}" alt="">
       <span class="interest-label">${esc(i.label)}</span>
     </div>`).join("");
-  const favoriteTracks = favoritesPlaylist.tracks.map((t, i) => favoriteTrackCard(t, favoritesPlaylist.trackIdx[i])).join("");
-  return { tint: "#ff2d87", html: `
+  const favoriteTracks = favoriteGlobalIndexes.map(favoriteTrackCard).join("");
+  return { tint: "#1a1a1a", html: `
     <div class="artist-page">
+      <div class="artist-page-bg" data-artist-hero>${slides}<div class="artist-page-scrim"></div></div>
       <div class="artist-tabs" data-artist-tabs>
         <button class="artist-tab is-active" data-artist-tab="about">About</button>
         <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
@@ -72,7 +82,21 @@ export function viewAbout() {
   ` };
 }
 
+let slideTimer = null;
+
 export function aboutEnter() {
+  const hero = $("[data-artist-hero]");
+  if (hero) {
+    let i = 0;
+    const slideEls = hero.querySelectorAll(".artist-slide");
+    if (slideEls.length > 1) {
+      slideTimer = setInterval(() => {
+        slideEls[i].classList.remove("is-active");
+        i = (i + 1) % slideEls.length;
+        slideEls[i].classList.add("is-active");
+      }, SLIDESHOW_SPEED_MS);
+    }
+  }
   const tabs = $("[data-artist-tabs]");
   if (tabs) tabs.addEventListener("click", onTabClick);
   const star = $("[data-star-btn]");
@@ -82,7 +106,9 @@ export function aboutEnter() {
   });
 }
 
-export function aboutTeardown() {}
+export function aboutTeardown() {
+  if (slideTimer) { clearInterval(slideTimer); slideTimer = null; }
+}
 
 function onTabClick(e) {
   const btn = e.target.closest("[data-artist-tab]");

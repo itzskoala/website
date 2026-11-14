@@ -1,10 +1,5 @@
 // playlists.js
 export const PLAYLISTS = [
-  { name: "Favorites", tracks: [
-    { title: "House Of Balloons / Glass Table Girls", artist: "The Weeknd", album: "House Of Balloons", year: 2011, cover: "./assets/favorites/house-of-balloons.jpg", yt: "https://www.youtube.com/watch?v=gKwqu74RD_k" },
-    { title: 'Something Stupid (From "Better Call Saul")', artist: "Lola Marsh", album: 'Something Stupid (From "Better Call Saul")', year: 2018, yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
-    { title: "BbY WOW", artist: "KAROL G, Judeline & rusowsky", album: "NO ME ARREPIENTO DE SENTIR TANTO", year: 2026, yt: "https://www.youtube.com/watch?v=ttjfRtuAhp4" },
-  ] },
   { name: "Spanish", tracks: [
     { title: "Eres para Mí", artist: "Julieta Venegas", yt: "https://www.youtube.com/watch?v=gvjjheYHfO0" },
     { title: "Don", artist: "Miranda!", yt: "https://www.youtube.com/watch?v=32DOcN9A0TQ" },
@@ -30,6 +25,7 @@ export const PLAYLISTS = [
     { title: "Quién Será", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=r6QzhYYlsos" },
     { title: "La Rosa de los Vientos", artist: "Makiza", yt: "https://www.youtube.com/watch?v=Yr6GczearGA" },
     { title: "1977", artist: "Ana Tijoux", yt: "https://www.youtube.com/watch?v=yiQ7S38nKog" },
+    { title: "BbY WOW", artist: "KAROL G, Judeline & rusowsky", album: "NO ME ARREPIENTO DE SENTIR TANTO", year: 2026, yt: "https://www.youtube.com/watch?v=ttjfRtuAhp4" },
   ] },
   { name: "Telugu", tracks: [
     { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
@@ -87,7 +83,8 @@ export const PLAYLISTS = [
     { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
     { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
     { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
-    { title: "Something Stupid", artist: "Lola Marsh", yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
+    { title: 'Something Stupid (From "Better Call Saul")', artist: "Lola Marsh", album: 'Something Stupid (From "Better Call Saul")', year: 2018, yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
+    { title: "House Of Balloons / Glass Table Girls", artist: "The Weeknd", album: "House Of Balloons", year: 2011, cover: "./assets/favorites/house-of-balloons.jpg", yt: "https://www.youtube.com/watch?v=gKwqu74RD_k" },
     { title: "Baby Blue", artist: "Badfinger", yt: "https://www.youtube.com/watch?v=33oAuvbRg-c" },
     { title: "Pokémon Theme", artist: "Jason Paige", yt: "https://www.youtube.com/watch?v=2zMIddjFAIA" },
     { title: "2.B.A. Master", artist: "Russell Velázquez", yt: "https://www.youtube.com/watch?v=D2G3FWVukGU" },
