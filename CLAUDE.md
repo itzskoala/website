@@ -119,14 +119,18 @@ the active language.
   if that can't be detected) unless a theme was already saved to `localStorage`;
   `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
 - **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
-- **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — a full-width hero that
-  slowly crossfades through `data/slideshow.js`'s photo list (`SLIDESHOW_SPEED_MS`, stacked
+- **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — `.artist-layout` splits
+  the view into a left photo panel and a right tabbed panel (`.artist-panel-wrap`, hardcoded solid
+  pink per design direction, independent of the dark/light theme). The photo panel slowly
+  crossfades through `data/slideshow.js`'s list (`SLIDESHOW_SPEED_MS`, stacked
   `<img class="artist-slide">` layers, only the active one opaque) with the name + a "Follow"
-  button overlaid and static, then two tabs (`About`, default; `My Favorites`, a placeholder until
-  music preferences are added) below it. `aboutEnter()`/`aboutTeardown()` are called from
-  `route()` the same way `vmEnter()`/`vmTeardown()` are — `aboutEnter()` starts the slideshow
-  `setInterval` and wires the tab clicks, `aboutTeardown()` just clears that interval (the tab
-  click listener dies with its DOM node on the next render, same as everywhere else in this SPA;
+  button overlaid and static. The pink panel holds two tabs (`About`, default; `My Favorites`, a
+  placeholder until music preferences are added) and scrolls its own content independently
+  (`.artist-panel-scroll`) so the photo never moves. Below 820px the two panels stack vertically
+  instead (see `responsive.css`). `aboutEnter()`/`aboutTeardown()` are called from `route()` the
+  same way `vmEnter()`/`vmTeardown()` are — `aboutEnter()` starts the slideshow `setInterval` and
+  wires the tab clicks, `aboutTeardown()` just clears that interval (the tab click listener dies
+  with its DOM node on the next render, same as everywhere else in this SPA;
   no separate cleanup needed there).
 - **Voicemail recorder** (`voicemail/recorder.js`): `vmEnter()`/`vmTeardown()` are called from
   `route()` on entering/leaving the `voicemail` route — `vmEnter()` just resets the UI (mic button

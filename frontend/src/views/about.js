@@ -10,27 +10,31 @@ export function viewAbout() {
   const bio = PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("");
   const interests = INTERESTS.map((t) => `<span class="tag">${esc(t)}</span>`).join("");
   return { tint: "#1a1a1a", html: `
-    <div class="artist-hero" data-artist-hero>
-      ${slides}
-      <div class="artist-hero-overlay"></div>
-      <div class="artist-hero-text">
-        <h1 class="artist-name">${esc(PROFILE.name)}</h1>
-        <button class="ghost-btn" data-route="connect">Follow</button>
+    <div class="artist-layout">
+      <div class="artist-photo" data-artist-hero>
+        ${slides}
+        <div class="artist-hero-overlay"></div>
+        <div class="artist-hero-text">
+          <h1 class="artist-name">${esc(PROFILE.name)}</h1>
+          <button class="ghost-btn" data-route="connect">Follow</button>
+        </div>
       </div>
-    </div>
-    <div class="artist-tabs" data-artist-tabs>
-      <button class="artist-tab is-active" data-artist-tab="about">About</button>
-      <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
-    </div>
-    <div class="view-pad">
-      <div class="artist-panel" data-artist-panel="about">
-        <p class="artist-headline">${headline}</p>
-        <div class="artist-bio">${bio}</div>
-        <div class="section-label">What I'm into right now</div>
-        <div class="tags">${interests}</div>
-      </div>
-      <div class="artist-panel" data-artist-panel="favorites" hidden>
-        <p class="artist-favorites-placeholder">Music favorites, coming soon.</p>
+      <div class="artist-panel-wrap">
+        <div class="artist-tabs" data-artist-tabs>
+          <button class="artist-tab is-active" data-artist-tab="about">About</button>
+          <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
+        </div>
+        <div class="artist-panel-scroll">
+          <div class="artist-panel" data-artist-panel="about">
+            <p class="artist-headline">${headline}</p>
+            <div class="artist-bio">${bio}</div>
+            <div class="artist-section-label">What I'm into right now</div>
+            <div class="tags">${interests}</div>
+          </div>
+          <div class="artist-panel" data-artist-panel="favorites" hidden>
+            <p class="artist-favorites-placeholder">Music favorites, coming soon.</p>
+          </div>
+        </div>
       </div>
     </div>
   ` };
