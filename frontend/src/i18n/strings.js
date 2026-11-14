@@ -12,7 +12,7 @@ export const I18N = {
   "Show all": "Ver todo", "Popular": "Popular", "More by Sri": "Más de Sri",
   "Resume": "Currículum", "Playlist": "Lista", "Follow": "Seguir",
   "About": "Acerca de", "My Favorites": "Mis favoritos",
-  "AI Engineer, Marketer, Writer, & Connoisseur of all Things Interesting Based in Minneapolis": "Ingeniero de IA, marketer, escritor y conocedor de todo lo interesante, radicado en Minneapolis",
+  "AI Engineer, Marketer, Writer, & Connoisseur of all Things Interesting": "Ingeniero de IA, marketer, escritor y conocedor de todo lo interesante",
   "Studied @ University of Minnesota": "Estudió en la Universidad de Minnesota",
   "Currently Software Engineer @ Minnesota Public Radio": "Actualmente Ingeniero de Software en Minnesota Public Radio",
   "Originally from the lulling flatlands of Fargo, North Dakota, my curiosity has taken me across the world. I wear multiple hats and bounce between leading teams to being a team player.": "Originario de las apacibles llanuras de Fargo, Dakota del Norte, mi curiosidad me ha llevado por todo el mundo. Uso muchos sombreros y alterno entre liderar equipos y ser parte del equipo.",

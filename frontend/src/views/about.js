@@ -48,11 +48,11 @@ export function viewAbout() {
   return { tint: "#1a1a1a", html: `
     <div class="artist-page">
       <div class="artist-page-bg" data-artist-hero>${slides}<div class="artist-page-scrim"></div></div>
-      <div class="artist-tabs" data-artist-tabs>
-        <button class="artist-tab is-active" data-artist-tab="about">About</button>
-        <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
-      </div>
       <div class="artist-panel-content">
+        <div class="artist-tabs" data-artist-tabs>
+          <button class="artist-tab is-active" data-artist-tab="about">About</button>
+          <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
+        </div>
         <div class="artist-panel" data-artist-panel="about">
           <p class="artist-headline">${headline}</p>
           <div class="artist-bio">${bio}</div>

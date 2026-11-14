@@ -2,7 +2,7 @@
 export const PROFILE = {
   name: "Sri Kotala",
   headline: [
-    "AI Engineer, Marketer, Writer, & Connoisseur of all Things Interesting Based in Minneapolis",
+    "AI Engineer, Marketer, Writer, & Connoisseur of all Things Interesting",
     "Studied @ University of Minnesota",
     "Currently Software Engineer @ Minnesota Public Radio",
   ],

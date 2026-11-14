@@ -14,7 +14,12 @@
     linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.3) 32%, rgba(0,0,0,.3) 66%, rgba(0,0,0,.68) 100%);
 }
 
-.artist-tabs { position: relative; z-index: 1; display: flex; justify-content: flex-end; gap: 22px; padding: 72px 32px 10px; flex: 0 0 auto; }
+.artist-panel-content {
+  position: relative; z-index: 1; flex: 1; min-height: 0; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 72px 32px 8px calc(50% - 18px); text-align: left;
+}
+.artist-tabs { display: flex; justify-content: flex-start; gap: 22px; margin-bottom: 14px; flex: 0 0 auto; }
 .artist-tab {
   background: none; border: none; cursor: pointer; padding: 0 0 6px;
   color: rgba(255,255,255,.7); font-weight: 700; font-size: .9rem; letter-spacing: .01em;
@@ -23,8 +28,7 @@
 .artist-tab:hover { color: #fff; }
 .artist-tab.is-active { color: #fff; border-color: #ffc72c; }
 
-.artist-panel-content { position: relative; z-index: 1; flex: 1; min-height: 0; overflow: hidden; padding: 8px 32px 8px calc(50% - 18px); text-align: left; }
-.artist-panel { display: flex; flex-direction: column; height: 100%; }
+.artist-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .artist-panel[hidden] { display: none; }
 .artist-headline { margin: 0 0 32px; font-size: 1.2rem; font-weight: 800; line-height: 1.4; color: #fff; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 .artist-bio p { margin: 0 0 8px; line-height: 1.5; color: rgba(255,255,255,.76); font-weight: 400; font-size: 1rem; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
@@ -43,7 +47,7 @@
 .interest-thumb { width: 36px; height: 36px; border-radius: 7px; object-fit: cover; flex: 0 0 auto; }
 .interest-label { font-size: .78rem; font-weight: 700; color: #16161f; white-space: nowrap; }
 
-.favorite-track-list { display: flex; flex-direction: column; gap: 8px; max-width: 420px; }
+.favorite-track-list { display: flex; flex-direction: column; gap: 8px; max-width: 420px; margin-left: auto; }
 .favorite-track {
   display: flex; align-items: center; gap: 10px; text-align: left;
   background: rgba(18,18,22,.55); backdrop-filter: blur(8px); border-radius: 10px; padding: 7px 10px;
