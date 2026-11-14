@@ -38,7 +38,7 @@ function favoriteTrackCard(globalIdx) {
 export function viewAbout() {
   const slides = SLIDESHOW_PHOTOS.map((src, i) => `<img class="artist-slide${i === 0 ? " is-active" : ""}" src="${src}" alt="">`).join("");
   const headline = PROFILE.headline.map((line) => esc(line)).join("<br>");
-  const bio = PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("");
+  const bio = PROFILE.bio.map((p) => `<p>${p}</p>`).join("");
   const interestCards = INTERESTS.map((i) => `
     <div class="interest-card">
       <img class="interest-thumb" src="${i.img}" alt="">
