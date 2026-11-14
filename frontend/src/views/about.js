@@ -2,124 +2,107 @@
 import { $, esc } from "../utils/dom.js";
 import { PROFILE } from "../data/profile.js";
 import { INTERESTS } from "../data/interests.js";
-import { SLIDESHOW_PHOTOS, SLIDESHOW_SPEED_MS } from "../data/slideshow.js";
 import { TRACKS } from "../data/tracks.js";
 import { playSvg } from "../utils/icons.js";
 import { ytId, ytThumb } from "../utils/youtube.js";
-import { playTrack } from "../player/controls.js";
+import { playTrack, playPos } from "../player/controls.js";
+import { state } from "../player/state.js";
 
-const starSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2.5 15.09 8.76 22 9.76 17 14.63 18.18 21.52 12 18.26 5.82 21.52 7 14.63 2 9.76 8.91 8.76 12 2.5"/></svg>';
-const plusSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+const ABOUT_EMOJIS = ["🏊", "✈️", "💻", "🏖️"];
 
 // Favorite tracks live in their normal language playlist (data/playlists.js) — this just
-// points at which ones, by yt URL, so "My Favorites" can show them without a separate playlist.
+// points at which ones, by yt URL, so the About page can feature them without a separate playlist.
 const FAVORITE_YT_IDS = [
   "https://www.youtube.com/watch?v=gKwqu74RD_k", // House Of Balloons / Glass Table Girls — The Weeknd
   "https://www.youtube.com/watch?v=F8dKVbP1Nzo", // Something Stupid — Lola Marsh
   "https://www.youtube.com/watch?v=ttjfRtuAhp4", // BbY WOW — KAROL G, Judeline & rusowsky
+  "https://www.youtube.com/watch?v=hfmxO-HQ5rU", // Down Under — Men At Work
+  "https://www.youtube.com/watch?v=MX7FSAnRPug", // Loser — Tame Impala
+  "https://www.youtube.com/watch?v=l8ubuRRqSaM", // El Chico Del Apartamento 512 — Selena
+  "https://www.youtube.com/watch?v=GQeCiGJYoU0", // God Save the Queen — Sex Pistols
+  "https://www.youtube.com/watch?v=mEhYtnHQAUw", // Say So — Doja Cat
+  "https://www.youtube.com/watch?v=rTNAIm6h1xo", // Inkem Inkem Inkem Kaavaale — Sid Sriram
+  "https://www.youtube.com/watch?v=oh_aCp_XLoE", // ¿Porqué Te Vas? — Jeanette
 ];
+const FAVORITES_VISIBLE = 5;
 const favoriteGlobalIndexes = FAVORITE_YT_IDS.map((yt) => TRACKS.findIndex((t) => t.yt === yt));
 
-function favoriteTrackCard(globalIdx) {
+function favoriteTrackRow(globalIdx, i) {
   const track = TRACKS[globalIdx];
   const cover = track.cover || ytThumb(ytId(track.yt));
-  const meta = [track.artist, track.album, track.year].filter(Boolean).join(" • ");
   return `
-    <div class="favorite-track">
-      <img class="favorite-track-cover" src="${cover}" alt="">
-      <div class="favorite-track-info">
-        <div class="favorite-track-title">${esc(track.title)}</div>
-        <div class="favorite-track-meta">${esc(meta)}</div>
-      </div>
-      <button type="button" class="favorite-track-play" data-favorite-play="${globalIdx}" aria-label="Play ${esc(track.title)}">${playSvg}</button>
+    <div class="track-row link has-art" data-favorite-play="${globalIdx}">
+      <span class="track-idx">
+        <span class="track-num">${i + 1}</span>
+        <span class="track-play-ico">${playSvg}</span>
+      </span>
+      <div class="track-tooltip">Play ${esc(track.title)} by ${esc(track.artist)}</div>
+      <img class="track-art" src="${cover}" alt="">
+      <div class="track-main"><div class="track-name">${esc(track.title)}</div><div class="track-sub">${esc(track.artist)}</div></div>
+      <span class="track-meta">${esc([track.album, track.year].filter(Boolean).join(" • "))}</span>
     </div>`;
 }
 
 export function viewAbout() {
-  const slides = SLIDESHOW_PHOTOS.map((src, i) => `<img class="artist-slide${i === 0 ? " is-active" : ""}" src="${src}" alt="">`).join("");
-  const headline = PROFILE.headline.map((line) => esc(line)).join("<br>");
-  const bio = PROFILE.bio.map((p) => `<p>${p}</p>`).join("");
-  const interestCards = INTERESTS.map((i) => `
+  const visibleFavorites = favoriteGlobalIndexes.slice(0, FAVORITES_VISIBLE).map(favoriteTrackRow).join("");
+  const extraIndexes = favoriteGlobalIndexes.slice(FAVORITES_VISIBLE);
+  const extraFavorites = extraIndexes.map((gi, i) => favoriteTrackRow(gi, i + FAVORITES_VISIBLE)).join("");
+  const emojis = ABOUT_EMOJIS.map((e) => `<span class="about-emoji" aria-hidden="true">${e}</span>`).join("");
+  const interests = INTERESTS.map((i) => `
     <div class="interest-card">
-      <img class="interest-thumb" src="${i.img}" alt="">
+      <img class="interest-thumb" src="${i.img}" alt="" ${i.fit ? `style="object-fit:${i.fit}"` : ""}>
       <span class="interest-label">${esc(i.label)}</span>
     </div>`).join("");
-  const favoriteTracks = favoriteGlobalIndexes.map(favoriteTrackCard).join("");
-  return { tint: "#1a1a1a", html: `
-    <div class="artist-page">
-      <div class="artist-page-bg" data-artist-hero>${slides}<div class="artist-page-scrim"></div></div>
-      <div class="artist-panel-content">
-        <div class="artist-tabs" data-artist-tabs>
-          <button class="artist-tab is-active" data-artist-tab="about">About</button>
-          <button class="artist-tab" data-artist-tab="favorites">My Favorites</button>
-        </div>
-        <div class="artist-panel" data-artist-panel="about">
-          <p class="artist-headline">${headline}</p>
-          <div class="artist-bio">${bio}</div>
-          <div class="artist-section-label"><span class="artist-section-strong">What I'm into</span> <span class="artist-section-soft">right now</span></div>
-          <div class="interest-grid">${interestCards}</div>
-        </div>
-        <div class="artist-panel" data-artist-panel="favorites" hidden>
-          <div class="favorite-track-list">${favoriteTracks}</div>
-        </div>
+  return { tint: "#7a001933", hero: "#5a0013", html: `
+    <div class="hero" style="--hero-c:#5a0013">
+      <div class="hero-cover round"><img src="${PROFILE.headshot}" alt="Sri Kotala"></div>
+      <div>
+        <h1 class="hero-title">${esc(PROFILE.name)}</h1>
+        <div class="hero-meta">${esc(PROFILE.tagline)}</div>
       </div>
-      <div class="artist-page-foot">
-        <h1 class="artist-name">${esc(PROFILE.name)}</h1>
-        <div class="artist-icon-row">
-          <button type="button" class="artist-icon-btn" data-star-btn aria-label="Favorite" aria-pressed="false">${starSvg}</button>
-          <button type="button" class="artist-icon-btn" data-route="connect" aria-label="Contact">${plusSvg}</button>
-        </div>
-        <div class="artist-related">
-          <div class="artist-related-label">Related Artists</div>
-          <div class="artist-related-avatars">
-            <span class="artist-avatar-placeholder" aria-hidden="true"></span>
-            <span class="artist-avatar-placeholder" aria-hidden="true"></span>
-            <span class="artist-avatar-placeholder" aria-hidden="true"></span>
-          </div>
-        </div>
+    </div>
+    <div class="action-bar">
+      <button class="play-big" data-play-favorites aria-label="Play">${playSvg}</button>
+      <button class="ghost-btn" data-route="connect">Follow</button>
+    </div>
+    <div class="view-pad">
+      <div class="about-card">
+        <div class="about-emoji-rail">${emojis}</div>
+        <img src="./assets/headshot.jpg" alt="Sri Kotala" loading="lazy">
+        <div><h2 class="about-lead">${PROFILE.intro}</h2>${PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
       </div>
+      <div class="section-label">Favorite Songs</div>
+      <div class="tracklist">${visibleFavorites}</div>
+      ${extraFavorites ? `
+      <div class="tracklist" data-favorites-extra hidden>${extraFavorites}</div>
+      <button type="button" class="show-all" data-favorites-toggle>See more</button>
+      ` : ""}
+      <div class="section-label">What I'm into <span class="section-label-soft">right now</span></div>
+      <div class="interest-grid">${interests}</div>
     </div>
   ` };
 }
 
-let slideTimer = null;
-
 export function aboutEnter() {
-  const hero = $("[data-artist-hero]");
-  if (hero) {
-    let i = 0;
-    const slideEls = hero.querySelectorAll(".artist-slide");
-    if (slideEls.length > 1) {
-      slideTimer = setInterval(() => {
-        slideEls[i].classList.remove("is-active");
-        i = (i + 1) % slideEls.length;
-        slideEls[i].classList.add("is-active");
-      }, SLIDESHOW_SPEED_MS);
-    }
-  }
-  const tabs = $("[data-artist-tabs]");
-  if (tabs) tabs.addEventListener("click", onTabClick);
-  const star = $("[data-star-btn]");
-  if (star) star.addEventListener("click", onStarClick);
   document.querySelectorAll("[data-favorite-play]").forEach((btn) => {
     btn.addEventListener("click", () => playTrack(+btn.dataset.favoritePlay));
   });
+  const toggleBtn = $("[data-favorites-toggle]");
+  const extraList = $("[data-favorites-extra]");
+  if (toggleBtn && extraList) {
+    toggleBtn.addEventListener("click", () => {
+      const willShow = extraList.hidden;
+      extraList.hidden = !willShow;
+      toggleBtn.textContent = willShow ? "Show less" : "See more";
+    });
+  }
+  const playFirst = $("[data-play-favorites]");
+  if (playFirst) playFirst.addEventListener("click", () => {
+    const expanded = !extraList || !extraList.hidden;
+    const idxs = expanded ? favoriteGlobalIndexes : favoriteGlobalIndexes.slice(0, FAVORITES_VISIBLE);
+    state.queue = idxs.slice();
+    playPos(0);
+  });
 }
 
-export function aboutTeardown() {
-  if (slideTimer) { clearInterval(slideTimer); slideTimer = null; }
-}
-
-function onTabClick(e) {
-  const btn = e.target.closest("[data-artist-tab]");
-  if (!btn) return;
-  const tabs = $("[data-artist-tabs]");
-  tabs.querySelectorAll("[data-artist-tab]").forEach((b) => b.classList.toggle("is-active", b === btn));
-  document.querySelectorAll("[data-artist-panel]").forEach((p) => { p.hidden = p.dataset.artistPanel !== btn.dataset.artistTab; });
-}
-
-function onStarClick() {
-  const star = $("[data-star-btn]");
-  const filled = star.classList.toggle("is-filled");
-  star.setAttribute("aria-pressed", String(filled));
-}
+export function aboutTeardown() {}

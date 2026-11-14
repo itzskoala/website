@@ -38,7 +38,7 @@
 html, body { margin: 0; height: 100%; }
 html { zoom: 90%; }
 body.sp-body {
-  font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
   background: var(--bg, #000);
   overflow: hidden;
 }

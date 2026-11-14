@@ -11,8 +11,11 @@ import { translateEl } from "../i18n/translate.js";
 const qPanel = $("[data-queue-panel]"), qBtn = $("[data-queue-toggle]");
 let libView = null;
 
-const artBg = (yt) => { const id = ytId(yt); return id ? `#000 center/cover no-repeat url(${ytThumb(id)})` : grad("#7a0019", "#ffc72c"); };
-const artAttr = (yt) => { const id = ytId(yt); return id ? `data-yt="${id}"` : ""; };
+const artBg = (t) => {
+  if (t && t.cover) return `#000 center/cover no-repeat url(${t.cover})`;
+  const id = ytId(t && t.yt); return id ? `#000 center/cover no-repeat url(${ytThumb(id)})` : grad("#7a0019", "#ffc72c");
+};
+const artAttr = (t) => { const id = !t?.cover && ytId(t && t.yt); return id ? `data-yt="${id}"` : ""; };
 const chevR = '<svg class="queue-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
 const chevL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
 
@@ -22,7 +25,7 @@ function renderPanel() {
       `<div class="queue-head"><span>Your Library</span><span class="queue-count">${PLAYLISTS.length} playlist${PLAYLISTS.length === 1 ? "" : "s"}</span></div>` +
       `<div class="queue-list">${PLAYLISTS.map((p, pi) => `
         <div class="queue-item" data-pl="${pi}">
-          <div class="queue-art" style="background:${artBg(p.tracks[0] && p.tracks[0].yt)}" ${artAttr(p.tracks[0] && p.tracks[0].yt)}></div>
+          <div class="queue-art" style="background:${artBg(p.tracks[0])}" ${artAttr(p.tracks[0])}></div>
           <div class="queue-info"><div class="queue-title">${esc(p.name)}</div><div class="queue-artist">Playlist · ${p.tracks.length} songs</div></div>
           <button class="queue-playbtn" data-play-pl="${pi}" aria-label="Play ${esc(p.name)}" title="Play playlist">${playSvg}</button>
           ${chevR}
@@ -35,7 +38,7 @@ function renderPanel() {
       `<div class="queue-head"><button class="queue-back" data-back-lib aria-label="Back to library">${chevL}</button><span>${esc(p.name)}</span><span class="queue-count">${p.tracks.length} songs</span><button class="queue-playbtn head-play" data-play-pl-cur aria-label="Play ${esc(p.name)}" title="Play playlist">${playSvg}</button></div>` +
       `<div class="queue-list">${p.trackIdx.map((gi) => { const t = TRACKS[gi]; return `
         <div class="queue-item" data-qi="${gi}">
-          <div class="queue-art" style="background:${artBg(t.yt)}" ${artAttr(t.yt)}></div>
+          <div class="queue-art" style="background:${artBg(t)}" ${artAttr(t)}></div>
           <div class="queue-info"><div class="queue-title">${esc(t.title)}</div><div class="queue-artist">${esc(t.artist)}</div></div>
           <div class="queue-eq" aria-hidden="true"><span></span><span></span><span></span></div>
         </div>`; }).join("")}</div>`;

@@ -14,6 +14,7 @@
 :root[data-theme="light"] .main-head {
   background: color-mix(in srgb, var(--header-tint, var(--panel)) 14%, var(--panel));
 }
+
 .nav-burger { display: none; }
 .nav-arrows { display: flex; gap: 8px; }
 .round-btn {

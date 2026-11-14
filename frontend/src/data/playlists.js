@@ -25,7 +25,9 @@ export const PLAYLISTS = [
     { title: "Quién Será", artist: "Lisa Ono", yt: "https://www.youtube.com/watch?v=r6QzhYYlsos" },
     { title: "La Rosa de los Vientos", artist: "Makiza", yt: "https://www.youtube.com/watch?v=Yr6GczearGA" },
     { title: "1977", artist: "Ana Tijoux", yt: "https://www.youtube.com/watch?v=yiQ7S38nKog" },
-    { title: "BbY WOW", artist: "KAROL G, Judeline & rusowsky", album: "NO ME ARREPIENTO DE SENTIR TANTO", year: 2026, yt: "https://www.youtube.com/watch?v=ttjfRtuAhp4" },
+    { title: "BbY WOW", artist: "KAROL G, Judeline & rusowsky", album: "NO ME ARREPIENTO DE SENTIR TANTO", year: 2026, cover: "./assets/favorites/bby-wow.jpg", yt: "https://www.youtube.com/watch?v=ttjfRtuAhp4" },
+    { title: "El Chico Del Apartamento 512", artist: "Selena", album: "Amor Prohibido", year: 1994, cover: "./assets/tracks/el-chico-del-apartamento-512.jpg", yt: "https://www.youtube.com/watch?v=l8ubuRRqSaM" },
+    { title: "¿Porqué Te Vas?", artist: "Jeanette", album: "Las 5 Mejores", year: 1974, cover: "./assets/tracks/porque-te-vas.jpg", yt: "https://www.youtube.com/watch?v=oh_aCp_XLoE" },
   ] },
   { name: "Telugu", tracks: [
     { title: "Jenniper Lopez", artist: "Benny Dayal", yt: "https://www.youtube.com/watch?v=rEFE9467bKU" },
@@ -47,6 +49,8 @@ export const PLAYLISTS = [
     { title: "Uppenantha", artist: "KK, Devi Sri Prasad", yt: "https://www.youtube.com/watch?v=TIOZUdc0aL8" },
     { title: "Diyyalo Diyyala", artist: "Priya Himesh & Khushi Murali", yt: "https://www.youtube.com/watch?v=RAotnwMAXAA" },
     { title: "Arey Rey", artist: "Mickey J Meyer & Karthik", yt: "https://www.youtube.com/watch?v=PTAScUlG7ZA" },
+    { title: "Gundellonaa", artist: "Anirudh Ravichander, Leon James & Kasarla Shyam", album: 'Gundellonaa (From "Ori Devuda")', year: 2022, cover: "./assets/tracks/gundellonaa.jpg", yt: "https://www.youtube.com/watch?v=BtUZMVi0Hqo" },
+    { title: 'Inkem Inkem Inkem Kaavaale (From "Geetha Govindam")', artist: "Sid Sriram", album: "Geetha Govindam", year: 2018, cover: "./assets/tracks/inkem-inkem-inkem-kaavaale.jpg", yt: "https://www.youtube.com/watch?v=rTNAIm6h1xo" },
   ] },
   { name: "Hindi", tracks: [
     { title: "Lutt Le Gaya", artist: "Shashwat Sachdev", yt: "https://www.youtube.com/watch?v=84Lc9SYzGSM" },
@@ -63,7 +67,7 @@ export const PLAYLISTS = [
     { title: "Oh Priya Priya", artist: "Adnan Sami", yt: "https://www.youtube.com/watch?v=ASahUxsb4QQ" },
     { title: "Chaleya", artist: "Arijit Singh, Shilpa Rao", yt: "https://www.youtube.com/watch?v=VAdGW7QDJiU" },
     { title: "Jhoome Jo Pathaan", artist: "Arijit Singh, Sukriti Kakar", yt: "https://www.youtube.com/watch?v=YxWlaYCA8MU" },
-    { title: "Disco Deewane", artist: "Nazia Hassan", yt: "https://www.youtube.com/watch?v=QljTHgNSmHQ" },
+    { title: "Disco Deewane", artist: "Nazia Hassan", album: "Disco Deewane", year: 1981, cover: "./assets/tracks/disco-deewane.jpg", yt: "https://www.youtube.com/watch?v=QljTHgNSmHQ" },
   ] },
   { name: "English", tracks: [
     { title: "Illegal", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=XuKq7zT_0nM" },
@@ -83,7 +87,7 @@ export const PLAYLISTS = [
     { title: "Black or White", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=m-y_IxPcx8U" },
     { title: "Thriller", artist: "Michael Jackson", yt: "https://www.youtube.com/watch?v=Z85lxckrtzg" },
     { title: "Girl Like Me", artist: "PinkPantheress", yt: "https://www.youtube.com/watch?v=D24dn9eXTwA" },
-    { title: 'Something Stupid (From "Better Call Saul")', artist: "Lola Marsh", album: 'Something Stupid (From "Better Call Saul")', year: 2018, yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
+    { title: 'Something Stupid (From "Better Call Saul")', artist: "Lola Marsh", album: 'Something Stupid (From "Better Call Saul")', year: 2018, cover: "./assets/favorites/something-stupid.jpg", yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
     { title: "House Of Balloons / Glass Table Girls", artist: "The Weeknd", album: "House Of Balloons", year: 2011, cover: "./assets/favorites/house-of-balloons.jpg", yt: "https://www.youtube.com/watch?v=gKwqu74RD_k" },
     { title: "Baby Blue", artist: "Badfinger", yt: "https://www.youtube.com/watch?v=33oAuvbRg-c" },
     { title: "Pokémon Theme", artist: "Jason Paige", yt: "https://www.youtube.com/watch?v=2zMIddjFAIA" },
@@ -97,5 +101,9 @@ export const PLAYLISTS = [
     { title: "Rasputin", artist: "Boney M.", yt: "https://www.youtube.com/watch?v=6JhVo2zS8hU" },
     { title: "Livin' La Vida Loca", artist: "Ricky Martin", yt: "https://www.youtube.com/watch?v=CN5hQOI__10" },
     { title: "Oops!...I Did It Again", artist: "Britney Spears", yt: "https://www.youtube.com/watch?v=wsHbHR3Os6U" },
+    { title: "Down Under", artist: "Men At Work", album: "Business As Usual", year: 1981, cover: "./assets/tracks/down-under.jpg", yt: "https://www.youtube.com/watch?v=hfmxO-HQ5rU" },
+    { title: "Loser", artist: "Tame Impala", year: 2025, cover: "./assets/tracks/loser.jpg", yt: "https://www.youtube.com/watch?v=MX7FSAnRPug" },
+    { title: "God Save the Queen", artist: "Sex Pistols", album: "Never Mind the Bollocks, Here's the Sex Pistols", year: 1977, cover: "./assets/tracks/god-save-the-queen.jpg", yt: "https://www.youtube.com/watch?v=GQeCiGJYoU0" },
+    { title: "Say So", artist: "Doja Cat", album: "Hot Pink", year: 2019, cover: "./assets/tracks/say-so.jpg", yt: "https://www.youtube.com/watch?v=mEhYtnHQAUw" },
   ] },
 ];

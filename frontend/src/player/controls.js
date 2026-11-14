@@ -25,8 +25,12 @@ export function startPoll() {
 export function loadTrack(idx, autoplay) {
   const t = TRACKS[idx], id = ytId(t.yt);
   nowArt.textContent = "";
-  nowArt.style.background = id ? `#000 center/cover no-repeat url(${ytThumb(id)})` : grad("#7a0019", "#ffc72c");
-  if (id) upgradeThumb(nowArt, id);
+  if (t.cover) {
+    nowArt.style.background = `#000 center/cover no-repeat url(${t.cover})`;
+  } else {
+    nowArt.style.background = id ? `#000 center/cover no-repeat url(${ytThumb(id)})` : grad("#7a0019", "#ffc72c");
+    if (id) upgradeThumb(nowArt, id);
+  }
   nowTitle.textContent = t.title; nowArtist.textContent = t.artist;
   curEl.textContent = "0:00"; durEl.textContent = "0:00"; seekEl.value = 0; seekEl.style.setProperty("--f", "0%");
   state.curVizId = id; state.curViz = null;

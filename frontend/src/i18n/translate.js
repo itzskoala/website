@@ -18,6 +18,7 @@ function esPattern(key) {
   if ((m = key.match(/^(\d+) builds$/))) return m[1] + " proyectos";
   if ((m = key.match(/^(\d+) photos$/))) return m[1] + " fotos";
   if ((m = key.match(/^Results for "(.*)"$/))) return 'Resultados de "' + m[1] + '"';
+  if ((m = key.match(/^Play (.+) by (.+)$/))) return "Reproducir " + m[1] + " de " + m[2];
   if ((m = key.match(/^Generation (\d+)$/))) return "Generación " + m[1];
   if ((m = key.match(/^Browse Gen (\d+) Pokémon$/))) return "Explorar Pokémon de la Gen " + m[1];
   return null;

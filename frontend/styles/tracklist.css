@@ -9,6 +9,24 @@
 .track-row:hover { background: var(--card-hover); }
 .track-row.link { cursor: pointer; }
 .track-idx { color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; }
+.track-row.has-art { position: relative; grid-template-columns: 28px 40px 1fr auto; }
+.track-row.has-art .track-idx { display: grid; place-items: center; }
+.track-row.has-art .track-play-ico { display: none; width: 14px; height: 14px; color: var(--text); }
+.track-row.has-art .track-idx:hover .track-num { display: none; }
+.track-row.has-art .track-idx:hover .track-play-ico { display: block; }
+.track-art { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+
+.track-tooltip {
+  position: absolute; left: 14px; top: 50%; transform: translateY(calc(-100% + 2px));
+  background: rgba(10,10,10,.9); color: #fff; padding: 3px 7px; border-radius: 4px 4px 4px 2px;
+  font-size: .64rem; font-weight: 400; white-space: nowrap; line-height: 1.4;
+  opacity: 0; pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease; z-index: 5;
+}
+.track-row.has-art .track-idx:hover ~ .track-tooltip {
+  opacity: 1; transform: translateY(calc(-100% - 6px));
+  transition: opacity .12s ease .5s, transform .12s ease .5s;
+}
 .track-main { min-width: 0; }
 .track-name { font-weight: 600; font-size: .98rem; color: var(--text); }
 .track-sub { color: var(--muted); font-size: .82rem; margin-top: 2px; }
