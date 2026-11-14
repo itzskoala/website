@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- index.html -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,15 +15,28 @@
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/fab.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/about.css" />
+    <link rel="stylesheet" href="./styles/tracklist.css" />
+    <link rel="stylesheet" href="./styles/photos.css" />
+    <link rel="stylesheet" href="./styles/connect.css" />
+    <link rel="stylesheet" href="./styles/voicemail.css" />
+    <link rel="stylesheet" href="./styles/player.css" />
+    <link rel="stylesheet" href="./styles/queue-panel.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles/confetti.css" />
+    <link rel="stylesheet" href="./styles/pokemon.css" />
 
-    <!-- Vercel Web Analytics (vanilla snippet — no bundler in this project) -->
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
-    <!-- Open Graph / social preview -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://srikotala.com/" />
     <meta property="og:title" content="Sri Kotala" />
@@ -37,7 +51,6 @@
   </head>
   <body class="sp-body">
     <div class="sp">
-      <!-- ===== Sidebar ===== -->
       <aside class="side">
         <div class="side-top">
           <div class="brand" data-route="home" role="link" tabindex="0" aria-label="Home"><img src="./favicon.png" alt="Koala logo" /><span>Sri<span class="g"> Kotala</span></span></div>
@@ -58,8 +71,6 @@
           </ul>
         </div>
 
-        <!-- Pokémon roaming-pet widget — a pure easter egg, unrelated to the player. Sits here as a
-             natural third panel of the sidebar (not a floating overlay); resets on refresh. -->
         <div class="poke-widget" data-poke-widget>
           <div class="poke-resize" data-poke-resize aria-hidden="true"></div>
           <div class="poke-head">
@@ -83,7 +94,6 @@
         </div>
       </aside>
 
-      <!-- ===== Main ===== -->
       <main class="main" data-main>
         <div class="main-head">
           <button class="round-btn nav-burger" data-nav-burger aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -129,7 +139,6 @@
         <div class="view" data-view></div>
       </main>
 
-      <!-- ===== Player ===== -->
       <footer class="player">
         <canvas class="viz" data-viz aria-hidden="true"></canvas>
         <div class="now">
@@ -168,14 +177,10 @@
         </div>
       </footer>
 
-      <!-- Library / playlist popover — kept outside .player so its overflow:hidden can't clip it. Filled by JS. -->
       <div class="queue-panel" data-queue-panel hidden></div>
 
-      <!-- Mobile sidebar drawer backdrop (sidebar itself is .side, reused as an overlay below 820px) -->
       <div class="side-backdrop" data-side-backdrop></div>
 
-      <!-- Pokémon add-picker — small quick-pick style search modal opened by the widget's + button
-           (widget itself now lives in the sidebar, see <aside class="side"> above). -->
       <div class="poke-picker" data-poke-picker hidden>
         <div class="poke-picker-box">
           <input class="poke-picker-input" type="text" data-poke-picker-input placeholder="Select a generation or start typing to search for a Pokémon…" autocomplete="off" spellcheck="false" />
@@ -184,15 +189,13 @@
       </div>
     </div>
 
-    <!-- lightbox + audio -->
     <div class="lightbox" data-lightbox>
       <button class="lightbox-close" data-lb-close aria-label="Close">&times;</button>
       <img data-lb-img alt="" />
       <div class="lightbox-cap" data-lb-cap></div>
     </div>
-    <!-- hidden YouTube audio host (IFrame API replaces this div) -->
     <div class="yt-hide"><div id="yt-host"></div></div>
 
-    <script src="./app.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

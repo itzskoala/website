@@ -1,0 +1,11 @@
+{
+  "id": "adriana",
+  "title": "AdrianaOye",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/AdrianaOye",
+  "img": "./assets/placeholders/icon-social-listening.jpg",
+  "c1": "#0f2027",
+  "c2": "#2c5364",
+  "tags": ["Social Listening", "Gradio", "NLP", "Web Scrapping"],
+  "desc": "A social-listening application I made for Telemundo Minnesota."
+}

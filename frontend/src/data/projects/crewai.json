@@ -1,0 +1,11 @@
+{
+  "id": "crewai",
+  "title": "Content Creator w/ CrewAI",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/content-creator-flow",
+  "img": "./assets/placeholders/social-media-ai.png",
+  "c1": "#c33764",
+  "c2": "#1d2671",
+  "tags": ["CrewAI", "Harness Engineering", "Serper API"],
+  "desc": "A multi-agent social media content workflow built with CrewAI."
+}

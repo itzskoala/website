@@ -1,5 +1,6 @@
 # Sri Kotala Website
 
-My static multi-page website hosted on GitHub Pages.
+A Spotify-style single-page portfolio, served from `frontend/` with a small Vercel Functions
+backend in `api/` + `backend/`. See `CLAUDE.md` for the full architecture and dev workflow.
 
 srikotala.com

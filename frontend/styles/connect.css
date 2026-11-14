@@ -1,0 +1,13 @@
+/* connect.css */
+.connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 12px; }
+.connect-card {
+  background: var(--card); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 10px;
+  cursor: pointer; transition: background .2s, transform .15s; color: var(--text);
+}
+.connect-card:hover { background: var(--card-hover); transform: translateY(-3px); }
+.connect-card .ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; color: #fff; }
+.connect-card .ico svg { width: 24px; height: 24px; }
+.connect-card h3 { margin: 4px 0 0; font-size: 1.05rem; }
+.connect-card span { color: var(--muted); font-size: .85rem; }
+.connect-embed { margin-top: 24px; }
+.connect-embed iframe { width: 100%; max-width: 560px; aspect-ratio: 16/9; border: 0; border-radius: 12px; }

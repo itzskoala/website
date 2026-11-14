@@ -1,0 +1,43 @@
+/* voicemail.css */
+.vm-card { max-width: 480px; background: var(--card); border-radius: 12px; padding: 26px; margin: 8px auto 0; }
+.vm-fields { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+.vm-field { display: flex; flex-direction: column; gap: 6px; }
+.vm-field span { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.vm-field input {
+  width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--elevated); color: var(--text); font-size: .95rem; font-family: inherit; outline: none;
+}
+.vm-field input:focus { border-color: var(--text); }
+.vm-field input[aria-invalid="true"] { border-color: #e74c3c; }
+.vm-error { color: #e74c3c; font-size: .78rem; }
+
+.vm-recorder { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 12px 0 4px; text-align: center; }
+.vm-mic {
+  position: relative; width: 84px; height: 84px; border-radius: 999px; border: none; cursor: pointer;
+  background: var(--card-hover); color: var(--muted);
+  display: grid; place-items: center; transition: background .18s, color .18s, transform .12s, box-shadow .18s;
+}
+.vm-mic:not(:disabled):hover { transform: scale(1.05); }
+.vm-mic:disabled { cursor: not-allowed; }
+.vm-mic svg { width: 32px; height: 32px; position: relative; z-index: 1; }
+.vm-mic.is-ready { background: #1ed760; color: #063617; box-shadow: 0 8px 24px rgba(30,215,96,.35); }
+.vm-mic.is-recording { background: #e74c3c; color: #fff; box-shadow: 0 8px 24px rgba(231,76,60,.4); }
+.vm-mic.is-recording .vm-mic-ring { animation: vmPulse 1.6s infinite; }
+.vm-mic.is-denied { background: transparent; border: 2px solid #e74c3c; color: #e74c3c; }
+.vm-mic-ring { position: absolute; inset: 0; border-radius: inherit; }
+@keyframes vmPulse {
+  0% { box-shadow: 0 0 0 0 rgba(231,76,60,.55); }
+  70% { box-shadow: 0 0 0 16px rgba(231,76,60,0); }
+  100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); }
+}
+.vm-status { color: var(--muted); font-size: .9rem; max-width: 340px; }
+.vm-timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.1rem; }
+
+.vm-preview { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.vm-preview[hidden] { display: none; }
+.vm-preview audio { width: 100%; }
+.vm-preview-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.vm-send:disabled { opacity: .6; cursor: default; }
+.vm-send.is-sent { background: #1ed760; }
+.vm-send-status { color: var(--muted); font-size: .85rem; }
+.vm-send-status[hidden] { display: none; }

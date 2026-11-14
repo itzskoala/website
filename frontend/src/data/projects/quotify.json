@@ -1,0 +1,12 @@
+{
+  "id": "quotify",
+  "title": "Quotable",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/quotify",
+  "site": "https://quotableapp.net/",
+  "img": "./assets/placeholders/icon-quotable.svg",
+  "c1": "#1d976c",
+  "c2": "#93f9b9",
+  "tags": ["Content-Based Filtering", "Node.js", "UI/UX", "Digital Marketing"],
+  "desc": "A motivational quotes app. Highlighting extraordinary people, places, and things so we too can become extraordinary 🌎🌷💛🏖️🏄"
+}

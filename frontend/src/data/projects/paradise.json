@@ -1,0 +1,11 @@
+{
+  "id": "paradise",
+  "title": "Paradise Builder",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/vacation-builder",
+  "img": "./assets/placeholders/paradise-icon.jpg",
+  "c1": "#f7971e",
+  "c2": "#ffd200",
+  "tags": ["CrewAI", "Harness Engineering", "Serper API", "Google Travel Explore API"],
+  "desc": "A trip-planning project via a crew of agents."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "talkingbooks",
+  "title": "TalkingBooks",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/talking-books",
+  "img": "./assets/placeholders/talking-books.png",
+  "c1": "#d35400",
+  "c2": "#f9d423",
+  "tags": ["RAG", "Langchain", "ChromaDB", "JSONL", "Chunking", "Evaluation Metrics"],
+  "desc": "I used Retrieval-Augmented Generation (RAG) to \"chat\" with any book! This application is geared towards children who are able to have simple conversations with complex books, stories, and ideas."
+}

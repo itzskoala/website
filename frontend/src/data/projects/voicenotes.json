@@ -1,0 +1,11 @@
+{
+  "id": "voicenotes",
+  "title": "Voice Notes",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/voicemail",
+  "img": "./assets/placeholders/voice-notes.svg",
+  "c1": "#7a0019",
+  "c2": "#33000a",
+  "tags": ["Inference Models", "Prompt Engineering", "Content Moderation", "Multi-language Support", "Background Processing", "Serverless Functions"],
+  "desc": "A voice-message feature for this site that records audio in the browser, then runs it through open-weight Hugging Face models. Every message goes through a spam-filter."
+}

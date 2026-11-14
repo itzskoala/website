@@ -1,0 +1,12 @@
+/* photos.css */
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.photo { border-radius: 8px; overflow: hidden; cursor: pointer; aspect-ratio: 1; position: relative; background: var(--card-hover); }
+.photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.photo:hover img { transform: scale(1.06); }
+.photo-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 12px 10px; font-size: .82rem; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.75)); opacity: 0; transition: opacity .2s; }
+.photo:hover .photo-cap { opacity: 1; }
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; padding: 40px; }
+.lightbox.show { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 86vh; border-radius: 8px; }
+.lightbox-cap { position: absolute; bottom: 24px; color: #fff; font-size: .95rem; }
+.lightbox-close { position: absolute; top: 22px; right: 26px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }

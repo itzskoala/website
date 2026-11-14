@@ -1,0 +1,11 @@
+{
+  "id": "linkedinfinder",
+  "title": "LinkedIn Candidate Finder",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/LinkedIn-candidate-finder",
+  "img": "./assets/placeholders/linkedin-candidate-finder.png",
+  "c1": "#0077b5",
+  "c2": "#00a0dc",
+  "tags": ["Social listening", "Web Scraping", "Recruiting", "MCP", "Open Source LLMs"],
+  "desc": "A tool that searches LinkedIn to surface candidates matching a given role."
+}

@@ -1,0 +1,19 @@
+/* tracklist.css */
+.tracklist { margin: 8px 0 0; }
+.track-head, .track-row {
+  display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 14px;
+  padding: 8px 14px; border-radius: 6px;
+}
+.track-head { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--line); border-radius: 0; padding-bottom: 10px; }
+.track-row { cursor: default; transition: background .15s; }
+.track-row:hover { background: var(--card-hover); }
+.track-row.link { cursor: pointer; }
+.track-idx { color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; }
+.track-main { min-width: 0; }
+.track-name { font-weight: 600; font-size: .98rem; color: var(--text); }
+.track-sub { color: var(--muted); font-size: .82rem; margin-top: 2px; }
+.track-meta { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+.section-label { font-size: 1.15rem; font-weight: 800; margin: 30px 0 6px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.tag { background: var(--card-hover); color: var(--text); border-radius: 999px; padding: 6px 14px; font-size: .8rem; font-weight: 600; }

@@ -1,0 +1,12 @@
+{
+  "id": "worldwalker",
+  "title": "World Walker",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/WorldWalker",
+  "site": "https://worldwalker-qcasgfcwha-uc.a.run.app/",
+  "img": "./assets/placeholders/worldwalker.jpg",
+  "c1": "#2193b0",
+  "c2": "#6dd5ed",
+  "tags": ["Webooks", "FastAPI", "Google Health", "Authentication", "PostgresSQL", "OpenStreetMap", "Design Patterns"],
+  "desc": "A FastAPI app that pulls step counts from my Fitbit Air via Google Cloud and converts them into progress on a virtual walk around the world."
+}

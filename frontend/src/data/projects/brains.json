@@ -1,0 +1,12 @@
+{
+  "id": "brains",
+  "title": "Brains vs. Brawn",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/brains-versus-brawns",
+  "site": "https://huggingface.co/spaces/holasoykoalo7/BrainsVSBrawn",
+  "img": "./assets/placeholders/ai-ufc.jpg",
+  "c1": "#11998e",
+  "c2": "#38ef7d",
+  "tags": ["Logistic Regression", "Decision Trees", "SVM", "Evaluation Metrics", "Playwright", "Github Actions", "Caching"],
+  "desc": "Using machine learning algorithms to predict a UFC fighter’s probability of winning, their most likely method of victory, and in which round."
+}

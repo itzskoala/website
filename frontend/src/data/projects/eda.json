@@ -1,0 +1,11 @@
+{
+  "id": "eda",
+  "title": "Exploratory Data Analysis",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/exploratory-data-analysis",
+  "img": "./assets/placeholders/icon-eda.png",
+  "c1": "#373b44",
+  "c2": "#4286f4",
+  "tags": ["Pandas", "NumPy", "Seaborn", "Matplotlib", "Univariate, bivariate & multivariate analysis", "Data cleaning & preprocessing", "Statistical distributions", "Descriptive statistics"],
+  "desc": "Data exploration of different datasets in Python."
+}

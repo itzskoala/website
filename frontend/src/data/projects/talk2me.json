@@ -1,0 +1,11 @@
+{
+  "id": "talk2me",
+  "title": "Talk2Me",
+  "kind": "Hugging Face Space",
+  "url": "https://huggingface.co/spaces/holasoykoalo7/ai-me",
+  "img": "./assets/placeholders/talk-2-me.png",
+  "c1": "#5f2c82",
+  "c2": "#49a09d",
+  "tags": ["HuggingFace", "Harness Engineering", "Gradio"],
+  "desc": "An interactive AI chat experience that allows you to talk to me."
+}

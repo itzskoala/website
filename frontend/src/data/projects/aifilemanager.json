@@ -1,0 +1,11 @@
+{
+  "id": "aifilemanager",
+  "title": "AIFileManager",
+  "kind": "GitHub Repository",
+  "url": "https://github.com/itzskoala/LegaIAI-File-Manager",
+  "img": "./assets/placeholders/aifilemanager.png",
+  "c1": "#e58e26",
+  "c2": "#f9d423",
+  "tags": ["ETL", "Ollama", "Langchain", "SQL Database", "Pydantic", "MS Sharepoint Engineering", "MS Power Automate", "MS Azure"],
+  "desc": "An AI-powered file manager that automatically renames and sorts files."
+}
