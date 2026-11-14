@@ -17,3 +17,8 @@
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
 .tag { background: var(--card-hover); color: var(--text); border-radius: 999px; padding: 6px 14px; font-size: .8rem; font-weight: 600; }
+
+.edu-block { display: flex; align-items: center; gap: 20px; }
+.edu-block .tracklist { flex: 1; min-width: 0; }
+.edu-logo { width: 120px; height: auto; flex: 0 0 auto; object-fit: contain; }
+@media (max-width: 640px) { .edu-block { flex-direction: column; align-items: flex-start; } .edu-logo { width: 90px; } }

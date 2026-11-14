@@ -4,7 +4,7 @@ import { setupReveals } from "./reveals.js";
 import { setTitle } from "./titles.js";
 import { translateEl } from "../i18n/translate.js";
 import { viewHome, fitShelves } from "../views/home.js";
-import { viewAbout } from "../views/about.js";
+import { viewAbout, aboutEnter, aboutTeardown } from "../views/about.js";
 import { viewProjects, viewProjectDetail } from "../views/projects.js";
 import { viewExperience } from "../views/experience.js";
 import { viewPhotos } from "../views/photos.js";
@@ -50,6 +50,7 @@ export function route() {
   document.querySelectorAll("[data-nav]").forEach((a) => a.classList.toggle("is-active", a.dataset.nav === base));
   document.querySelectorAll("[data-lib]").forEach((li) => li.classList.toggle("is-active", li.dataset.lib === base));
   if (base === "voicemail") vmEnter(); else vmTeardown();
+  if (base === "about") aboutEnter(); else aboutTeardown();
 }
 
 export function go(hash) { if (location.hash === "#" + hash) route(); else location.hash = hash; }

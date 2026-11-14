@@ -1,13 +1,13 @@
 // profile.js
 export const PROFILE = {
   name: "Sri Kotala",
-  tagline: "CS & Strategic Communication · UMN-TC",
-  headshot: "./assets/headshot-angel.jpg",
-  intro: 'Hi, I’m Sri, an AI Engineer, Marketer, Writer, &amp; <span class="highlight">connoisseur</span> of all things interesting',
+  headline: [
+    "AI Engineer, Marketer, Writer, & Connoisseur of all Things Interesting Based in Minneapolis",
+    "Studied @ University of Minnesota",
+    "Currently Software Engineer @ Minnesota Public Radio",
+  ],
   bio: [
-    "I live in Minneapolis, Minnesota and I’m on a mission to learn as many things as possible!",
-    "Software Engineering is like building with Legos and Marketing is like getting everybody to look at my Legos.",
-    "I wear multiple hats and bounce between leading teams to being a team player. My ultimate goal is to create impactful, inclusive innovations in technology and media.",
-    "In my free time, you’ll find me writing short stories, on late night runs, studying for the DELE (Spanish Certification), and spending time with my family in the lulling flatlands of Fargo, North Dakota.",
+    "Hailing from the pastoral city of Fargo, North Dakota, I traded snowy plains for the Silicon Valley sun. But I kept the same curiosity that drove me to tinker, sketch, empathize, and build things that make everyday life a bit better...simpler.",
+    "Now, I channel that curiosity into designing thoughtful digital experiences that can bridge people and emerging technology like AI and XR. In my processes, I strive to understand human behavior and user experience to inform my design choices to make meaningful, precise solutions. By combining empathy, collaboration and innovation, you get at the true heart of design that will impact those around you.",
   ],
 };

@@ -28,8 +28,10 @@ frontend/            static site, served as the Vercel "outputDirectory"
     main.js           entry point — wires up every subsystem below, then calls route()
     data/             content constants: profile.js, experience.js, photos.js, links.js,
                       playlists.js, tracks.js (derives TRACKS from playlists.js), sections.js,
-                      pokedex.js, and projects/ — one JSON file per project + index.js that
-                      imports them (via `with { type: "json" }`) into a PROJECTS array
+                      pokedex.js, interests.js ("What I'm into right now" tags on the About page),
+                      slideshow.js (the About page hero's photo list + crossfade speed), and
+                      projects/ — one JSON file per project + index.js that imports them (via
+                      `with { type: "json" }`) into a PROJECTS array
     i18n/             strings.js (the English→Spanish I18N map) + translate.js (tstr/translateEl/
                       applyLang — English is always the language on load, never persisted)
     utils/            dom.js ($/esc/grad), icons.js (shared inline svg strings), youtube.js
@@ -117,6 +119,15 @@ the active language.
   if that can't be detected) unless a theme was already saved to `localStorage`;
   `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
 - **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
+- **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — a full-width hero that
+  slowly crossfades through `data/slideshow.js`'s photo list (`SLIDESHOW_SPEED_MS`, stacked
+  `<img class="artist-slide">` layers, only the active one opaque) with the name + a "Follow"
+  button overlaid and static, then two tabs (`About`, default; `My Favorites`, a placeholder until
+  music preferences are added) below it. `aboutEnter()`/`aboutTeardown()` are called from
+  `route()` the same way `vmEnter()`/`vmTeardown()` are — `aboutEnter()` starts the slideshow
+  `setInterval` and wires the tab clicks, `aboutTeardown()` just clears that interval (the tab
+  click listener dies with its DOM node on the next render, same as everywhere else in this SPA;
+  no separate cleanup needed there).
 - **Voicemail recorder** (`voicemail/recorder.js`): `vmEnter()`/`vmTeardown()` are called from
   `route()` on entering/leaving the `voicemail` route — `vmEnter()` just resets the UI (mic button
   enabled/green); it does **not** call `getUserMedia`. The permission prompt only fires from
