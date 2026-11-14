@@ -24,13 +24,14 @@
 .artist-tab.is-active { color: #fff; border-color: #ffc72c; }
 
 .artist-panel-content { position: relative; z-index: 1; flex: 1; min-height: 0; overflow: hidden; padding: 8px 32px 8px calc(50% - 18px); text-align: left; }
+.artist-panel { display: flex; flex-direction: column; height: 100%; }
 .artist-panel[hidden] { display: none; }
-.artist-headline { margin: 0 0 10px; font-size: 1.2rem; font-weight: 800; line-height: 1.4; color: #fff; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
+.artist-headline { margin: 0 0 32px; font-size: 1.2rem; font-weight: 800; line-height: 1.4; color: #fff; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 .artist-bio p { margin: 0 0 8px; line-height: 1.5; color: rgba(255,255,255,.76); font-weight: 400; font-size: 1rem; max-width: 640px; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 .artist-bio p:last-child { margin-bottom: 0; }
 .artist-bio strong { color: #fff; font-weight: 800; }
 
-.artist-section-label { margin: 24px 0 12px; font-size: 1.35rem; font-weight: 800; }
+.artist-section-label { margin: auto 0 12px; font-size: 1.35rem; font-weight: 800; }
 .artist-section-strong { color: #fff; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 .artist-section-soft { color: rgba(255,255,255,.6); font-weight: 700; text-shadow: 0 1px 10px rgba(0,0,0,.4); }
 
