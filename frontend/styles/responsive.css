@@ -23,10 +23,9 @@
   .hero { flex-direction: column; align-items: flex-start; padding: 32px 16px 20px; gap: 16px; }
   .hero-cover { width: 140px; height: 140px; }
   .view-pad { padding: 12px 16px 40px; }
-  .artist-page { height: auto; max-height: calc(100vh - 220px); }
-  .artist-page-head { padding: 20px 16px 0; }
-  .artist-tabs { padding: 18px 16px 0; }
-  .artist-panel-scroll { padding: 18px 16px 24px; }
+  .artist-tabs { padding: 14px 16px 10px; }
+  .artist-panel-content { padding: 10px 16px; }
+  .artist-page-foot { padding: 0 16px 14px; }
   .main-head { padding: 10px 14px; gap: 8px; }
   .queue-panel { right: 10px; left: 10px; width: auto; bottom: 112px; }
   .lightbox { padding: 16px; }

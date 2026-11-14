@@ -1,5 +1,10 @@
 // playlists.js
 export const PLAYLISTS = [
+  { name: "Favorites", tracks: [
+    { title: "House Of Balloons / Glass Table Girls", artist: "The Weeknd", album: "House Of Balloons", year: 2011, cover: "./assets/favorites/house-of-balloons.jpg", yt: "https://www.youtube.com/watch?v=gKwqu74RD_k" },
+    { title: 'Something Stupid (From "Better Call Saul")', artist: "Lola Marsh", album: 'Something Stupid (From "Better Call Saul")', year: 2018, yt: "https://www.youtube.com/watch?v=F8dKVbP1Nzo" },
+    { title: "BbY WOW", artist: "KAROL G, Judeline & rusowsky", album: "NO ME ARREPIENTO DE SENTIR TANTO", year: 2026, yt: "https://www.youtube.com/watch?v=ttjfRtuAhp4" },
+  ] },
   { name: "Spanish", tracks: [
     { title: "Eres para Mí", artist: "Julieta Venegas", yt: "https://www.youtube.com/watch?v=gvjjheYHfO0" },
     { title: "Don", artist: "Miranda!", yt: "https://www.youtube.com/watch?v=32DOcN9A0TQ" },

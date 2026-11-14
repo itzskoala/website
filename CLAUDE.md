@@ -121,14 +121,28 @@ the active language.
 - **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
 - **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — `.artist-page` is a
   full-page hardcoded solid pink panel (independent of the dark/light theme, per design
-  direction) holding the name + a "Follow" button, then two tabs (`About`, default; `My
-  Favorites`, a placeholder until music preferences are added), then a scrollable content area
-  (`.artist-panel-scroll`). `aboutEnter()` (called from `route()` the same way `vmEnter()` is)
-  just wires the tab clicks — the tab click listener dies with its DOM node on the next render,
-  same as everywhere else in this SPA, so `aboutTeardown()` has nothing to do. An earlier version
-  of this page had a crossfading photo slideshow where the name now sits (see `data/slideshow.js`,
-  currently unused) — removed for now per design direction, but the data/plumbing is still there
-  to bring back.
+  direction), `position: absolute; inset: 0` within `.main` so the pink fills the whole view edge
+  to edge and shows through the translucent/blurred `.main-head` above it (the route's `tint` is
+  set to the same pink so the header's own color-mix leans the same way). Three stacked zones,
+  top to bottom: `.artist-tabs` (`About` default, `My Favorites`), right-aligned, with enough
+  top padding to clear `.main-head`'s height so the tabs aren't hidden under it; `.artist-panel-
+  content` (`flex:1`, the About bio + "What I'm into right now" interest-card grid, or the My
+  Favorites track list), right-aligned text, `overflow: hidden` rather than scrolling — this page
+  deliberately does not scroll, so content here has to stay compact enough to fit; `.artist-page-
+  foot` (name, then the star/+ icon row directly under it, then a "Related Artists" placeholder
+  row of 3 circles), left-aligned. The star button is a pure client-side toggle
+  (`.is-filled`, not persisted); the `+` button is just `data-route="connect"`, reusing the
+  generic nav click delegation. Favorite tracks (`data/playlists.js`'s `"Favorites"` playlist)
+  render as compact rows via `favoriteTrackCard()`, each `data-favorite-play="<global TRACKS
+  index>"` wired in `aboutEnter()` to `playTrack()` from `player/controls.js` — same player every
+  other route uses, so these are real, queueable tracks (they also show up in the sidebar
+  queue-panel's library list). A track without its own `cover` field falls back to its YouTube
+  thumbnail (`ytThumb(ytId(track.yt))`). `aboutEnter()`/`aboutTeardown()` are called from
+  `route()` the same way `vmEnter()`/`vmTeardown()` are; `aboutTeardown()` has nothing to clean up
+  since every listener dies with its DOM node on the next render, same as everywhere else in this
+  SPA. An earlier version of this page had a crossfading photo slideshow behind the name (see
+  `data/slideshow.js`, currently unused) — removed per design direction, but the data/plumbing is
+  still there to bring back.
 - **Voicemail recorder** (`voicemail/recorder.js`): `vmEnter()`/`vmTeardown()` are called from
   `route()` on entering/leaving the `voicemail` route — `vmEnter()` just resets the UI (mic button
   enabled/green); it does **not** call `getUserMedia`. The permission prompt only fires from
