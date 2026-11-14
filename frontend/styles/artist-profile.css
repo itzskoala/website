@@ -32,5 +32,4 @@
 @media (max-width: 640px) {
   .edu-block { flex-direction: column; align-items: flex-start; }
   .edu-logo { width: 90px; }
-  .about-emoji-rail { flex-direction: row; }
 }
