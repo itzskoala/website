@@ -116,9 +116,8 @@ the active language.
   (`playPos` / `syncQueue`) — that's a real mutual dependency (the transport needs to refresh the
   queue highlight, the queue needs to be able to start playback), not an accident; both usages are
   inside function bodies, so the circular ES module import resolves fine.
-- **Theme** (`ui/theme.js`): defaults to the OS's `prefers-color-scheme` (falling back to light
-  if that can't be detected) unless a theme was already saved to `localStorage`;
-  `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
+- **Theme** (`ui/theme.js`): defaults to light unless a theme was already saved to
+  `localStorage`; `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
 - **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
 - **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — `.artist-page` is
   `position: absolute; inset: 0` within `.main` so it fills the whole view edge to edge and shows
