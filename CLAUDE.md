@@ -29,7 +29,7 @@ frontend/            static site, served as the Vercel "outputDirectory"
     data/             content constants: profile.js, experience.js, photos.js, links.js,
                       playlists.js, tracks.js (derives TRACKS from playlists.js), sections.js,
                       pokedex.js, interests.js ("What I'm into right now" tags on the About page),
-                      slideshow.js (the About page hero's photo list + crossfade speed), and
+                      slideshow.js (unused for now — see "About page" below), and
                       projects/ — one JSON file per project + index.js that imports them (via
                       `with { type: "json" }`) into a PROJECTS array
     i18n/             strings.js (the English→Spanish I18N map) + translate.js (tstr/translateEl/
@@ -119,19 +119,16 @@ the active language.
   if that can't be detected) unless a theme was already saved to `localStorage`;
   `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
 - **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
-- **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — `.artist-layout` splits
-  the view into a left photo panel and a right tabbed panel (`.artist-panel-wrap`, hardcoded solid
-  pink per design direction, independent of the dark/light theme). The photo panel slowly
-  crossfades through `data/slideshow.js`'s list (`SLIDESHOW_SPEED_MS`, stacked
-  `<img class="artist-slide">` layers, only the active one opaque) with the name + a "Follow"
-  button overlaid and static. The pink panel holds two tabs (`About`, default; `My Favorites`, a
-  placeholder until music preferences are added) and scrolls its own content independently
-  (`.artist-panel-scroll`) so the photo never moves. Below 820px the two panels stack vertically
-  instead (see `responsive.css`). `aboutEnter()`/`aboutTeardown()` are called from `route()` the
-  same way `vmEnter()`/`vmTeardown()` are — `aboutEnter()` starts the slideshow `setInterval` and
-  wires the tab clicks, `aboutTeardown()` just clears that interval (the tab click listener dies
-  with its DOM node on the next render, same as everywhere else in this SPA;
-  no separate cleanup needed there).
+- **About page** (`views/about.js`): a TIDAL/artist-profile-style layout — `.artist-page` is a
+  full-page hardcoded solid pink panel (independent of the dark/light theme, per design
+  direction) holding the name + a "Follow" button, then two tabs (`About`, default; `My
+  Favorites`, a placeholder until music preferences are added), then a scrollable content area
+  (`.artist-panel-scroll`). `aboutEnter()` (called from `route()` the same way `vmEnter()` is)
+  just wires the tab clicks — the tab click listener dies with its DOM node on the next render,
+  same as everywhere else in this SPA, so `aboutTeardown()` has nothing to do. An earlier version
+  of this page had a crossfading photo slideshow where the name now sits (see `data/slideshow.js`,
+  currently unused) — removed for now per design direction, but the data/plumbing is still there
+  to bring back.
 - **Voicemail recorder** (`voicemail/recorder.js`): `vmEnter()`/`vmTeardown()` are called from
   `route()` on entering/leaving the `voicemail` route — `vmEnter()` just resets the UI (mic button
   enabled/green); it does **not** call `getUserMedia`. The permission prompt only fires from

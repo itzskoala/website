@@ -1,20 +1,11 @@
 /* artist-profile.css */
-.artist-layout { display: flex; height: min(78vh, 680px); min-height: 480px; }
+.artist-page { display: flex; flex-direction: column; height: min(78vh, 680px); min-height: 480px; background: #ff2d87; color: #fff; }
 
-.artist-photo { position: relative; flex: 1.4; overflow: hidden; background: var(--panel-2); }
-.artist-slide {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transition: opacity 1.2s ease;
-}
-.artist-slide.is-active { opacity: 1; }
-.artist-hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.25) 45%, rgba(0,0,0,.05) 70%);
-}
-.artist-hero-text { position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
-.artist-name { font-size: clamp(2rem, 4.2vw, 4rem); font-weight: 900; margin: 0; letter-spacing: -.03em; line-height: 1; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.45); }
+.artist-page-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 28px 0; flex: 0 0 auto; }
+.artist-name { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 900; margin: 0; letter-spacing: -.03em; line-height: 1; color: #fff; }
+.artist-page-head .ghost-btn { border-color: rgba(255,255,255,.7); color: #fff; }
+.artist-page-head .ghost-btn:hover { border-color: #fff; }
 
-.artist-panel-wrap { flex: 1; min-width: 320px; display: flex; flex-direction: column; background: #ff2d87; color: #fff; }
 .artist-tabs { display: flex; gap: 24px; padding: 22px 28px 0; border-bottom: 1px solid rgba(255,255,255,.25); flex: 0 0 auto; }
 .artist-tab {
   background: none; border: none; cursor: pointer; padding: 0 0 14px;
@@ -26,11 +17,11 @@
 
 .artist-panel-scroll { flex: 1; min-height: 0; overflow-y: auto; padding: 24px 28px 28px; }
 .artist-panel[hidden] { display: none; }
-.artist-headline { margin: 0 0 16px; font-size: 1.05rem; font-weight: 800; line-height: 1.5; color: #fff; }
-.artist-bio p { margin: 0 0 14px; line-height: 1.65; color: rgba(255,255,255,.92); font-size: .96rem; }
+.artist-headline { margin: 0 0 16px; font-size: 1.05rem; font-weight: 800; line-height: 1.5; color: #fff; max-width: 680px; }
+.artist-bio p { margin: 0 0 14px; line-height: 1.65; color: rgba(255,255,255,.92); font-size: .96rem; max-width: 680px; }
 .artist-bio p:last-child { margin-bottom: 0; }
 .artist-section-label { font-size: 1.05rem; font-weight: 800; margin: 26px 0 10px; color: #fff; }
-.artist-panel-wrap .tags { margin: 0; }
-.artist-panel-wrap .tag { background: rgba(255,255,255,.18); color: #fff; }
+.artist-panel-scroll .tags { margin: 0; }
+.artist-panel-scroll .tag { background: rgba(255,255,255,.18); color: #fff; }
 
 .artist-favorites-placeholder { color: rgba(255,255,255,.85); font-size: .95rem; padding: 4px 0; }
