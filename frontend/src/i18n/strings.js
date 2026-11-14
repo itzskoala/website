@@ -20,7 +20,7 @@ export const I18N = {
   "Software Engineering is like building with Legos and Marketing is like getting everybody to look at my Legos.": "La ingeniería de software es como construir con Legos y el marketing es como lograr que todos miren mis Legos.",
   "In my free time, you’ll find me writing short stories, on late night runs, studying for the DELE (Spanish Certification), and spending time with my family in the lulling flatlands of Fargo, North Dakota.": "En mi tiempo libre me encontrarás escribiendo cuentos, saliendo a correr de noche, estudiando para el DELE (certificación de español) y pasando tiempo con mi familia en las tranquilas llanuras de Fargo, Dakota del Norte.",
   "What I'm into": "Lo que me interesa", "right now": "ahora mismo", "Related Artists": "Artistas relacionados",
-  "AI tools": "Herramientas de IA", "Pumpkin Pie": "Pastel de calabaza", "World history": "Historia mundial", "Hiking": "Senderismo",
+  "Pumpkin Pie": "Pastel de calabaza", "World history": "Historia mundial", "Hiking": "Senderismo",
   "Music favorites, coming soon.": "Favoritos musicales, próximamente.",
   "Experience": "Experiencia", "Sri Kotala · work, education, research & awards": "Sri Kotala · trabajo, educación, investigación y premios",
   "Work Experience": "Experiencia laboral", "Education": "Educación", "Research": "Investigación",

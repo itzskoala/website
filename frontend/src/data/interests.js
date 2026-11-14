@@ -1,6 +1,5 @@
 // interests.js
 export const INTERESTS = [
-  { label: "AI tools", img: "./assets/interests/ai-tools.jpg" },
   { label: "Mario Kart", img: "./assets/interests/mario-kart.jpg" },
   { label: "Pumpkin Pie", img: "./assets/interests/pumpkin-pie.jpg" },
   { label: "Chile", img: "./assets/interests/chile.png" },
