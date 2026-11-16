@@ -4,12 +4,17 @@ import { PROFILE } from "../data/profile.js";
 import { EXPERIENCE } from "../data/experience.js";
 
 function trackRows(list) {
-  return list.map((e, i) => `
+  return list.map((e, i) => {
+    const idx = e.icon
+      ? `<img class="track-icon" src="${e.icon}" alt="" loading="lazy" ${e.iconLink ? `data-open="${esc(e.iconLink)}"` : ""}>`
+      : `<span class="track-idx">${i + 1}</span>`;
+    return `
     <div class="track-row">
-      <span class="track-idx">${i + 1}</span>
+      ${idx}
       <div class="track-main"><div class="track-name">${esc(e.name)}</div>${e.sub ? `<div class="track-sub">${esc(e.sub)}</div>` : ""}</div>
       <span class="track-meta">${esc(e.meta || "")}</span>
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
 export function viewExperience() {
@@ -32,11 +37,12 @@ export function viewExperience() {
       <div class="section-label">Work Experience</div><div class="tracklist">${trackRows(EXPERIENCE.work)}</div>
       <div class="section-label">Education</div>
       <div class="edu-block">
-        <img class="edu-logo" src="./assets/umn.svg" alt="University of Minnesota" loading="lazy">
+        <img class="edu-logo" src="./assets/umn.svg" alt="University of Minnesota" loading="lazy" data-open="https://www.linkedin.com/in/skotala/overlay/Certifications/1445608585/treasury?profileId=ACoAAD8gHgYBTzdvjqwjr6BewOpOGd8LgN6lKR4">
         <div class="tracklist">${trackRows(EXPERIENCE.education)}</div>
       </div>
       <div class="section-label">Research</div><div class="tracklist">${trackRows(EXPERIENCE.research)}</div>
       <div class="section-label">Awards & Achievements</div><div class="tracklist">${trackRows(EXPERIENCE.awards)}</div>
+      <div class="section-label">Certifications</div><div class="tracklist">${trackRows(EXPERIENCE.certifications)}</div>
       <div class="section-label">Documents</div><div class="grid">${docs}</div>
     </div>
   ` };

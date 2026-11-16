@@ -28,11 +28,14 @@ export function resizeCanvas() {
 window.addEventListener("resize", resizeCanvas);
 
 const NB = 48, bars = new Array(NB).fill(0);
+const DEFAULT_COLOR = { r: 122, g: 0, b: 25 };
+const lighten = (v) => Math.min(255, v + 90);
 
 export function draw() {
   state.raf = requestAnimationFrame(draw);
   const w = canvas.clientWidth, h = canvas.clientHeight; ctx2d.clearRect(0, 0, w, h);
   const t = performance.now() / 1000, bw = w / NB;
+  const c = state.curColor || DEFAULT_COLOR;
   let frame = null, frameBase = 0, frameBands = 0;
   if (state.isPlaying && state.curViz && state.ytReady) {
     const ct = state.yt.getCurrentTime() || 0;
@@ -52,7 +55,8 @@ export function draw() {
     bars[i] += (target - bars[i]) * 0.25;
     const bh = bars[i] * h * 0.95, x = i * bw;
     const g = ctx2d.createLinearGradient(0, h, 0, h - bh);
-    g.addColorStop(0, "rgba(122,0,25,.95)"); g.addColorStop(1, "rgba(255,199,44,.55)");
+    g.addColorStop(0, `rgba(${c.r},${c.g},${c.b},.95)`);
+    g.addColorStop(1, `rgba(${lighten(c.r)},${lighten(c.g)},${lighten(c.b)},.55)`);
     ctx2d.fillStyle = g; ctx2d.fillRect(x + bw * 0.15, h - bh, bw * 0.7, bh);
   }
   if (!state.isPlaying && bars.every((b) => b < 0.03)) { cancelAnimationFrame(state.raf); state.raf = 0; ctx2d.clearRect(0, 0, w, h); }

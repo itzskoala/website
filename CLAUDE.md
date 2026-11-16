@@ -114,18 +114,53 @@ the active language.
   than trusting the request to fail). `controls.js` and `player/queuePanel.js` import each other
   (`playPos` / `syncQueue`) — that's a real mutual dependency (the transport needs to refresh the
   queue highlight, the queue needs to be able to start playback), not an accident; both usages are
-  inside function bodies, so the circular ES module import resolves fine.
+  inside function bodies, so the circular ES module import resolves fine. The visualizer's bar
+  gradient is tinted from the current track's own cover/thumbnail rather than a fixed palette:
+  `loadTrack()` calls `utils/color.js`'s `extractAverageColor()` on the same cover URL already
+  used for `nowArt` (downscales it onto an 8×8 canvas and averages the pixels — cheap, no need
+  for real palette extraction) and stores the result on `state.curColor`; `draw()` reads it each
+  frame, falling back to the original maroon default (`DEFAULT_COLOR`) when a cover is missing,
+  still loading, or fails to decode. `i.ytimg.com` happens to send
+  `Access-Control-Allow-Origin: *`, so `img.crossOrigin = "anonymous"` is enough to read pixels
+  from YouTube thumbnails too without a canvas "tainted canvas" security error; results are
+  cached by URL since the same cover is sampled repeatedly as a track replays or repeats in the
+  queue.
+- **Experience page** (`views/experience.js`): every section (work, education, research, awards,
+  certifications) renders through the one `trackRows()` helper, each row showing a numbered
+  `.track-idx` badge — except an entry with an `icon` field (currently only `EXPERIENCE
+  .certifications`, in `data/experience.js`), which swaps that number for the logo image instead;
+  an `iconLink` alongside it additionally makes that one icon `data-open`-clickable (so only the
+  UNAM certification icon opens its Coursera verification URL, not the Udemy one next to it,
+  since Udemy's entry has no verification link to send people to). The University of Minnesota
+  `edu-logo` is likewise just a `data-open` image — it currently points at a LinkedIn
+  certifications treasury overlay URL rather than umn.edu, a deliberate swap, not a mistake.
 - **Theme** (`ui/theme.js`): defaults to light unless a theme was already saved to
   `localStorage`; `[data-theme-toggle]` flips `html[data-theme]` between dark/light afterward.
-- **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes.
+- **Lightbox** (`ui/lightbox.js`): click a photo to open; Escape or backdrop click closes. Prev/next
+  arrow buttons (`data-lb-prev`/`data-lb-next`, straddling the image) and the ArrowLeft/ArrowRight
+  keys step through `PHOTOS` from whichever index opened the lightbox, wrapping around at either
+  end (same `(i + d + length) % length` wrap the player's queue uses); the keydown handler bails
+  immediately if the lightbox isn't showing, so arrow keys don't hijack navigation elsewhere on the
+  site. This module wires its own click listener directly on `[data-lightbox]` rather than going
+  through `ui/clickDelegation.js`'s generic document-level delegation — it's a self-contained
+  overlay, not part of the routed page.
 - **About page** (`views/about.js`): uses the same `.hero` + `.action-bar` pattern as
   projects/experience/photos (maroon `--hero-c:#5a0013`, round `hero-cover` instead of a square
   one), with a Spotify "artist page" `play-big` + `Follow` action bar underneath (`Follow` is just
   `data-route="connect"`, reusing the generic nav click delegation — there's no real follow
   state). Below that, `.about-card` (`styles/artist-profile.css`) is a single rounded card holding
   `.about-emoji-rail` (a vertical stack of plain decorative emoji — `ABOUT_EMOJIS` in `about.js`),
-  the square `headshot.jpg`, and the intro/bio text (`PROFILE.intro` is raw HTML for the inline
-  `.highlight` span, `PROFILE.bio` is plain strings run through `esc()`). All of this uses the
+  the square `headshot.jpg`, and the intro/bio text — both `PROFILE.intro` (the inline `.highlight`
+  span) and `PROFILE.bio` are raw HTML rather than escaped, since this is first-party, developer-
+  authored copy, never user input; that's what lets one bio line embed a real inline link
+  (`<a class="bio-dog-link" data-route="photos" data-dog-link>Golden Doodle</a>`, styled in
+  `artist-profile.css` to swap maroon/gold with the theme) without a one-off escaping exception.
+  That link does double duty: `data-route="photos"` still runs through the generic click
+  delegation to navigate there, while `aboutEnter()` separately wires the same `[data-dog-link]`
+  element to `openLightbox()` so the dog's own photo (found in `PHOTOS` by matching the `rambo`
+  filename, the same lookup-by-content pattern `favoriteGlobalIndexes` uses against `TRACKS`) opens
+  immediately — the lightbox lives outside the router's `[data-main]`, so opening it doesn't care
+  whether the photos view has actually finished rendering yet. All of this uses the
   normal theme vars (`var(--text)`, `var(--card-hover)`, …) like every other view, so it already
   follows dark/light mode with no page-specific overrides. Below the card: "Favorite Songs" as a
   real `.tracklist` (see below), then "What I'm into right now" as `.interest-grid` — both sit in
@@ -234,6 +269,14 @@ persisted across reloads.
 - Count strings like `"N builds"` / `"N photos"` are handled by pattern in `esPattern()`
   (`translate.js`).
 - Search matches both English and Spanish text so queries work in either language.
+- `translateEl()` walks and replaces individual DOM **text nodes**, not whole elements — so a
+  string that embeds an inline tag (e.g. `PROFILE.bio`'s `<a class="bio-dog-link">Golden
+  Doodle</a>`) is split into separate text nodes at render time (text before the tag, the tag's
+  own text, text after it), each looked up in `strings.js` independently. A `strings.js` key with
+  the *entire* original sentence will never match once any part of it is wrapped in a tag — key
+  each fragment on its own (trimmed) text instead, same as `"In my free time, …with my"` (the
+  prefix before the dog link) is keyed separately from the untranslated `"Golden Doodle"` link
+  text and the trailing `"."`.
 
 ## Conventions
 

@@ -31,6 +31,9 @@
   .queue-panel { right: 10px; left: 10px; width: auto; bottom: 112px; }
   .lightbox { padding: 16px; }
   .lightbox-close { top: 10px; right: 16px; }
+  .lightbox-nav { width: 48px; height: 48px; font-size: 2.2rem; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
   .poke-stage { height: 170px; }
 }
 

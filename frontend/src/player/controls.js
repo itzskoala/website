@@ -1,6 +1,7 @@
 // controls.js
 import { $, grad } from "../utils/dom.js";
 import { ytId, ytThumb, upgradeThumb } from "../utils/youtube.js";
+import { extractAverageColor } from "../utils/color.js";
 import { TRACKS } from "../data/tracks.js";
 import { state } from "./state.js";
 import { loadViz } from "./visualizer.js";
@@ -24,6 +25,7 @@ export function startPoll() {
 
 export function loadTrack(idx, autoplay) {
   const t = TRACKS[idx], id = ytId(t.yt);
+  const coverUrl = t.cover || (id ? ytThumb(id) : null);
   nowArt.textContent = "";
   if (t.cover) {
     nowArt.style.background = `#000 center/cover no-repeat url(${t.cover})`;
@@ -33,8 +35,9 @@ export function loadTrack(idx, autoplay) {
   }
   nowTitle.textContent = t.title; nowArtist.textContent = t.artist;
   curEl.textContent = "0:00"; durEl.textContent = "0:00"; seekEl.value = 0; seekEl.style.setProperty("--f", "0%");
-  state.curVizId = id; state.curViz = null;
+  state.curVizId = id; state.curViz = null; state.curColor = null;
   loadViz(id).then((v) => { if (state.curVizId === id) state.curViz = v; });
+  extractAverageColor(coverUrl).then((c) => { if (state.curVizId === id) state.curColor = c; });
   syncQueue();
   if (!state.ytReady) { state.wantPlay = autoplay ? idx : -1; return; }
   if (autoplay) state.yt.loadVideoById(id); else state.yt.cueVideoById(id);

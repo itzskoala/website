@@ -16,4 +16,5 @@ export const state = {
   errCount: 0,
   curVizId: null,
   curViz: null,
+  curColor: null,
 };

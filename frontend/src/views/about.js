@@ -3,10 +3,14 @@ import { $, esc } from "../utils/dom.js";
 import { PROFILE } from "../data/profile.js";
 import { INTERESTS } from "../data/interests.js";
 import { TRACKS } from "../data/tracks.js";
+import { PHOTOS } from "../data/photos.js";
 import { playSvg } from "../utils/icons.js";
 import { ytId, ytThumb } from "../utils/youtube.js";
 import { playTrack, playPos } from "../player/controls.js";
 import { state } from "../player/state.js";
+import { openLightbox } from "../ui/lightbox.js";
+
+const dogPhotoIdx = PHOTOS.findIndex((p) => /rambo/i.test(p.src));
 
 const ABOUT_EMOJIS = ["🏊", "✈️", "💻", "🏖️"];
 
@@ -50,7 +54,7 @@ export function viewAbout() {
   const emojis = ABOUT_EMOJIS.map((e) => `<span class="about-emoji" aria-hidden="true">${e}</span>`).join("");
   const interests = INTERESTS.map((i) => `
     <div class="interest-card">
-      <img class="interest-thumb" src="${i.img}" alt="" ${i.fit ? `style="object-fit:${i.fit}"` : ""}>
+      <img class="interest-thumb" src="${i.img}" alt="" draggable="false" ${i.fit ? `style="object-fit:${i.fit}"` : ""}>
       <span class="interest-label">${esc(i.label)}</span>
     </div>`).join("");
   return { tint: "#7a001933", hero: "#5a0013", html: `
@@ -69,7 +73,7 @@ export function viewAbout() {
       <div class="about-card">
         <div class="about-emoji-rail">${emojis}</div>
         <img src="./assets/headshot.jpg" alt="Sri Kotala" loading="lazy">
-        <div><h2 class="about-lead">${PROFILE.intro}</h2>${PROFILE.bio.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
+        <div><h2 class="about-lead">${PROFILE.intro}</h2>${PROFILE.bio.map((p) => `<p>${p}</p>`).join("")}</div>
       </div>
       <div class="section-label">Favorite Songs</div>
       <div class="tracklist">${visibleFavorites}</div>
@@ -84,6 +88,8 @@ export function viewAbout() {
 }
 
 export function aboutEnter() {
+  const dogLink = $("[data-dog-link]");
+  if (dogLink && dogPhotoIdx !== -1) dogLink.addEventListener("click", () => openLightbox(dogPhotoIdx));
   document.querySelectorAll("[data-favorite-play]").forEach((btn) => {
     btn.addEventListener("click", () => playTrack(+btn.dataset.favoritePlay));
   });

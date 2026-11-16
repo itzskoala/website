@@ -1,7 +1,7 @@
 // experience.js
 export const EXPERIENCE = {
   work: [
-    { name: "Sharepoint Engineer", sub: "Minnesota Public Radio", meta: "Nov 2026 – Present" },
+    { name: "Software Engineer", sub: "Minnesota Public Radio", meta: "Nov 2026 – Present" },
     { name: "Account Executive", sub: "Telemundo Minnesota", meta: "Jun 2026 – Aug 2026" },
     { name: "Software Engineer Intern — Legal Technology", sub: "Minnesota Public Radio", meta: "Jun 2026 – Aug 2026" },
     { name: "Research Assistant", sub: "Hubbard School of Journalism & Mass Communication", meta: "Sep 2024 – May 2026" },
@@ -20,6 +20,21 @@ export const EXPERIENCE = {
     { name: "2026 International Communication Association (ICA) Finalist", meta: "2026" },
     { name: "UMN Undergraduate Research Scholarship", meta: "2024 – 2025" },
     { name: "Dean's List, College of Liberal Arts", meta: "2023 – 2025" },
+  ],
+  certifications: [
+    {
+      name: "AI Engineer Agentic Track: The Complete Agent & MCP Course",
+      sub: "Udemy",
+      meta: "Issued Jun 2026",
+      icon: "./assets/certifications/udemy.png",
+    },
+    {
+      name: "Español para profesionales: comunicación en el trabajo",
+      sub: "Universidad Nacional Autónoma de México (UNAM)",
+      meta: "Issued Mar 2026",
+      icon: "./assets/certifications/unam.png",
+      iconLink: "https://www.coursera.org/account/accomplishments/verify/5KVBM5WLVQA2",
+    },
   ],
   documents: [
     { title: "Resume", kind: "PDF", url: "https://drive.google.com/file/d/1yp7Fqrp77I5zCeHlOSOiL0AeAa6Ooz9t/view?usp=sharing", thumb: "./assets/docs/resume.jpg", c1: "#7a0019", c2: "#ffc72c" },
